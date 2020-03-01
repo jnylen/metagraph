@@ -1,0 +1,10 @@
+<div class="flex items-center pt-2">
+  <%= live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "show", predicate: @predicate) %>
+  <div class="pl-8">
+    <%= if is_nil(@value) do %>
+      -
+    <% else %>
+      <a href="<%= into_url(@predicate, @value) %>" target="_blank"><%= into_url(@predicate, @value) %></a>
+    <% end %>
+  </div>
+</div>

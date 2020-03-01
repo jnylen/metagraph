@@ -1,0 +1,1003 @@
+[
+  {
+    "country": "US",
+    "order": 1,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 12"
+  },
+  {
+    "country": "US",
+    "order": 3,
+    "certification": "PG-13",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "US",
+    "order": 4,
+    "certification": "R",
+    "media_type": "film",
+    "explanation": "17+ - Restricted"
+  },
+  {
+    "country": "US",
+    "order": 5,
+    "certification": "NC-17",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "CA",
+    "order": 4,
+    "certification": "18A",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "AU",
+    "order": 1,
+    "certification": "E",
+    "media_type": "film",
+    "explanation": "Exempt"
+  },
+  {
+    "country": "AU",
+    "order": 2,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 14 - Recommended for children"
+  },
+  {
+    "country": "AU",
+    "order": 6,
+    "certification": "R18+",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "AU",
+    "order": 8,
+    "certification": "RC",
+    "media_type": "film",
+    "explanation": "Banned"
+  },
+  {
+    "country": "CA",
+    "order": 1,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 13 - Recommended for children"
+  },
+  {
+    "country": "CA",
+    "order": 2,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "Up to 13 - Parental guidance is suggested"
+  },
+  {
+    "country": "CA",
+    "order": 3,
+    "certification": "14A",
+    "media_type": "film",
+    "explanation": "14+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "CA",
+    "order": 5,
+    "certification": "A",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "DE",
+    "order": 1,
+    "certification": "0",
+    "media_type": "film",
+    "explanation": "Up to 5 - Recommended for children"
+  },
+  {
+    "country": "DE",
+    "order": 2,
+    "certification": "6",
+    "media_type": "film",
+    "explanation": "6+"
+  },
+  {
+    "country": "DE",
+    "order": 3,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "6+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "DE",
+    "order": 4,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "DE",
+    "order": 5,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "FR",
+    "order": 1,
+    "certification": "U",
+    "media_type": "film",
+    "explanation": "Up to 11"
+  },
+  {
+    "country": "FR",
+    "order": 3,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "NZ",
+    "order": 3,
+    "certification": "M",
+    "media_type": "film",
+    "explanation": null
+  },
+  {
+    "country": "NZ",
+    "order": 4,
+    "certification": "13",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "NZ",
+    "order": 5,
+    "certification": "15",
+    "media_type": "film",
+    "explanation": "15+"
+  },
+  {
+    "country": "IN",
+    "order": 0,
+    "certification": "U",
+    "media_type": "film",
+    "explanation": "Up to 11"
+  },
+  {
+    "country": "GB",
+    "order": 5,
+    "certification": "15",
+    "media_type": "film",
+    "explanation": "15+"
+  },
+  {
+    "country": "US",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "NL",
+    "order": 1,
+    "certification": "AL",
+    "media_type": "film",
+    "explanation": "Up to 5"
+  },
+  {
+    "country": "GB",
+    "order": 7,
+    "certification": "R18",
+    "media_type": "film",
+    "explanation": "18+ - Restricted"
+  },
+  {
+    "country": "US",
+    "order": 2,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "Up to 12 - Parental guidance is suggested"
+  },
+  {
+    "country": "AU",
+    "order": 3,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "Up to 14 - Parental guidance is suggested"
+  },
+  {
+    "country": "AU",
+    "order": 4,
+    "certification": "M",
+    "media_type": "film",
+    "explanation": "15+ - Not recommended for a younger audience but not restricted"
+  },
+  {
+    "country": "AU",
+    "order": 5,
+    "certification": "MA15+",
+    "media_type": "film",
+    "explanation": "15+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "AU",
+    "order": 7,
+    "certification": "X18+",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "FR",
+    "order": 2,
+    "certification": "10",
+    "media_type": "film",
+    "explanation": null
+  },
+  {
+    "country": "FR",
+    "order": 4,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "FR",
+    "order": 5,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "GB",
+    "order": 1,
+    "certification": "U",
+    "media_type": "film",
+    "explanation": "Up to 7"
+  },
+  {
+    "country": "GB",
+    "order": 2,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "8+"
+  },
+  {
+    "country": "GB",
+    "order": 3,
+    "certification": "12A",
+    "media_type": "film",
+    "explanation": "12+ - Cinema Only"
+  },
+  {
+    "country": "GB",
+    "order": 4,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+ - Video Only"
+  },
+  {
+    "country": "NZ",
+    "order": 1,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 12"
+  },
+  {
+    "country": "NZ",
+    "order": 2,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "Up to 12 - Parental guidance is suggested"
+  },
+  {
+    "country": "NZ",
+    "order": 6,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "NZ",
+    "order": 7,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "NZ",
+    "order": 8,
+    "certification": "R",
+    "media_type": "film",
+    "explanation": "18+ - Restricted"
+  },
+  {
+    "country": "IN",
+    "order": 1,
+    "certification": "UA",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "IN",
+    "order": 2,
+    "certification": "A",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "GB",
+    "order": 6,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "BR",
+    "order": 1,
+    "certification": "L",
+    "media_type": "film",
+    "explanation": "Up to 9 - Recommended for children"
+  },
+  {
+    "country": "BR",
+    "order": 2,
+    "certification": "10",
+    "media_type": "film",
+    "explanation": "10+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "BR",
+    "order": 3,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "BR",
+    "order": 4,
+    "certification": "14",
+    "media_type": "film",
+    "explanation": "14+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "BR",
+    "order": 5,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "BR",
+    "order": 6,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "NL",
+    "order": 2,
+    "certification": "6",
+    "media_type": "film",
+    "explanation": "6+"
+  },
+  {
+    "country": "NL",
+    "order": 3,
+    "certification": "9",
+    "media_type": "film",
+    "explanation": "9+"
+  },
+  {
+    "country": "NL",
+    "order": 4,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "NL",
+    "order": 5,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "FI",
+    "order": 1,
+    "certification": "S",
+    "media_type": "film",
+    "explanation": "Up to 3"
+  },
+  {
+    "country": "FI",
+    "order": 2,
+    "certification": "K-7",
+    "media_type": "film",
+    "explanation": "Up to 7"
+  },
+  {
+    "country": "FI",
+    "order": 3,
+    "certification": "K-12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "FI",
+    "order": 4,
+    "certification": "K-16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "FI",
+    "order": 5,
+    "certification": "K-18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "FI",
+    "order": 6,
+    "certification": "KK",
+    "media_type": "film",
+    "explanation": ""
+  },
+  {
+    "country": "BG",
+    "order": 1,
+    "certification": "A",
+    "media_type": "film",
+    "explanation": "Up to 11 - Recommended for children"
+  },
+  {
+    "country": "BG",
+    "order": 2,
+    "certification": "B",
+    "media_type": "film",
+    "explanation": "Up to 11 - Recommended for children"
+  },
+  {
+    "country": "BG",
+    "order": 3,
+    "certification": "C",
+    "media_type": "film",
+    "explanation": "12+ - Parental accompaniment required for younger audiences"
+  },
+  {
+    "country": "BG",
+    "order": 4,
+    "certification": "D",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "BG",
+    "order": 5,
+    "certification": "X",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "ES",
+    "order": 1,
+    "certification": "APTA",
+    "media_type": "film",
+    "explanation": "Up to 6"
+  },
+  {
+    "country": "ES",
+    "order": 2,
+    "certification": "7",
+    "media_type": "film",
+    "explanation": "7+"
+  },
+  {
+    "country": "ES",
+    "order": 3,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "ES",
+    "order": 4,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "ES",
+    "order": 5,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "ES",
+    "order": 6,
+    "certification": "X",
+    "media_type": "film",
+    "explanation": "18+ - Restricted"
+  },
+  {
+    "country": "PT",
+    "order": 1,
+    "certification": "Públicos",
+    "media_type": "film",
+    "explanation": null
+  },
+  {
+    "country": "PT",
+    "order": 2,
+    "certification": "M/3",
+    "media_type": "film",
+    "explanation": "3+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 3,
+    "certification": "M/6",
+    "media_type": "film",
+    "explanation": "6+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 4,
+    "certification": "M/12",
+    "media_type": "film",
+    "explanation": "12+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 5,
+    "certification": "M/14",
+    "media_type": "film",
+    "explanation": "14+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 6,
+    "certification": "M/16",
+    "media_type": "film",
+    "explanation": "16+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 7,
+    "certification": "M/18",
+    "media_type": "film",
+    "explanation": "18+ - Cinema only"
+  },
+  {
+    "country": "PT",
+    "order": 8,
+    "certification": "P",
+    "media_type": "film",
+    "explanation": "18+ - Pornographic"
+  },
+  {
+    "country": "MY",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "MY",
+    "order": 1,
+    "certification": "U",
+    "media_type": "film",
+    "explanation": "Up to 12"
+  },
+  {
+    "country": "MY",
+    "order": 2,
+    "certification": "P13",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "MY",
+    "order": 3,
+    "certification": "18SG",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "MY",
+    "order": 4,
+    "certification": "18SX",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "MY",
+    "order": 5,
+    "certification": "18PA",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "MY",
+    "order": 6,
+    "certification": "18PL",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "CA-QC",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "CA-QC",
+    "order": 1,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 13 - Recommended for children"
+  },
+  {
+    "country": "CA-QC",
+    "order": 2,
+    "certification": "13+",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "CA-QC",
+    "order": 3,
+    "certification": "16+",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "CA-QC",
+    "order": 4,
+    "certification": "18+",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "SE",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "SE",
+    "order": 1,
+    "certification": "Btl",
+    "media_type": "film",
+    "explanation": "All ages"
+  },
+  {
+    "country": "SE",
+    "order": 2,
+    "certification": "7",
+    "media_type": "film",
+    "explanation": "7+"
+  },
+  {
+    "country": "SE",
+    "order": 3,
+    "certification": "11",
+    "media_type": "film",
+    "explanation": "11+"
+  },
+  {
+    "country": "DK",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "DK",
+    "order": 1,
+    "certification": "A",
+    "media_type": "film",
+    "explanation": "Up to 6 - Recommended for children"
+  },
+  {
+    "country": "DK",
+    "order": 2,
+    "certification": "7",
+    "media_type": "film",
+    "explanation": "7+ - Not recommended for a younger audience"
+  },
+  {
+    "country": "DK",
+    "order": 3,
+    "certification": "11",
+    "media_type": "film",
+    "explanation": "11+"
+  },
+  {
+    "country": "DK",
+    "order": 4,
+    "certification": "15",
+    "media_type": "film",
+    "explanation": "15+"
+  },
+  {
+    "country": "DK",
+    "order": 5,
+    "certification": "F",
+    "media_type": "film",
+    "explanation": "Exempt"
+  },
+  {
+    "country": "NO",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "NO",
+    "order": 1,
+    "certification": "A",
+    "media_type": "film",
+    "explanation": "Up to 5"
+  },
+  {
+    "country": "NO",
+    "order": 2,
+    "certification": "6",
+    "media_type": "film",
+    "explanation": "6+"
+  },
+  {
+    "country": "NO",
+    "order": 3,
+    "certification": "9",
+    "media_type": "film",
+    "explanation": "9+"
+  },
+  {
+    "country": "NO",
+    "order": 4,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "NO",
+    "order": 5,
+    "certification": "15",
+    "media_type": "film",
+    "explanation": "15+"
+  },
+  {
+    "country": "NO",
+    "order": 6,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "SE",
+    "order": 4,
+    "certification": "15",
+    "media_type": "film",
+    "explanation": "15+"
+  },
+  {
+    "country": "HU",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "HU",
+    "order": 1,
+    "certification": "KN",
+    "media_type": "film",
+    "explanation": "Up to 5"
+  },
+  {
+    "country": "HU",
+    "order": 2,
+    "certification": "6",
+    "media_type": "film",
+    "explanation": "6+"
+  },
+  {
+    "country": "HU",
+    "order": 3,
+    "certification": "12",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "HU",
+    "order": 4,
+    "certification": "16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "HU",
+    "order": 5,
+    "certification": "18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "HU",
+    "order": 6,
+    "certification": "X",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "LT",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "LT",
+    "order": 1,
+    "certification": "V",
+    "media_type": "film",
+    "explanation": "All ages"
+  },
+  {
+    "country": "LT",
+    "order": 2,
+    "certification": "N-7",
+    "media_type": "film",
+    "explanation": "7+"
+  },
+  {
+    "country": "LT",
+    "order": 3,
+    "certification": "N-13",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "LT",
+    "order": 4,
+    "certification": "N-16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "LT",
+    "order": 5,
+    "certification": "N-18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "RU",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "RU",
+    "order": 1,
+    "certification": "0+",
+    "media_type": "film",
+    "explanation": "All ages"
+  },
+  {
+    "country": "RU",
+    "order": 2,
+    "certification": "6+",
+    "media_type": "film",
+    "explanation": "6+"
+  },
+  {
+    "country": "RU",
+    "order": 3,
+    "certification": "12+",
+    "media_type": "film",
+    "explanation": "12+"
+  },
+  {
+    "country": "RU",
+    "order": 4,
+    "certification": "16+",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "RU",
+    "order": 5,
+    "certification": "18+",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "PH",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "PH",
+    "order": 1,
+    "certification": "G",
+    "media_type": "film",
+    "explanation": "Up to 12"
+  },
+  {
+    "country": "PH",
+    "order": 2,
+    "certification": "PG",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "PH",
+    "order": 3,
+    "certification": "R-13",
+    "media_type": "film",
+    "explanation": "13+"
+  },
+  {
+    "country": "PH",
+    "order": 4,
+    "certification": "R-16",
+    "media_type": "film",
+    "explanation": "16+"
+  },
+  {
+    "country": "PH",
+    "order": 5,
+    "certification": "R-18",
+    "media_type": "film",
+    "explanation": "18+"
+  },
+  {
+    "country": "PH",
+    "order": 6,
+    "certification": "X",
+    "media_type": "film",
+    "explanation": "Banned"
+  },
+  {
+    "country": "IT",
+    "order": 0,
+    "certification": "NR",
+    "media_type": "film",
+    "explanation": "Not Rated"
+  },
+  {
+    "country": "IT",
+    "order": 1,
+    "certification": "T",
+    "media_type": "film",
+    "explanation": "Up to 13"
+  },
+  {
+    "country": "IT",
+    "order": 2,
+    "certification": "VM14",
+    "media_type": "film",
+    "explanation": "14+"
+  },
+  {
+    "country": "IT",
+    "order": 3,
+    "certification": "VM18",
+    "media_type": "film",
+    "explanation": "18+"
+  }
+]

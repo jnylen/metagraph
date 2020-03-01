@@ -1,0 +1,9 @@
+<%= render_existing @view_module, "new_show/_menu.html", assigns %>
+<div class="flex flex-row-reverse w-full">
+  <div class="w-4/5 px-8 pt-24">
+    <%= render_existing @view_module, "new_show/_header.html", assigns %>
+    <%= for domain <- @sections do %>
+      <%= render_item_template(domain, Map.take(assigns, [:item, :types]), "domain", "new_show") %>
+    <% end %>
+  </div>
+</div>

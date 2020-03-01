@@ -1,0 +1,6 @@
+<footer class="h-16 flex items-center justify-center">
+  <div class="text-center text-sm font-sourcesans text-gray-500 font-light">
+    Brought to you by <a href="https://jnylen.nu" target="_blank" class="font-bold hover:text-gray-700">Joakim Nylén</a> with help from BunnyCDN.<br/>
+    <a href="/about/license" target="_blank" class="hover:text-gray-700">Data from our API is licensed under ODbL while our database dumps are in the Public Domain.</a>
+  </div>
+</footer>

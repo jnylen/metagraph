@@ -1,0 +1,27 @@
+<div class="pt-16">
+  <div class="bg-brand-activemenubg py-10">
+    <div class="container mx-auto text-indigo-900">
+      <div class="w-3/4 mx-auto">
+        <h1 class="font-oxygen text-3xl font-bold">Feed</h1>
+        <p class="font-oxygen">
+          List with the most recent changes across the site.
+        </p>
+        <div class="stats"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto pt-10 pb-8">
+    <div class="w-3/4 mx-auto">
+      <%= for change <- @changes do %>
+        <%= render("_item.#{change.action}.html",
+          item: change, show: false, graph: Map.get(@graphs, change.subject, %{}))
+        %>
+      <% end %>
+      <%= if Enum.empty?(@changes) do %>
+        <div class="">
+          Empty...
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

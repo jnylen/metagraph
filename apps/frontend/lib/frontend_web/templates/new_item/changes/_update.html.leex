@@ -1,0 +1,37 @@
+<div class="mt-2 mb-4 bg-white rounded-lg shadow-md" onclick="show('edits_<%= @change.id %>')">
+  <div class="flex items-center px-4 py-5">
+    <div class="relative pl-2">
+      <div class="px-5 py-4 font-bold leading-none tracking-tighter text-green-900 bg-blue-200 rounded-full font-sourcesans">E</div>
+      <div class="absolute bottom-0 right-0 w-4 h-4 leading-none text-white bg-red-600 border-2 border-white rounded-full"></div>
+    </div>
+    <div class="pl-6 text-indigo-900 font-sourcesans">
+      <h3 class="text-lg font-semibold leading-normal"><a href="/uid/<%= @change.subject %>"><%= Map.get(get_lang(Map.get(@graph, :label, []), "sv-SE"), :value, "Unknown") %></a></h3>
+      <p class="leading-normal text-md"><%= get_type(@graph) %></p>
+    </div>
+    <div class="flex items-center justify-end flex-1">
+      <div class="flex items-center pr-8 text-indigo-900 font-sourcesans">
+        <div class="text-right">
+          <h5 class="font-semibold leading-normal text-normal">Changed by <%= @change.user.username %></h5>
+          <p class="leading-normal text-normal"><%= time_ago_in_words @change.inserted_at %> ago</p>
+        </div>
+      </div>
+      <div class="w-10 mr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="text-indigo-900 fill-current "><path class="secondary" fill-rule="evenodd" d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/></svg>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-600 w-full rounded-b-lg py-4 px-6 shadow-inner<%= if (@show || false), do: "", else: " hidden" %>" id="edits_<%= @change.id %>">
+    <div class="flex flex-wrap">
+      <%= for {change_key, %{"changed" => action, "value" => change_val}} <- @change.changes |> remove_blanks!(@graph) do %>
+        <div class="flex items-center w-1/2 w-full py-2 font-sourcesans">
+          <div class="w-1/6 px-3 py-2 font-semibold text-green-900 bg-green-200 rounded shadow">
+            <%= change_key %>
+          </div>
+          <div class="flex-1 pl-4 font-mono text-sm text-white">
+            <%= Jason.encode!(change_val)  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

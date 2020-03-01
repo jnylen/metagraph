@@ -1,0 +1,19 @@
+<div class="px-8 ">
+  <%= form_tag "/auth/identity/callback?type=login", method: "post", class: "login", novalidate: true do %>
+    <div class="mb-4 mt-4">
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="username" id="username" name="username" value="<%= @conn.params["username"] %>" required placeholder="Username">
+    </div>
+
+    <div class="mb-4">
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="password" id="password" name="password" required placeholder="Password">
+    </div>
+
+    <div class="mb-8">
+      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-roboto leading-none uppercase py-4 px-4 rounded w-full">Login</div>
+    </div>
+  <% end %>
+  <div class="text-center pb-8 flex flex-col">
+    <a href="#" class="text-sm text-gray-700 no-underline hover:underline hover:text-gray-900">Forgot your password?</a>
+    <a href="/auth/signup" class="text-sm text-gray-700 no-underline hover:underline hover:text-gray-900">Register</a>
+  </div>
+</div>

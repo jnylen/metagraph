@@ -1,0 +1,48 @@
+@tailwind base;
+
+@tailwind components;
+
+@import "multiselect.scss";
+
+.bg-start-gradient {
+  background: rgb(235, 244, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(235, 244, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.submenu {
+  .menuitem {
+    @apply py-3 px-4 mb-4 font-roboto text-brand-ind text-base;
+
+    &.active {
+      @apply bg-white font-bold;
+    }
+  }
+}
+
+button.disabled {
+  @apply bg-indigo-900 cursor-not-allowed;
+}
+
+.vhwf {
+  min-height: calc(100vh - 64px);
+}
+
+header {
+  .menu {
+    @apply font-sans;
+
+    .item {
+      @apply mr-4 py-2 px-2 rounded-lg leading-none;
+
+      &.active {
+        @apply bg-brand-activemenubg text-brand-activemenutext font-bold;
+      }
+    }
+  }
+}
+
+@tailwind utilities;

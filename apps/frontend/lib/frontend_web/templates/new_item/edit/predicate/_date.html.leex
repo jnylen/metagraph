@@ -1,0 +1,7 @@
+<div class="flex items-center pt-2">
+  <%= live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "edit", predicate: @predicate) %>
+  <div class="flex-1 pl-8">
+    <%= date_input(@form, @predicate["name"], class: "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-700 w-full") %>
+    <%= error_tag(@form, @predicate["name"]) %>
+  </div>
+</div>

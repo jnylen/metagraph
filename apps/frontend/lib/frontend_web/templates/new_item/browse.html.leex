@@ -1,0 +1,54 @@
+<div class="pt-16">
+  <div class="py-10 bg-brand-activemenubg">
+    <div class="container mx-auto text-indigo-900">
+      <div class="mx-auto">
+        <div class="flex items-center pb-8">
+          <div class="px-2 py-1 text-sm bg-white rounded"><%= @type.type || "main type" %></div>
+          <%= if @type.hidden do %>
+            <div class="px-2 py-1 ml-3 text-sm text-white bg-indigo-900 rounded">locked</div>
+          <% end %>
+          <%= if @type.images do %>
+            <div class="px-2 py-1 ml-3 text-sm text-white bg-indigo-700 rounded">has images</div>
+          <% end %>
+        </div>
+        <div class="flex items-center pb-4">
+          <div class="mr-5 text-4xl leading-none text-center text-indigo-500">
+            <%= unless is_nil(@type.icon) do %>
+              <i class="<%= @type.icon %>"></i>
+            <% else %>
+              ?
+            <% end %>
+          </div>
+          <div class="flex-col items-center w-full font-oxygen">
+            <h1 class="text-3xl font-bold leading-none">
+              <%= @type.label %>
+            </h1>
+            <div class="flex-col">
+              <h6 class=""><%= @type.id %></h6>
+            </div>
+          </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada pulvinar orci, in dapibus sapien consectetur quis. Donec pulvinar non lorem id pulvinar. Proin lacinia orci ex, non scelerisque magna aliquet ut. Integer porttitor mauris quis erat tristique, sit amet tincidunt erat porta. Donec laoreet elementum mi, vitae scelerisque ipsum interdum eget. Ut convallis ex nec neque dictum vulputate. Aliquam tristique, felis nec iaculis accumsan, ante risus congue lacus, eget ullamcorper velit tellus ac libero. Duis eget cursus nisi. Nunc faucibus mi risus, at ultrices erat imperdiet sed. Pellentesque tincidunt nisi ac felis tincidunt interdum. Integer mattis ex eget magna laoreet ultricies. Donec euismod ligula at nisl interdum malesuada. </p>
+      </div>
+    </div>
+  </div>
+  <div class="py-4 bg-white shadow">
+    <div class="container mx-auto">
+      <div class="flex justify-between mx-auto">
+        <ul class="flex">
+          <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, "index"), replace: true, class: "px-4 py-2 mr-3" do %>
+            Data
+          <% end %>
+          <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, "schema"), replace: true, class: "px-4 py-2 mr-3 rounded-lg bg-brand-activemenubg text-brand-activemenutext" do %>
+            Schema
+          <% end %>
+          <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, "queries"), replace: true, class: "px-4 py-2 mr-3" do %>
+            Example queries
+          <% end %>
+        </ul>
+        <a class="px-4 py-2 text-white bg-indigo-900 rounded-lg pull-right">Create item</a>
+      </div>
+    </div>
+  </div>
+  <%= live_component(@socket, FrontendWeb.ItemLive.Browse, menu: @menu, type: @type) %>
+</div>

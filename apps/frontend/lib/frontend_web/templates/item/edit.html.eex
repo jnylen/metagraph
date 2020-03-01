@@ -1,0 +1,14 @@
+<%= render_existing @view_module, "new_edit/_menu.html", assigns %>
+<div class="flex flex-row-reverse w-full">
+  <div class="w-4/5 px-8 pt-24">
+    <%= render_existing @view_module, "new_edit/_header.html", assigns %>
+    <%= form_for @changeset, Routes.item_path(@conn, :update, @item.uid), [as: "item"], fn f -> %>
+    <%= for domain <- @sections do %>
+      <%= render_item_template(domain |> Map.put(:form, f), Map.take(assigns, [:item, :types]), "domain", "new_edit") %>
+    <% end %>
+    <div class="pt-4 ">
+      <%= submit "Save changes", class: "bg-indigo-500 hover:bg-indigo-700 py-3 leading-none px-4 rounded-full text-white font-oxygen" %>
+    </div>
+  <% end %>
+</div>
+</div>

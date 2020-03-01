@@ -1,0 +1,1056 @@
+{
+  "rows": [
+    {
+      "name@en-US": "Afghanistan",
+      "iso_3166": "AF"
+    },
+    {
+      "name@en-US": "Åland Islands",
+      "iso_3166": "AX"
+    },
+    {
+      "name@en-US": "Albania",
+      "iso_3166": "AL"
+    },
+    {
+      "name@en-US": "Algeria",
+      "iso_3166": "DZ"
+    },
+    {
+      "name@en-US": "American Samoa",
+      "iso_3166": "AS"
+    },
+    {
+      "name@en-US": "Andorra",
+      "iso_3166": "AD"
+    },
+    {
+      "name@en-US": "Angola",
+      "iso_3166": "AO"
+    },
+    {
+      "name@en-US": "Anguilla",
+      "iso_3166": "AI"
+    },
+    {
+      "name@en-US": "Antarctica",
+      "iso_3166": "AQ"
+    },
+    {
+      "name@en-US": "Antigua & Barbuda",
+      "iso_3166": "AG"
+    },
+    {
+      "name@en-US": "Argentina",
+      "iso_3166": "AR"
+    },
+    {
+      "name@en-US": "Armenia",
+      "iso_3166": "AM"
+    },
+    {
+      "name@en-US": "Aruba",
+      "iso_3166": "AW"
+    },
+    {
+      "name@en-US": "Australia",
+      "iso_3166": "AU"
+    },
+    {
+      "name@en-US": "Austria",
+      "iso_3166": "AT"
+    },
+    {
+      "name@en-US": "Azerbaijan",
+      "iso_3166": "AZ"
+    },
+    {
+      "name@en-US": "Bahamas",
+      "iso_3166": "BS"
+    },
+    {
+      "name@en-US": "Bahrain",
+      "iso_3166": "BH"
+    },
+    {
+      "name@en-US": "Bangladesh",
+      "iso_3166": "BD"
+    },
+    {
+      "name@en-US": "Barbados",
+      "iso_3166": "BB"
+    },
+    {
+      "name@en-US": "Belarus",
+      "iso_3166": "BY"
+    },
+    {
+      "name@en-US": "Belgium",
+      "iso_3166": "BE"
+    },
+    {
+      "name@en-US": "Belize",
+      "iso_3166": "BZ"
+    },
+    {
+      "name@en-US": "Benin",
+      "iso_3166": "BJ"
+    },
+    {
+      "name@en-US": "Bermuda",
+      "iso_3166": "BM"
+    },
+    {
+      "name@en-US": "Bhutan",
+      "iso_3166": "BT"
+    },
+    {
+      "name@en-US": "Bolivia",
+      "iso_3166": "BO"
+    },
+    {
+      "name@en-US": "Bonaire, Saint Eustatius and Saba",
+      "iso_3166": "BQ"
+    },
+    {
+      "name@en-US": "Bosnia & Herzegovina",
+      "iso_3166": "BA"
+    },
+    {
+      "name@en-US": "Botswana",
+      "iso_3166": "BW"
+    },
+    {
+      "name@en-US": "Bouvet Island",
+      "iso_3166": "BV"
+    },
+    {
+      "name@en-US": "Brazil",
+      "iso_3166": "BR"
+    },
+    {
+      "name@en-US": "British Indian Ocean Territory",
+      "iso_3166": "IO"
+    },
+    {
+      "name@en-US": "British Virgin Islands",
+      "iso_3166": "VG"
+    },
+    {
+      "name@en-US": "Brunei",
+      "iso_3166": "BN"
+    },
+    {
+      "name@en-US": "Bulgaria",
+      "iso_3166": "BG"
+    },
+    {
+      "name@en-US": "Burkina Faso",
+      "iso_3166": "BF"
+    },
+    {
+      "name@en-US": "Burma (Myanmar)",
+      "iso_3166": "MM"
+    },
+    {
+      "name@en-US": "Burundi",
+      "iso_3166": "BI"
+    },
+    {
+      "name@en-US": "Cambodia",
+      "iso_3166": "KH"
+    },
+    {
+      "name@en-US": "Cameroon",
+      "iso_3166": "CM"
+    },
+    {
+      "name@en-US": "Canada",
+      "iso_3166": "CA"
+    },
+    {
+      "name@en-US": "Cape Verde Islands",
+      "iso_3166": "CV"
+    },
+    {
+      "name@en-US": "Cayman Islands",
+      "iso_3166": "KY"
+    },
+    {
+      "name@en-US": "Central African Republic",
+      "iso_3166": "CF"
+    },
+    {
+      "name@en-US": "Chad",
+      "iso_3166": "TD"
+    },
+    {
+      "name@en-US": "Chile",
+      "iso_3166": "CL"
+    },
+    {
+      "name@en-US": "China",
+      "iso_3166": "CN"
+    },
+    {
+      "name@en-US": "Christmas Island",
+      "iso_3166": "CX"
+    },
+    {
+      "name@en-US": "Cocos (Keeling) Islands",
+      "iso_3166": "CC"
+    },
+    {
+      "name@en-US": "Colombia",
+      "iso_3166": "CO"
+    },
+    {
+      "name@en-US": "Comoros",
+      "iso_3166": "KM"
+    },
+    {
+      "name@en-US": "Congo (Brazzaville)",
+      "iso_3166": "CG"
+    },
+    {
+      "name@en-US": "Congo, Democratic Republic",
+      "iso_3166": "CD"
+    },
+    {
+      "name@en-US": "Cook Islands",
+      "iso_3166": "CK"
+    },
+    {
+      "name@en-US": "Costa Rica",
+      "iso_3166": "CR"
+    },
+    {
+      "name@en-US": "Croatia",
+      "iso_3166": "HR"
+    },
+    {
+      "name@en-US": "Curacao",
+      "iso_3166": "CW"
+    },
+    {
+      "name@en-US": "Cuba",
+      "iso_3166": "CU"
+    },
+    {
+      "name@en-US": "Cyprus",
+      "iso_3166": "CY"
+    },
+    {
+      "name@en-US": "Czech Republic",
+      "iso_3166": "CZ"
+    },
+    {
+      "name@en-US": "Denmark",
+      "iso_3166": "DK"
+    },
+    {
+      "name@en-US": "Djibouti",
+      "iso_3166": "DJ"
+    },
+    {
+      "name@en-US": "Dominica",
+      "iso_3166": "DM"
+    },
+    {
+      "name@en-US": "Dominican Republic",
+      "iso_3166": "DO"
+    },
+    {
+      "name@en-US": "East Timor",
+      "iso_3166": "TL"
+    },
+    {
+      "name@en-US": "Ecuador",
+      "iso_3166": "EC"
+    },
+    {
+      "name@en-US": "Egypt",
+      "iso_3166": "EG"
+    },
+    {
+      "name@en-US": "El Salvador",
+      "iso_3166": "SV"
+    },
+    {
+      "name@en-US": "Equatorial Guinea",
+      "iso_3166": "GQ"
+    },
+    {
+      "name@en-US": "Eritrea",
+      "iso_3166": "ER"
+    },
+    {
+      "name@en-US": "Estonia",
+      "iso_3166": "EE"
+    },
+    {
+      "name@en-US": "Ethiopia",
+      "iso_3166": "ET"
+    },
+    {
+      "name@en-US": "Falkland Islands",
+      "iso_3166": "FK"
+    },
+    {
+      "name@en-US": "Faroe Islands",
+      "iso_3166": "FO"
+    },
+    {
+      "name@en-US": "Fiji",
+      "iso_3166": "FJ"
+    },
+    {
+      "name@en-US": "Finland",
+      "iso_3166": "FI"
+    },
+    {
+      "name@en-US": "France",
+      "iso_3166": "FR"
+    },
+    {
+      "name@en-US": "French Guiana",
+      "iso_3166": "GF"
+    },
+    {
+      "name@en-US": "French Polynesia",
+      "iso_3166": "PF"
+    },
+    {
+      "name@en-US": "French Southern Territories",
+      "iso_3166": "TF"
+    },
+    {
+      "name@en-US": "Gabon",
+      "iso_3166": "GA"
+    },
+    {
+      "name@en-US": "Gambia",
+      "iso_3166": "GM"
+    },
+    {
+      "name@en-US": "Georgia",
+      "iso_3166": "GE"
+    },
+    {
+      "name@en-US": "Germany",
+      "iso_3166": "DE"
+    },
+    {
+      "name@en-US": "Ghana",
+      "iso_3166": "GH"
+    },
+    {
+      "name@en-US": "Gibraltar",
+      "iso_3166": "GI"
+    },
+    {
+      "name@en-US": "Greece",
+      "iso_3166": "GR"
+    },
+    {
+      "name@en-US": "Greenland",
+      "iso_3166": "GL"
+    },
+    {
+      "name@en-US": "Grenada",
+      "iso_3166": "GD"
+    },
+    {
+      "name@en-US": "Guadeloupe",
+      "iso_3166": "GP"
+    },
+    {
+      "name@en-US": "Guam",
+      "iso_3166": "GU"
+    },
+    {
+      "name@en-US": "Guatemala",
+      "iso_3166": "GT"
+    },
+    {
+      "name@en-US": "Guernsey",
+      "iso_3166": "GG"
+    },
+    {
+      "name@en-US": "Guinea",
+      "iso_3166": "GN"
+    },
+    {
+      "name@en-US": "Guinea-Bissau",
+      "iso_3166": "GW"
+    },
+    {
+      "name@en-US": "Guyana",
+      "iso_3166": "GY"
+    },
+    {
+      "name@en-US": "Haiti",
+      "iso_3166": "HT"
+    },
+    {
+      "name@en-US": "Heard and McDonald Islands",
+      "iso_3166": "HM"
+    },
+    {
+      "name@en-US": "Honduras",
+      "iso_3166": "HN"
+    },
+    {
+      "name@en-US": "Hong Kong",
+      "iso_3166": "HK"
+    },
+    {
+      "name@en-US": "Hungary",
+      "iso_3166": "HU"
+    },
+    {
+      "name@en-US": "Iceland",
+      "iso_3166": "IS"
+    },
+    {
+      "name@en-US": "India",
+      "iso_3166": "IN"
+    },
+    {
+      "name@en-US": "Indonesia",
+      "iso_3166": "ID"
+    },
+    {
+      "name@en-US": "Iran",
+      "iso_3166": "IR"
+    },
+    {
+      "name@en-US": "Iraq",
+      "iso_3166": "IQ"
+    },
+    {
+      "name@en-US": "Ireland",
+      "iso_3166": "IE"
+    },
+    {
+      "name@en-US": "Isle of Man",
+      "iso_3166": "IM"
+    },
+    {
+      "name@en-US": "Israel",
+      "iso_3166": "IL"
+    },
+    {
+      "name@en-US": "Italy",
+      "iso_3166": "IT"
+    },
+    {
+      "name@en-US": "Ivory Coast (Côte d'Ivoire)",
+      "iso_3166": "CI"
+    },
+    {
+      "name@en-US": "Jamaica",
+      "iso_3166": "JM"
+    },
+    {
+      "name@en-US": "Japan",
+      "iso_3166": "JP"
+    },
+    {
+      "name@en-US": "Jersey",
+      "iso_3166": "JE"
+    },
+    {
+      "name@en-US": "Jordan",
+      "iso_3166": "JO"
+    },
+    {
+      "name@en-US": "Kazakhstan",
+      "iso_3166": "KZ"
+    },
+    {
+      "name@en-US": "Kenya",
+      "iso_3166": "KE"
+    },
+    {
+      "name@en-US": "Kiribati",
+      "iso_3166": "KI"
+    },
+    {
+      "name@en-US": "North Korea",
+      "iso_3166": "KP"
+    },
+    {
+      "name@en-US": "South Korea",
+      "iso_3166": "KR"
+    },
+    {
+      "name@en-US": "Kuwait",
+      "iso_3166": "KW"
+    },
+    {
+      "name@en-US": "Kyrgyzstan",
+      "iso_3166": "KG"
+    },
+    {
+      "name@en-US": "Laos",
+      "iso_3166": "LA"
+    },
+    {
+      "name@en-US": "Latvia",
+      "iso_3166": "LV"
+    },
+    {
+      "name@en-US": "Lebanon",
+      "iso_3166": "LB"
+    },
+    {
+      "name@en-US": "Lesotho",
+      "iso_3166": "LS"
+    },
+    {
+      "name@en-US": "Liberia",
+      "iso_3166": "LR"
+    },
+    {
+      "name@en-US": "Libya",
+      "iso_3166": "LY"
+    },
+    {
+      "name@en-US": "Liechtenstein",
+      "iso_3166": "LI"
+    },
+    {
+      "name@en-US": "Lithuania",
+      "iso_3166": "LT"
+    },
+    {
+      "name@en-US": "Luxembourg",
+      "iso_3166": "LU"
+    },
+    {
+      "name@en-US": "Macao",
+      "iso_3166": "MO"
+    },
+    {
+      "name@en-US": "Macedonia",
+      "iso_3166": "MK"
+    },
+    {
+      "name@en-US": "Madagascar",
+      "iso_3166": "MG"
+    },
+    {
+      "name@en-US": "Malawi",
+      "iso_3166": "MW"
+    },
+    {
+      "name@en-US": "Malaysia",
+      "iso_3166": "MY"
+    },
+    {
+      "name@en-US": "Maldives",
+      "iso_3166": "MV"
+    },
+    {
+      "name@en-US": "Mali",
+      "iso_3166": "ML"
+    },
+    {
+      "name@en-US": "Malta",
+      "iso_3166": "MT"
+    },
+    {
+      "name@en-US": "Marshall Islands",
+      "iso_3166": "MH"
+    },
+    {
+      "name@en-US": "Martinique",
+      "iso_3166": "MQ"
+    },
+    {
+      "name@en-US": "Mauritania",
+      "iso_3166": "MR"
+    },
+    {
+      "name@en-US": "Mauritius",
+      "iso_3166": "MU"
+    },
+    {
+      "name@en-US": "Mayotte",
+      "iso_3166": "YT"
+    },
+    {
+      "name@en-US": "Mexico",
+      "iso_3166": "MX"
+    },
+    {
+      "name@en-US": "Micronesia, Federated States",
+      "iso_3166": "FM"
+    },
+    {
+      "name@en-US": "Moldova",
+      "iso_3166": "MD"
+    },
+    {
+      "name@en-US": "Monaco",
+      "iso_3166": "MC"
+    },
+    {
+      "name@en-US": "Mongolia",
+      "iso_3166": "MN"
+    },
+    {
+      "name@en-US": "Montenegro",
+      "iso_3166": "ME"
+    },
+    {
+      "name@en-US": "Montserrat",
+      "iso_3166": "MS"
+    },
+    {
+      "name@en-US": "Morocco",
+      "iso_3166": "MA"
+    },
+    {
+      "name@en-US": "Mozambique",
+      "iso_3166": "MZ"
+    },
+    {
+      "name@en-US": "Myanmar (Burma)",
+      "iso_3166": "MM"
+    },
+    {
+      "name@en-US": "Namibia",
+      "iso_3166": "NA"
+    },
+    {
+      "name@en-US": "Nauru",
+      "iso_3166": "NR"
+    },
+    {
+      "name@en-US": "Nepal",
+      "iso_3166": "NP"
+    },
+    {
+      "name@en-US": "The Netherlands",
+      "iso_3166": "NL"
+    },
+    {
+      "name@en-US": "New Caledonia",
+      "iso_3166": "NC"
+    },
+    {
+      "name@en-US": "New Zealand",
+      "iso_3166": "NZ"
+    },
+    {
+      "name@en-US": "Nicaragua",
+      "iso_3166": "NI"
+    },
+    {
+      "name@en-US": "Niger",
+      "iso_3166": "NE"
+    },
+    {
+      "name@en-US": "Nigeria",
+      "iso_3166": "NG"
+    },
+    {
+      "name@en-US": "Niue",
+      "iso_3166": "NU"
+    },
+    {
+      "name@en-US": "Norfolk Island",
+      "iso_3166": "NF"
+    },
+    {
+      "name@en-US": "Northern Marianas Islands",
+      "iso_3166": "MP"
+    },
+    {
+      "name@en-US": "North Korea",
+      "iso_3166": "KP"
+    },
+    {
+      "name@en-US": "Norway",
+      "iso_3166": "NO"
+    },
+    {
+      "name@en-US": "Oman",
+      "iso_3166": "OM"
+    },
+    {
+      "name@en-US": "Pakistan",
+      "iso_3166": "PK"
+    },
+    {
+      "name@en-US": "Palau",
+      "iso_3166": "PW"
+    },
+    {
+      "name@en-US": "Palestinian Authority",
+      "iso_3166": "PS"
+    },
+    {
+      "name@en-US": "Panama",
+      "iso_3166": "PA"
+    },
+    {
+      "name@en-US": "Papua New Guinea",
+      "iso_3166": "PG"
+    },
+    {
+      "name@en-US": "Paraguay",
+      "iso_3166": "PY"
+    },
+    {
+      "name@en-US": "Peru",
+      "iso_3166": "PE"
+    },
+    {
+      "name@en-US": "Philippines",
+      "iso_3166": "PH"
+    },
+    {
+      "name@en-US": "Pitcairn Island",
+      "iso_3166": "PN"
+    },
+    {
+      "name@en-US": "Poland",
+      "iso_3166": "PL"
+    },
+    {
+      "name@en-US": "Portugal",
+      "iso_3166": "PT"
+    },
+    {
+      "name@en-US": "Puerto Rico",
+      "iso_3166": "PR"
+    },
+    {
+      "name@en-US": "Qatar",
+      "iso_3166": "QA"
+    },
+    {
+      "name@en-US": "Reunion",
+      "iso_3166": "RE"
+    },
+    {
+      "name@en-US": "Romania",
+      "iso_3166": "RO"
+    },
+    {
+      "name@en-US": "Russia",
+      "iso_3166": "RU"
+    },
+    {
+      "name@en-US": "Rwanda",
+      "iso_3166": "RW"
+    },
+    {
+      "name@en-US": "Sahrawi Arab Democratic Republic",
+      "iso_3166": "EH"
+    },
+    {
+      "name@en-US": "Saint-Barthélemy",
+      "iso_3166": "BL"
+    },
+    {
+      "name@en-US": "Saint Helena",
+      "iso_3166": "SH"
+    },
+    {
+      "name@en-US": "Saint Kitts & Nevis",
+      "iso_3166": "KN"
+    },
+    {
+      "name@en-US": "Saint Lucia",
+      "iso_3166": "LC"
+    },
+    {
+      "name@en-US": "Saint-Martin (French)",
+      "iso_3166": "MF"
+    },
+    {
+      "name@en-US": "Saint Pierre et Miquelon",
+      "iso_3166": "PM"
+    },
+    {
+      "name@en-US": "Saint Vincent & the Grenadines",
+      "iso_3166": "VC"
+    },
+    {
+      "name@en-US": "Samoa",
+      "iso_3166": "WS"
+    },
+    {
+      "name@en-US": "San Marino",
+      "iso_3166": "SM"
+    },
+    {
+      "name@en-US": "Sao Tome & Principe",
+      "iso_3166": "ST"
+    },
+    {
+      "name@en-US": "Saudi Arabia",
+      "iso_3166": "SA"
+    },
+    {
+      "name@en-US": "Senegal",
+      "iso_3166": "SN"
+    },
+    {
+      "name@en-US": "Serbia",
+      "iso_3166": "RS"
+    },
+    {
+      "name@en-US": "Seychelles",
+      "iso_3166": "SC"
+    },
+    {
+      "name@en-US": "Sierra Leone",
+      "iso_3166": "SL"
+    },
+    {
+      "name@en-US": "Singapore",
+      "iso_3166": "SG"
+    },
+    {
+      "name@en-US": "Sint Maarten (Dutch)",
+      "iso_3166": "SX"
+    },
+    {
+      "name@en-US": "Slovakia",
+      "iso_3166": "SK"
+    },
+    {
+      "name@en-US": "Slovenia",
+      "iso_3166": "SI"
+    },
+    {
+      "name@en-US": "Solomon Islands",
+      "iso_3166": "SB"
+    },
+    {
+      "name@en-US": "Somalia",
+      "iso_3166": "SO"
+    },
+    {
+      "name@en-US": "South Africa",
+      "iso_3166": "ZA"
+    },
+    {
+      "name@en-US": "South Georgia and the South Sandwich Islands",
+      "iso_3166": "GS"
+    },
+    {
+      "name@en-US": "South Korea",
+      "iso_3166": "KR"
+    },
+    {
+      "name@en-US": "South Sudan",
+      "iso_3166": "SS"
+    },
+    {
+      "name@en-US": "Spain",
+      "iso_3166": "ES"
+    },
+    {
+      "name@en-US": "Sri Lanka",
+      "iso_3166": "LK"
+    },
+    {
+      "name@en-US": "Sudan",
+      "iso_3166": "SD"
+    },
+    {
+      "name@en-US": "Suriname",
+      "iso_3166": "SR"
+    },
+    {
+      "name@en-US": "Svalbard & Jan Mayen Islands",
+      "iso_3166": "SJ"
+    },
+    {
+      "name@en-US": "Swaziland",
+      "iso_3166": "SZ"
+    },
+    {
+      "name@en-US": "Sweden",
+      "iso_3166": "SE"
+    },
+    {
+      "name@en-US": "Switzerland",
+      "iso_3166": "CH"
+    },
+    {
+      "name@en-US": "Syria",
+      "iso_3166": "SY"
+    },
+    {
+      "name@en-US": "Taiwan (Republic of China)",
+      "iso_3166": "TW"
+    },
+    {
+      "name@en-US": "Tajikistan",
+      "iso_3166": "TJ"
+    },
+    {
+      "name@en-US": "Tanzania",
+      "iso_3166": "TZ"
+    },
+    {
+      "name@en-US": "Thailand",
+      "iso_3166": "TH"
+    },
+    {
+      "name@en-US": "Timor Leste",
+      "iso_3166": "TL"
+    },
+    {
+      "name@en-US": "Togo",
+      "iso_3166": "TG"
+    },
+    {
+      "name@en-US": "Tokelau",
+      "iso_3166": "TK"
+    },
+    {
+      "name@en-US": "Tonga",
+      "iso_3166": "TO"
+    },
+    {
+      "name@en-US": "Trinidad & Tobago",
+      "iso_3166": "TT"
+    },
+    {
+      "name@en-US": "Tunisia",
+      "iso_3166": "TN"
+    },
+    {
+      "name@en-US": "Turkey",
+      "iso_3166": "TR"
+    },
+    {
+      "name@en-US": "Turkmenistan",
+      "iso_3166": "TM"
+    },
+    {
+      "name@en-US": "Turks & Caicos Islands",
+      "iso_3166": "TC"
+    },
+    {
+      "name@en-US": "Tuvalu",
+      "iso_3166": "TV"
+    },
+    {
+      "name@en-US": "Uganda",
+      "iso_3166": "UG"
+    },
+    {
+      "name@en-US": "Ukraine",
+      "iso_3166": "UA"
+    },
+    {
+      "name@en-US": "United Arab Emirates",
+      "iso_3166": "AE"
+    },
+    {
+      "name@en-US": "United Kingdom",
+      "iso_3166": "GB"
+    },
+    {
+      "name@en-US": "United States of America",
+      "iso_3166": "US"
+    },
+    {
+      "name@en-US": "United States - minor outlying islands",
+      "iso_3166": "UM"
+    },
+    {
+      "name@en-US": "US Virgin Islands",
+      "iso_3166": "VI"
+    },
+    {
+      "name@en-US": "Uruguay",
+      "iso_3166": "UY"
+    },
+    {
+      "name@en-US": "Uzbekistan",
+      "iso_3166": "UZ"
+    },
+    {
+      "name@en-US": "Vanuatu",
+      "iso_3166": "VU"
+    },
+    {
+      "name@en-US": "Vatican City State (Holy See)",
+      "iso_3166": "VA"
+    },
+    {
+      "name@en-US": "Venezuela",
+      "iso_3166": "VE"
+    },
+    {
+      "name@en-US": "Vietnam",
+      "iso_3166": "VN"
+    },
+    {
+      "name@en-US": "Virgin Islands (British)",
+      "iso_3166": "VG"
+    },
+    {
+      "name@en-US": "Virgin Islands (U.S.)",
+      "iso_3166": "VI"
+    },
+    {
+      "name@en-US": "Wallis & Futuna Islands",
+      "iso_3166": "WF"
+    },
+    {
+      "name@en-US": "Western Sahara",
+      "iso_3166": "EH"
+    },
+    {
+      "name@en-US": "Yemen",
+      "iso_3166": "YE"
+    },
+    {
+      "name@en-US": "Zambia",
+      "iso_3166": "ZM"
+    },
+    {
+      "name@en-US": "Zimbabwe",
+      "iso_3166": "ZW"
+    },
+    {
+      "name@en-US": "Czechoslovakia",
+      "iso_3166": "XC"
+    },
+    {
+      "name@en-US": "German Democratic Republic",
+      "iso_3166": "DD"
+    },
+    {
+      "name@en-US": "Netherlands Antilles",
+      "iso_3166": "AN"
+    },
+    {
+      "name@en-US": "Pacific Islands (Trust Territory)",
+      "iso_3166": "PC"
+    },
+    {
+      "name@en-US": "Serbia & Montenegro",
+      "iso_3166": "CS"
+    },
+    {
+      "name@en-US": "USSR, Union of Soviet Socialist Republics",
+      "iso_3166": "SU"
+    },
+    {
+      "name@en-US": "Yugoslavia",
+      "iso_3166": "YU"
+    }
+  ]
+}

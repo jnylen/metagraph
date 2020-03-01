@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= page_title(assigns[:page_title]) %></title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Roboto|Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/reduxframework/elusive-icons@master/css/elusive-icons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <%= csrf_meta_tag() %>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </head>
+  <body class="antialiased bg-gray-100 font-roboto">
+    <div class="flex flex-col">
+      <%= render FrontendWeb.HeaderView, "_header.html", assigns %>
+      <%= if get_flash(@conn, :info) do %>
+        <div class="fixed bottom-0 right-0 z-50 px-4 py-4">
+            <div class="flex items-center p-2 leading-none bg-white shadow-md text-indigo-lightest lg:rounded-full lg:inline-flex" role="alert">
+                  <span class="flex px-2 py-1 mr-3 text-xs font-bold text-indigo-100 uppercase bg-indigo-500 rounded-full">Info</span>
+                  <span class="flex-auto mr-2 text-sm font-normal text-left text-indigo-900"><%= get_flash(@conn, :info) %></span>
+                  <svg class="w-4 h-4 opacity-75 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+                </div>
+        </div>
+      <% end %>
+      <%= if get_flash(@conn, :error) do %>
+        <div class="fixed bottom-0 right-0 z-50 px-4 py-4">
+            <div class="flex items-center p-2 leading-none bg-white shadow-md text-indigo-lightest lg:rounded-full lg:inline-flex" role="alert">
+                  <span class="flex px-2 py-1 mr-3 text-xs font-bold text-white uppercase bg-red-700 rounded-full">Error</span>
+                  <span class="flex-auto mr-2 text-sm font-normal text-left text-indigo-900"><%= get_flash(@conn, :error) %></span>
+                  <svg class="w-4 h-4 opacity-75 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+                </div>
+        </div>
+      <% end %>
+
+
+      <main class="flex-1 vhwf" id="app"><%= render @view_module, @view_template, assigns %></main>
+      <%= render FrontendWeb.FooterView, "_footer.html", assigns %>
+    </div>
+
+  </body>
+</html>

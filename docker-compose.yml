@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  zero:
+    image: dgraph/dgraph:v1.2.0
+    command: dgraph zero --my=zero:5080
+    restart: on-failure
+    ports:
+      - 5080:5080
+      - 6080:6080
+  dgraph:
+    image: dgraph/dgraph:v1.2.0
+    command: dgraph alpha --my=server:8080 --zero=zero:5080 --lru_mb=2048
+    restart: on-failure
+    ports:
+      - 8080:8080
+      - 9080:9080
+  ratel:
+    image: dgraph/dgraph:v1.2.0
+    command: dgraph-ratel
+    ports:
+      - 8000:8000

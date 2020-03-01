@@ -1,0 +1,123 @@
+[
+  {
+    "common.label@en": "Type",
+    "common.description@en": "A content type.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Thing",
+    "type.icon": null
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Film",
+    "common.description@en": "Sequence of images that give the impression of movement.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Movie",
+    "type.icon": "fas fa-film",
+    "type.can_create": true
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Person",
+    "common.description@en": "A real person, could be an actor/actress etc.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Person",
+    "type.icon": "fas fa-male",
+    "type.can_create": true
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "TV Show",
+    "common.description@en": "A recurring filmed sequence of images.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/TVSeries",
+    "type.icon": "fas fa-tv",
+    "type.can_create": true
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Sports",
+    "common.description@en": "A sports type.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Thing",
+    "type.icon": "fas fa-football-ball"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Version",
+    "common.description@en": "A media version.",
+    "type.root_type": ["Film"],
+    "type.main": false,
+    "type.schema_org": "https://schema.org/MediaObject",
+    "type.icon": "fas fa-compact-disc"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Release",
+    "common.description@en": "A media release.",
+    "type.root_type": ["Version"],
+    "type.main": false,
+    "type.schema_org": "https://schema.org/MediaObject",
+    "type.icon": "far fa-calendar"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Performance",
+    "common.description@en": "A performance in a media.",
+    "type.main": false,
+    "type.schema_org": "https://schema.org/PerformanceRole",
+    "type.icon": "fas fa-user-astronaut"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Certification",
+    "common.description@en": "A country certification.",
+    "type.root_type": ["Release"],
+    "type.main": false,
+    "type.schema_org": "https://schema.org/Thing",
+    "type.icon": "fas fa-certificate"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Country",
+    "common.description@en": "A country.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Country",
+    "type.icon": "fas fa-globe-europe"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Language",
+    "common.description@en": "A language.",
+    "type.main": true,
+    "type.schema_org": "https://schema.org/Language",
+    "type.icon": "fas fa-language"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Adult Film",
+    "common.description@en": "An erotic/adult type of film.",
+    "type.main": false,
+    "type.subtype_of": ["Film"],
+    "type.schema_org": "https://schema.org/additionalType",
+    "type.icon": "fas fa-bed",
+    "type.can_create": true
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Sports Tournament",
+    "common.description@en": "An tournament for a sports.",
+    "type.main": false,
+    "type.root_type": ["Sports"],
+    "type.schema_org": "https://schema.org/Thing",
+    "type.icon": "fas fa-male"
+  },
+  {
+    "type": ["Type"],
+    "common.label@en": "Sports Event",
+    "common.description@en": "An event for a sports tournament.",
+    "type.main": false,
+    "type.root_type": ["Sports Tournament"],
+    "type.schema_org": "https://schema.org/SportsEvent",
+    "type.icon": "fas fa-volleyball-ball"
+  }
+]

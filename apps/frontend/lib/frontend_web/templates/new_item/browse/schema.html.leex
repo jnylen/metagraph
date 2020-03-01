@@ -1,0 +1,47 @@
+<div class="container py-4 mx-auto mt-10 text-indigo-900 bg-white rounded-lg shadow">
+  <table class="w-full table-fixed">
+    <thead class="">
+      <th class="w-1/6 px-5 py-2">
+        Name
+      </th>
+      <th class="w-1/6 px-5 py-2">
+        ID
+      </th>
+      <th class="w-1/6 px-5 py-2">
+        Type
+      </th>
+      <th class="w-3/6 px-5 py-2">
+        Description
+      </th>
+    </thead>
+    <tbody>
+      <%= for predicate <- @schema do %>
+        <tr class="">
+          <td class="px-5 py-3 capitalize">
+            <%= Map.get(predicate, :label, Map.get(predicate, :name)) %>
+          </td>
+          <td class="px-5 py-3">
+            <%= Map.get(predicate, :db_name) %>
+          </td>
+          <td class="px-5 py-3 ">
+            <% {text, values} = Map.get(predicate, :type) |> parse_type(predicate) %>
+            <%= if values != [] do %>
+              <div class="flex-col">
+                <%= for model <- values do %>
+                  <%= model %>
+                <% end %>
+              </div>
+            <% else %>
+              <%= text %>
+            <% end %>
+          </td>
+          <td class="px-5 py-3">
+            <p class="leading-none tracking-none">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac elementum ligula.
+            </p>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

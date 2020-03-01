@@ -1,0 +1,24 @@
+<div class="pt-16">
+  <div class="py-10 bg-brand-activemenubg">
+    <div class="container mx-auto text-indigo-900">
+      <div class="w-3/4 mx-auto">
+        <h1 class="text-3xl font-bold font-oxygen">
+          <a href="/uid/<%= @item.uid %>"><%= Map.get(get_lang(Map.get(@item, :label, []), "sv-SE"), :value, "Unknown") %></a>
+        </h1>
+        <a href="/uid/<%= @item.uid %>" class="font-oxygen">&#8592; Back to item</a>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-10 pb-8 mx-auto">
+    <div class="w-3/4 mx-auto">
+      <%= for change <- @changes do %>
+        <%= live_component(@socket, FrontendWeb.ItemLive.Change, change: change, graph: @item, show: true) %>
+      <% end %>
+      <%= if Enum.empty?(@changes) do %>
+        <div class="">
+          Empty...
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
