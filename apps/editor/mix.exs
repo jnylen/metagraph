@@ -1,13 +1,11 @@
-defmodule Auditor.MixProject do
+defmodule Editor.MixProject do
   use Mix.Project
 
-  @name :auditor
+  @name :editor
   @version "0.1.0"
-
   @deps [
-    {:telemetry, "~> 0.4.0"},
-    {:database, in_umbrella: true},
-    {:map_diff, "~> 1.3", git: "https://github.com/jnylen/elixir_map_diff.git"}
+    {:auditor, github: "metagraph-wiki/auditor"},
+    {:auditor_dlex, github: "metagraph-wiki/auditor_dlex"}
   ]
 
   def project do
@@ -18,7 +16,7 @@ defmodule Auditor.MixProject do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.8",
+      elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: @deps
     ]
@@ -27,8 +25,7 @@ defmodule Auditor.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      mod: {Auditor.Application, []}
+      extra_applications: [:logger]
     ]
   end
 end
