@@ -1,6 +1,6 @@
-<footer class="h-16 flex items-center justify-center">
-  <div class="text-center text-sm font-sourcesans text-gray-500 font-light">
-    Brought to you by <a href="https://jnylen.nu" target="_blank" class="font-bold hover:text-gray-700">Joakim Nylén</a> with help from BunnyCDN.<br/>
+<footer class="flex items-center justify-center h-16">
+  <div class="flex-col w-2/3 pt-5 mb-4 text-sm font-light text-center text-gray-500 border-t border-gray-300 font-sourcesans">
+    <div>Metagraph is an opensource project licensed under GPLv3 and is maintained by <a href="https://joakim.nylen.nu" class="hover:text-gray-700" target="_blank">Joakim Nylén</a></div>
     <a href="/about/license" target="_blank" class="hover:text-gray-700">Data from our API is licensed under ODbL while our database dumps are in the Public Domain.</a>
   </div>
 </footer>
