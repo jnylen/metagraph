@@ -244,7 +244,7 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event("create", %{"item" => _params}, socket) do
     # Create item
-    Frontend.Editor.create(
+    Editor.create(
       socket.assigns.changeset,
       socket.assigns.current_user
     )
@@ -265,11 +265,10 @@ defmodule FrontendWeb.ItemLive do
     end
   end
 
-  def handle_event("update", %{"uid" => uid, "item" => params}, socket) do
+  def handle_event("update", %{"item" => _params}, socket) do
     # Update item
-    Frontend.Editor.update(
-      uid,
-      params,
+    Editor.update(
+      socket.assigns.changeset,
       socket.assigns.current_user
     )
     |> case do
