@@ -48,11 +48,11 @@ defmodule FrontendWeb.ItemLive do
   end
 
   @doc """
-    Handle a mount of a websocket for `show`
+    Handle a mount of a websocket for `edit`
   """
   def mount(
         %{"uid" => uid},
-        _session,
+        %{"current_user_id" => cuid},
         %{assigns: %{live_view_action: :edit}} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
@@ -69,6 +69,7 @@ defmodule FrontendWeb.ItemLive do
 
     new_socket =
       socket
+      |> set_current_user(cuid)
       |> assign(:item, item)
       |> assign(:sections, sections)
       |> assign(:types, types)
@@ -244,10 +245,8 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event("create", %{"item" => _params}, socket) do
     # Create item
-    Editor.create(
-      socket.assigns.changeset,
-      socket.assigns.current_user
-    )
+    socket.assigns.changeset
+    |> Editor.create(socket.assigns.current_user)
     |> case do
       {:ok, item} ->
         {:noreply,
@@ -265,12 +264,10 @@ defmodule FrontendWeb.ItemLive do
     end
   end
 
+  # Update item
   def handle_event("update", %{"item" => _params}, socket) do
-    # Update item
-    Editor.update(
-      socket.assigns.changeset,
-      socket.assigns.current_user
-    )
+    socket.assigns.changeset
+    |> Editor.update(socket.assigns.current_user)
     |> case do
       {:ok, item} ->
         {:stop,

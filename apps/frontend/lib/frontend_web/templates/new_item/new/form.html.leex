@@ -60,7 +60,7 @@
           </div>
         <% end %>
         <div class="mt-8 text-center">
-          <%= submit"Create item", class: "px-4 py-3 leading-none text-white bg-indigo-500 rounded-full font-oxygen#{if @changeset.valid?, do: '', else: ' disabled'}", disabled: !@changeset.valid? %>
+          <%= submit "Create item", class: "px-4 py-3 leading-none text-white bg-indigo-500 rounded-full font-oxygen#{if @changeset.valid?, do: '', else: ' disabled'}", disabled: !@changeset.valid? %>
           <p
             class="px-12 pt-8 text-sm leading-tight text-brand-ind"
           >By clicking on "Create item" you allow us to relicense the contributed data under various licenses by our choice without being able to rescind the allowance.</p>
