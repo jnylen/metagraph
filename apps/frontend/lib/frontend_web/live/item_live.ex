@@ -217,7 +217,8 @@ defmodule FrontendWeb.ItemLive do
         |> set_language("label", trans["label"], trans["language"])
         |> set_language("description", trans["description"], trans["language"])
       )
-      |> Map.put(:action, :insert)
+
+    # |> Map.put(:action, :insert)
 
     {:noreply, assign(socket, trans: trans, changeset: changeset)}
   end
@@ -230,12 +231,12 @@ defmodule FrontendWeb.ItemLive do
         %{"item" => params},
         socket
       ) do
-    params |> IO.inspect()
-
     changeset =
       socket.assigns.item
       |> socket.assigns.item.__struct__.changeset(params)
-      |> Map.put(:action, :insert)
+      |> IO.inspect()
+
+    # |> Map.put(:action, :insert)
 
     {:noreply, assign(socket, changeset: changeset)}
   end

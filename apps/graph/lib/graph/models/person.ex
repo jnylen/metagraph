@@ -70,6 +70,7 @@ defmodule Graph.Person do
 
   def changeset(film, params \\ %{}) do
     film
+    |> IO.inspect()
     |> cast(params, [
       :label,
       :description,
@@ -84,6 +85,7 @@ defmodule Graph.Person do
       :freebase_id,
       :wikidata_id
     ])
+    |> IO.inspect()
     |> validate_required_list(:label)
     |> validate_required_list(:description)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
