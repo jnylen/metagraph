@@ -6,8 +6,7 @@ defmodule Graph.MixProject do
 
   @deps [
     {:jason, "~> 1.0"},
-    {:dlex, "~> 0.4", git: "git@gitlab.com:metadata-by-design/metagraph/dlex.git"},
-    # {:currencies, "~> 0.5.1", git: "https://gitlab.com/jnylen/currencies.git"},
+    {:dlex, "~> 0.4", github: "metagraph-wiki/dlex"},
     {:database, in_umbrella: true}
   ]
 
