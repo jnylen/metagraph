@@ -48,11 +48,11 @@ defmodule FrontendWeb.ItemLive do
   end
 
   @doc """
-    Handle a mount of a websocket for `show`
+    Handle a mount of a websocket for `edit`
   """
   def mount(
         %{"uid" => uid},
-        _session,
+        %{"current_user_id" => cuid},
         %{assigns: %{live_view_action: :edit}} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
@@ -69,6 +69,7 @@ defmodule FrontendWeb.ItemLive do
 
     new_socket =
       socket
+      |> set_current_user(cuid)
       |> assign(:item, item)
       |> assign(:sections, sections)
       |> assign(:types, types)
@@ -216,7 +217,8 @@ defmodule FrontendWeb.ItemLive do
         |> set_language("label", trans["label"], trans["language"])
         |> set_language("description", trans["description"], trans["language"])
       )
-      |> Map.put(:action, :insert)
+
+    # |> Map.put(:action, :insert)
 
     {:noreply, assign(socket, trans: trans, changeset: changeset)}
   end
@@ -229,12 +231,12 @@ defmodule FrontendWeb.ItemLive do
         %{"item" => params},
         socket
       ) do
-    params |> IO.inspect()
-
     changeset =
       socket.assigns.item
       |> socket.assigns.item.__struct__.changeset(params)
-      |> Map.put(:action, :insert)
+      |> IO.inspect()
+
+    # |> Map.put(:action, :insert)
 
     {:noreply, assign(socket, changeset: changeset)}
   end
@@ -244,10 +246,8 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event("create", %{"item" => _params}, socket) do
     # Create item
-    Frontend.Editor.create(
-      socket.assigns.changeset,
-      socket.assigns.current_user
-    )
+    socket.assigns.changeset
+    |> Editor.create(socket.assigns.current_user)
     |> case do
       {:ok, item} ->
         {:noreply,
@@ -265,13 +265,10 @@ defmodule FrontendWeb.ItemLive do
     end
   end
 
-  def handle_event("update", %{"uid" => uid, "item" => params}, socket) do
-    # Update item
-    Frontend.Editor.update(
-      uid,
-      params,
-      socket.assigns.current_user
-    )
+  # Update item
+  def handle_event("update", %{"item" => _params}, socket) do
+    socket.assigns.changeset
+    |> Editor.update(socket.assigns.current_user)
     |> case do
       {:ok, item} ->
         {:stop,

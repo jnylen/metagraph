@@ -2,13 +2,13 @@
 <div class="flex flex-row-reverse w-full">
   <div class="w-4/5 px-8 pt-24">
     <%= live_component @socket, FrontendWeb.ItemLive.Header, item: @item, sections: @sections %>
-    <% form = form_for @changeset, "#", phx_change: :validate, phx_submit: :update, as: "item" %>
+    <%= form = form_for @changeset, "#", phx_change: :validate, phx_submit: "update", as: "item" %>
     <%= hidden_input(form, :uid, value: @item.uid) %>
     <%= for domain <- @sections do %>
       <%= live_component(@socket, FrontendWeb.ItemLive.Domain, form: form, folder: "edit", domain: domain, item: @item, types: @types, template: domain["config"][:template], type: domain["type"]) %>
     <% end %>
     <div class="pt-4 ">
-      <%= submit "Save changes", class: "bg-indigo-500 hover:bg-indigo-700 py-3 leading-none px-4 rounded-full text-white font-oxygen", disabled: !@changeset.valid? %>
+      <%= submit "Update item", class: "px-4 py-3 leading-none text-white bg-indigo-500 rounded-full font-oxygen#{if @changeset.valid?, do: '', else: ' disabled'}", disabled: !@changeset.valid? %>
     </div>
   </form>
 </div>

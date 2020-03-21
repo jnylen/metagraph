@@ -6,6 +6,8 @@ import Config
 config :database,
   ecto_repos: [Database.Repo]
 
+config :auditor, repo: Database.Media.Change
+
 # Configures the endpoint
 config :admin, AdminWeb.Endpoint,
   url: [host: "localhost"],

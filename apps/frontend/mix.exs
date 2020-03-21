@@ -22,7 +22,7 @@ defmodule Frontend.MixProject do
     # Database
     {:database, in_umbrella: true},
     {:graph, in_umbrella: true},
-    {:auditor, in_umbrella: true},
+    {:editor, in_umbrella: true},
     {:authorization, in_umbrella: true},
 
     # Pagination
