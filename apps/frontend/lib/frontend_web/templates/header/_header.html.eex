@@ -1,7 +1,7 @@
 <header class="fixed z-50 flex flex-row items-center justify-between w-full h-16 bg-white shadow-md">
   <div class="flex-1 pl-8 text-indigo-900">
     <ul class="flex justify-start menu">
-      <%= active_link(@conn, "Browse", class: "item", to: "/browse", active: [{FrontendWeb.ItemLive, :any}], class_active: "active", wrap_tag: :li) %>
+      <%= active_link(@conn, "Browse", class: "item", to: "/browse", active: [{FrontendWeb.ItemLive, :any}, {FrontendWeb.ItemLive.Browse, :any}], class_active: "active", wrap_tag: :li) %>
       <%= active_link(@conn, "Feed", class: "item", to: "/feed", active: [{FrontendWeb.FeedController, :any}], class_active: "active", wrap_tag: :li) %>
       <%= active_link(@conn, "Query", class: "item", to: "/query", active: [{FrontendWeb.QueryController, :any}], class_active: "active", wrap_tag: :li) %>
       <%= active_link(@conn, "Help", class: "item", to: "/help", active: [{FrontendWeb.HelpController, :any}], class_active: "active", wrap_tag: :li) %>
