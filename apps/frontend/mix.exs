@@ -5,9 +5,12 @@ defmodule Frontend.MixProject do
   @version "0.1.0"
 
   @deps [
-    {:phoenix, "~> 1.4.0"},
-    {:phoenix_pubsub, "~> 1.1"},
-    {:phoenix_html, "~> 2.14"},
+    # , "~> 1.4"
+    {:phoenix, github: "phoenixframework/phoenix", override: true},
+    # , "~> 0.10"
+    {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+    # {:phoenix_pubsub, "~> 1.1"},
+    # {:phoenix_html, "~> 2.14"},
     {:phoenix_live_reload, "~> 1.2", only: :dev},
     {:phoenix_active_link, "~> 0.3", github: "jnylen/phoenix-active-link"},
     {:phoenix_html_simplified_helpers, ">= 0.0.0"},
@@ -16,7 +19,6 @@ defmodule Frontend.MixProject do
     {:jason, "~> 1.0"},
     {:plug_cowboy, "~> 2.0"},
     {:canada, "~> 2.0"},
-    {:phoenix_live_view, "~> 0.8.0"},
     {:floki, ">= 0.0.0", only: :test},
 
     # Database

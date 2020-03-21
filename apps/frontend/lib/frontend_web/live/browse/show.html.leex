@@ -1,0 +1,38 @@
+<div class="pt-16">
+  <div class="py-10 bg-brand-activemenubg">
+    <div class="container mx-auto text-indigo-900">
+      <div class="mx-auto">
+        <div class="flex items-center pb-8">
+          <div class="px-2 py-1 text-sm bg-white rounded"><%= @type.type || "main type" %></div>
+          <%= if @type.hidden do %>
+            <div class="px-2 py-1 ml-3 text-sm text-white bg-indigo-900 rounded">locked</div>
+          <% end %>
+          <%= if @type.images do %>
+            <div class="px-2 py-1 ml-3 text-sm text-white bg-indigo-700 rounded">has images</div>
+          <% end %>
+        </div>
+        <div class="flex items-center pb-4">
+          <div class="flex items-center justify-center w-16 h-16 px-2 py-2 mr-5 text-4xl leading-none text-center text-indigo-500 bg-white rounded-lg shadow-md">
+            <%= unless is_nil(@type.icon) do %>
+              <i class="<%= @type.icon %>"></i>
+            <% else %>
+              ?
+            <% end %>
+          </div>
+          <div class="flex-col items-center w-full font-oxygen">
+            <h1 class="text-3xl font-bold leading-none">
+              <%= @type.label %>
+            </h1>
+            <div class="pt-1 leading-none">
+              <%= @type.id %>
+            </div>
+          </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada pulvinar orci, in dapibus sapien consectetur quis. Donec pulvinar non lorem id pulvinar. Proin lacinia orci ex, non scelerisque magna aliquet ut. Integer porttitor mauris quis erat tristique, sit amet tincidunt erat porta. Donec laoreet elementum mi, vitae scelerisque ipsum interdum eget. Ut convallis ex nec neque dictum vulputate. Aliquam tristique, felis nec iaculis accumsan, ante risus congue lacus, eget ullamcorper velit tellus ac libero. Duis eget cursus nisi. Nunc faucibus mi risus, at ultrices erat imperdiet sed. Pellentesque tincidunt nisi ac felis tincidunt interdum. Integer mattis ex eget magna laoreet ultricies. Donec euismod ligula at nisl interdum malesuada. </p>
+      </div>
+    </div>
+  </div>
+  <%= if @menu != nil do %>
+    <%= live_component(@socket, menu_component(@menu), menu: @menu, type: @type) %>
+  <% end %>
+</div>

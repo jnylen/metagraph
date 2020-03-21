@@ -1,5 +1,5 @@
 defmodule FrontendWeb.ItemLive.Browse do
-  use Phoenix.LiveComponent
+  use FrontendWeb, :live_component
 
   def render(%{template: "menu"} = assigns) do
     FrontendWeb.NewItemView.render("browse/_menu.html", assigns)

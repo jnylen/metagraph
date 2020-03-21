@@ -1,5 +1,5 @@
 defmodule FrontendWeb.ItemLive.Language do
-  use Phoenix.LiveComponent
+  use FrontendWeb, :live_component
 
   def render(assigns),
     do:

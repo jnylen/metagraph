@@ -1,11 +1,11 @@
 defmodule FrontendWeb.Router do
   use FrontendWeb, :router
-  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
     plug(:fetch_live_flash)
+    plug(:put_root_layout, {FrontendWeb.LayoutView, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
     plug(FrontendWeb.Plugs.SetCurrentUser)
@@ -32,9 +32,9 @@ defmodule FrontendWeb.Router do
     # get("/browse", ItemController, :index)
     # get("/browse/:type", ItemController, :list)
 
-    live("/browse", ItemLive, :index)
-    live("/browse/:type", ItemLive, :index)
-    live("/browse/:type/:menu", ItemLive, :index)
+    live("/browse", BrowseLive, :index)
+    live("/browse/:type", BrowseLive.Show, :show)
+    live("/browse/:type/:menu", BrowseLive.Show, :show)
 
     live("/uid/:uid", ItemLive, :show)
     live("/uid/:uid/changes", ItemLive, :changes)

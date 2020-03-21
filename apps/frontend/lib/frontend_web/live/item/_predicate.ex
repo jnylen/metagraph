@@ -1,5 +1,5 @@
 defmodule FrontendWeb.ItemLive.Predicate do
-  use Phoenix.LiveComponent
+  use FrontendWeb, :live_component
 
   def render(assigns) do
     cond do

@@ -1,0 +1,14 @@
+<a href="/uid/<%= @item.uid %>">
+  <div class="flex px-4 py-3 mb-4 text-indigo-900 bg-white rounded shadow">
+    <div class="">
+      <h3 class="flex items-center py-1 text-lg font-bold">
+        <%= Map.get(get_lang(Map.get(@item, :label, []), "sv-SE"), :value, "Unknown") %>
+        <span class="ml-3 text-sm font-normal leading-none text-gray-600">/uid/<%= @item.uid %></span>
+      </h3>
+      <div class="flex items-center py-1 text-sm leading-none text-gray-600">
+        <span><%= count_facts(@item) %> facts</span>
+        <span class="ml-2"><%= count_keys(@item) %> statements</span>
+      </div>
+    </div>
+  </div>
+</a>

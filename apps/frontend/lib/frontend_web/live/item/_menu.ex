@@ -1,5 +1,5 @@
 defmodule FrontendWeb.ItemLive.Menu do
-  use Phoenix.LiveComponent
+  use FrontendWeb, :live_component
 
   def render(assigns), do: FrontendWeb.NewItemView.render("shared/_menu.html", assigns)
 end
