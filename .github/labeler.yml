@@ -1,0 +1,20 @@
+authorization:
+  - apps/authorization/**/*
+
+database:
+  - apps/database/**/*
+
+editor:
+  - apps/editor/**/*
+
+frontend:
+  - apps/frontend/**/*
+
+graph:
+  - apps/graph/**/*
+
+metagraph:
+  - ./*
+  - config/**/*
+  - .github/**/*
+  - rel/**/*

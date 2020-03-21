@@ -1,0 +1,29 @@
+name: Elixir CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read .tool-versions
+        uses: marocchino/tool-versions-action@v1
+        id: versions
+      - name: Setup elixir
+        uses: actions/setup-elixir@v1
+        with:
+          elixir-version: ${{ steps.versions.outputs.elixir}}
+          otp-version: ${{ steps.versions.outputs.erlang}}
+      - name: Install Dependencies
+        run: mix deps.get
+      - name: Install node dependencies for frontend subapp
+        run: yarn
+        working-directory: ./apps/frontend/assets
+      - name: Run Tests
+        run: mix test
