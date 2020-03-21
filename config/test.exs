@@ -8,14 +8,6 @@ config :database, Database.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
-config :admin, AdminWeb.Endpoint,
-  http: [port: 4002],
-  server: false
-
-config :api, ApiWeb.Endpoint,
-  http: [port: 4002],
-  server: false
-
 config :frontend, FrontendWeb.Endpoint,
   http: [port: 4002],
   server: false
