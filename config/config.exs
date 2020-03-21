@@ -8,12 +8,6 @@ config :database,
 
 config :auditor, repo: Database.Media.Change
 
-# Configures the endpoint
-config :admin, AdminWeb.Endpoint,
-  url: [host: "localhost"],
-  render_errors: [view: AdminWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Admin.PubSub, adapter: Phoenix.PubSub.PG2]
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

@@ -23,48 +23,7 @@ config :authorization, Authorization.Guardian,
   secret_key: %{"k" => "4Cg2QCFvSq5Xuh47mYCiEw", "kty" => "oct"},
   serializer: Authorization.Guardian
 
-# For development, we disable any cache and enable
-# debugging and code reloading.
-#
-# The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with webpack to recompile .js and .css sources.
-config :admin, AdminWeb.Endpoint,
-  http: [port: 4001],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  secret_key_base: "d7QGNQBPm1XWzXaWDVuKPJzBhAtSIMT/ICTX8c1bwxLo2oqp8e5D+4Ct7eiLmvTP",
-  watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/admin/assets", __DIR__)
-    ]
-  ]
-
 # Watch static and templates for browser reloading.
-config :admin, AdminWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/admin_web/views/.*(ex)$},
-      ~r{lib/admin_web/templates/.*(eex)$}
-    ]
-  ],
-  live_view: [
-    signing_salt: "SECRET_SALT"
-  ]
-
-config :api, ApiWeb.Endpoint,
-  http: [port: 4003],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: []
 
 config :frontend, FrontendWeb.Endpoint,
   http: [port: 4000],
