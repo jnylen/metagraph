@@ -105,38 +105,6 @@ defmodule FrontendWeb.ItemLive do
   end
 
   @doc """
-    Handle a mount of a websocket for `index`
-  """
-  def mount(
-        %{"type" => type} = params,
-        _session,
-        %{assigns: %{live_action: :index}} = socket
-      ) do
-    type = types(false) |> Enum.find(&(&1.id == type))
-
-    new_socket =
-      socket
-      |> assign(:type, type)
-      |> assign(:menu, Map.get(params, "menu", "index"))
-      |> assign(:page_title, page_title("Browse #{Map.get(type, :label)}"))
-
-    {:ok, new_socket}
-  end
-
-  def mount(
-        _params,
-        _session,
-        %{assigns: %{live_action: :index}} = socket
-      ) do
-    new_socket =
-      socket
-      |> assign(:types, types(false))
-      |> assign(:page_title, page_title("Browse"))
-
-    {:ok, new_socket}
-  end
-
-  @doc """
     Render a view form
   """
   def render(%{live_action: :new, chosen_type: value} = assigns) when not is_nil(value) do
@@ -166,15 +134,6 @@ defmodule FrontendWeb.ItemLive do
   """
   def render(%{live_action: :edit} = assigns),
     do: FrontendWeb.NewItemView.render("edit.html", assigns)
-
-  @doc """
-    Render an item
-  """
-  def render(%{live_action: :index, type: _type} = assigns),
-    do: FrontendWeb.NewItemView.render("browse.html", assigns)
-
-  def render(%{live_action: :index} = assigns),
-    do: FrontendWeb.NewItemView.render("index.html", assigns)
 
   @doc """
     Render changes
