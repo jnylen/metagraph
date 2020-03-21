@@ -16,7 +16,7 @@ config :logger, :console,
 config :frontend, FrontendWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: FrontendWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Frontend.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: Frontend.PubSub
 
 # Via Authorizations app
 config :ueberauth, Ueberauth,

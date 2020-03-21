@@ -9,9 +9,10 @@ defmodule Frontend.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      FrontendWeb.Endpoint
+      FrontendWeb.Endpoint,
       # Starts a worker by calling: Frontend.Worker.start_link(arg)
       # {Frontend.Worker, arg},
+      {Phoenix.PubSub, [name: Frontend.PubSub, adapter: Phoenix.PubSub.PG2]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

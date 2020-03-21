@@ -1,5 +1,5 @@
 defmodule FrontendWeb.ItemLive do
-  use Phoenix.LiveView
+  use FrontendWeb, :live_view
   import FrontendWeb.TemplateHelper
   import FrontendWeb.GraphHelper
   import Ecto.Query
@@ -7,7 +7,7 @@ defmodule FrontendWeb.ItemLive do
   @doc """
     Handle a mount of a websocket for `new`
   """
-  def mount(_params, %{"current_user_id" => cuid}, %{assigns: %{live_view_action: :new}} = socket) do
+  def mount(_params, %{"current_user_id" => cuid}, %{assigns: %{live_action: :new}} = socket) do
     new_socket =
       socket
       |> set_current_user(cuid)
@@ -23,7 +23,7 @@ defmodule FrontendWeb.ItemLive do
   def mount(
         %{"uid" => uid},
         _session,
-        %{assigns: %{live_view_action: :show}} = socket
+        %{assigns: %{live_action: :show}} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
 
@@ -53,7 +53,7 @@ defmodule FrontendWeb.ItemLive do
   def mount(
         %{"uid" => uid},
         %{"current_user_id" => cuid},
-        %{assigns: %{live_view_action: :edit}} = socket
+        %{assigns: %{live_action: :edit}} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
 
@@ -84,7 +84,7 @@ defmodule FrontendWeb.ItemLive do
   def mount(
         %{"uid" => uid} = params,
         _session,
-        %{assigns: %{live_view_action: :changes}} = socket
+        %{assigns: %{live_action: :changes}} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
 
@@ -105,77 +105,40 @@ defmodule FrontendWeb.ItemLive do
   end
 
   @doc """
-    Handle a mount of a websocket for `index`
-  """
-  def mount(
-        %{"type" => type} = params,
-        _session,
-        %{assigns: %{live_view_action: :index}} = socket
-      ) do
-    type = types(false) |> Enum.find(&(&1.id == type))
-
-    new_socket =
-      socket
-      |> assign(:type, type)
-      |> assign(:menu, Map.get(params, "menu", "index"))
-      |> assign(:page_title, page_title("Browse #{Map.get(type, :label)}"))
-
-    {:ok, new_socket}
-  end
-
-  def mount(
-        _params,
-        _session,
-        %{assigns: %{live_view_action: :index}} = socket
-      ) do
-    new_socket =
-      socket
-      |> assign(:types, types(false))
-      |> assign(:page_title, page_title("Browse"))
-
-    {:ok, new_socket}
-  end
-
-  @doc """
     Render a view form
   """
-  def render(%{live_view_action: :new, chosen_type: value} = assigns) when not is_nil(value) do
+  def render(%{live_action: :new, chosen_type: value} = assigns) when not is_nil(value) do
     type = assigns.types |> Enum.find(&(&1.id == assigns.chosen_type))
 
-    FrontendWeb.NewItemView.render("new/form.html", assigns |> Map.put(:chosen_type, type))
+    Phoenix.View.render(
+      FrontendWeb.NewItemView,
+      "new/form.html",
+      assigns |> Map.put(:chosen_type, type)
+    )
   end
 
   @doc """
     Render a list of item types
   """
-  def render(%{live_view_action: :new} = assigns),
+  def render(%{live_action: :new} = assigns),
     do: FrontendWeb.NewItemView.render("new.html", assigns)
 
   @doc """
     Render an item
   """
-  def render(%{live_view_action: :show} = assigns),
+  def render(%{live_action: :show} = assigns),
     do: FrontendWeb.NewItemView.render("show.html", assigns)
 
   @doc """
     Render an edit
   """
-  def render(%{live_view_action: :edit} = assigns),
+  def render(%{live_action: :edit} = assigns),
     do: FrontendWeb.NewItemView.render("edit.html", assigns)
-
-  @doc """
-    Render an item
-  """
-  def render(%{live_view_action: :index, type: _type} = assigns),
-    do: FrontendWeb.NewItemView.render("browse.html", assigns)
-
-  def render(%{live_view_action: :index} = assigns),
-    do: FrontendWeb.NewItemView.render("index.html", assigns)
 
   @doc """
     Render changes
   """
-  def render(%{live_view_action: :changes} = assigns),
+  def render(%{live_action: :changes} = assigns),
     do: FrontendWeb.NewItemView.render("changes.html", assigns)
 
   @doc """
@@ -192,7 +155,7 @@ defmodule FrontendWeb.ItemLive do
     {:noreply, new_socket}
   end
 
-  def handle_params(_params, _uri, %{assigns: %{live_view_action: :edit}} = socket) do
+  def handle_params(_params, _uri, %{assigns: %{live_action: :edit}} = socket) do
     new_socket =
       socket
       |> assign(:changeset, socket.assigns.item.__struct__.changeset(socket.assigns.item, %{}))
