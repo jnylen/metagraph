@@ -1,12 +1,29 @@
 defmodule FrontendWeb.ItemLive.Browse do
   use Phoenix.LiveComponent
 
+  def render(%{template: "menu"} = assigns) do
+    FrontendWeb.NewItemView.render("browse/_menu.html", assigns)
+  end
+
   def render(%{menu: "index"} = assigns) do
+    {:ok, %{"queries" => items}} =
+      assigns
+      |> Map.get(:type)
+      |> Map.get(:model)
+      |> Graph.Repo.paginate(nil)
+
     assigns =
       assigns
-      |> Map.put(:items, [])
+      |> Map.put(
+        :items,
+        items
+      )
 
     FrontendWeb.NewItemView.render("browse/index.html", assigns)
+  end
+
+  def render(%{menu: "index_item"} = assigns) do
+    FrontendWeb.NewItemView.render("browse/_item.html", assigns)
   end
 
   def render(%{menu: "schema"} = assigns) do
@@ -29,7 +46,7 @@ defmodule FrontendWeb.ItemLive.Browse do
       assigns
       |> Map.put(:items, [])
 
-    FrontendWeb.NewItemView.render("browse/schema.html", assigns)
+    FrontendWeb.NewItemView.render("browse/queries.html", assigns)
   end
 
   defp schema(module) do

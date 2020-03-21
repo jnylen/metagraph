@@ -1,0 +1,18 @@
+<div class="py-4 bg-white shadow">
+  <div class="container mx-auto">
+    <div class="flex justify-between mx-auto">
+      <ul class="flex">
+        <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, ""), replace: true, class: active_link?(@menu, "index") do %>
+          Data
+        <% end %>
+        <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, "schema"), replace: true, class: active_link?(@menu, "schema") do %>
+          Schema
+        <% end %>
+        <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :index, @type.id, "queries"), replace: true, class: active_link?(@menu, "queries") do %>
+          Example queries
+        <% end %>
+      </ul>
+      <a href="/new/<%= @type.id %>" class="px-4 py-2 text-indigo-900 rounded-lg bg-brand-activemenubg pull-right text-brand-activemenutext">Create item</a>
+    </div>
+  </div>
+</div>

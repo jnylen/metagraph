@@ -10,6 +10,43 @@ defmodule FrontendWeb.NewItemView do
 
   use FrontendWeb, :view
 
+  def active_link?(link, active_link) do
+    default_classes = "px-4 py-2 mr-3"
+
+    if link != active_link do
+      default_classes
+    else
+      "#{default_classes} rounded-lg bg-brand-activemenubg text-brand-activemenutext"
+    end
+  end
+
+  def count_keys(item) do
+    Map.from_struct(item)
+    |> Enum.into([])
+    |> Enum.reject(fn {_key, value} -> empty_value?(value) end)
+    |> Enum.count()
+  end
+
+  def count_facts(item) do
+    {_, amount} =
+      Map.from_struct(item)
+      |> Enum.into([])
+      |> Enum.reject(fn {_key, value} -> empty_value?(value) end)
+      |> Enum.map_reduce(0, fn {_key, value}, acc ->
+        {value, acc + value_amount(value)}
+      end)
+
+    amount
+  end
+
+  defp empty_value?([]), do: true
+  defp empty_value?(nil), do: true
+  defp empty_value?(""), do: true
+  defp empty_value?(_), do: false
+
+  defp value_amount(list) when is_list(list), do: Enum.count(list)
+  defp value_amount(_), do: 1
+
   def into_url(_predicate, nil), do: nil
 
   def into_url(predicate, value) do
