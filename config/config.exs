@@ -2,6 +2,16 @@
 # and its dependencies with the aid of the Mix.Config module.
 import Config
 
+config :api,
+  generators: [context_app: false]
+
+# Configures the endpoint
+config :api, Api.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "H8ZqzwZ8OXCOM/7cMNiYJi9EnYOwmuyFbFdWaDIMRyiD81JsNTqdfhYzEDK0StSU",
+  render_errors: [view: Api.ErrorView, accepts: ~w(json)],
+  pubsub_server: Api.PubSub
+
 # Configure Mix tasks and generators
 config :database,
   ecto_repos: [Database.Repo]
