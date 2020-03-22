@@ -15,7 +15,7 @@ defmodule Api.Schema.Type.Person do
     field(:website, :string)
     field(:birth_day, :date)
     field(:death_day, :date)
-    # field(:bloodtype, :bloodtype)
+    field(:bloodtype, :bloodtype)
     field(:weight, :integer)
     field(:height, :integer)
     field(:themoviedb_id, :integer)

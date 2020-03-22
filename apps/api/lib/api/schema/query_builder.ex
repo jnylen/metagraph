@@ -46,8 +46,7 @@ defmodule Api.Schema.QueryBuilder do
     field_name = name_to_atom(name)
     translatable? = is_translatable(vertex, field_name)
 
-    language =
-      resolve_language(Argument.value_map(args) |> IO.inspect() |> Map.get(:language, language))
+    language = resolve_language(Argument.value_map(args) |> Map.get(:language, language))
 
     %State{
       name: resolve_name(vertex, field_name, translatable?, language),
