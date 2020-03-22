@@ -1,3 +1,6 @@
+api:
+  - apps/api/**/*
+
 authorization:
   - apps/authorization/**/*
 
