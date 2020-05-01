@@ -6,7 +6,7 @@ defmodule Frontend.MixProject do
 
   @deps [
     # , "~> 1.4"
-    {:phoenix, github: "phoenixframework/phoenix", override: true},
+    {:phoenix, "~> 1.5.1"},
     # , "~> 0.10"
     {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
     # {:phoenix_pubsub, "~> 1.1"},
@@ -14,10 +14,10 @@ defmodule Frontend.MixProject do
     {:phoenix_live_reload, "~> 1.2", only: :dev},
     {:phoenix_active_link, "~> 0.3", github: "jnylen/phoenix-active-link"},
     {:phoenix_html_simplified_helpers, ">= 0.0.0"},
-    {:phoenix_ecto, "~> 4.0"},
+    {:phoenix_ecto, "~> 4.1"},
     {:gettext, "~> 0.11"},
     {:jason, "~> 1.0"},
-    {:plug_cowboy, "~> 2.0"},
+    {:plug_cowboy, "~> 2.2"},
     {:canada, "~> 2.0"},
     {:floki, ">= 0.0.0", only: :test},
 
@@ -28,7 +28,7 @@ defmodule Frontend.MixProject do
     {:authorization, in_umbrella: true},
 
     # Pagination
-    {:scrivener_html, "~> 1.8"}
+    #{:scrivener_html, "~> 1.8"}
   ]
 
   def project do

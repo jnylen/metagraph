@@ -4,7 +4,7 @@ defmodule Database.MixProject do
   @name :database
   @version "0.1.0"
   @deps [
-    {:ecto_sql, "~> 3.1"},
+    {:ecto_sql, "~> 3.4"},
     {:postgrex, ">= 0.0.0"},
     {:jason, "~> 1.0"},
 
