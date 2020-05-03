@@ -35,11 +35,19 @@ defmodule FrontendWeb.InputHelper do
     Enum.map(values, fn(val) ->
       {language, value} = values(val)
 
-      input_opts2 = [
-        name: Phoenix.HTML.Form.input_name(form, field) <> "[#{language}]",
-        value: value
-      ]
-      apply(Phoenix.HTML.Form, :text_input, [form, field, input_opts ++ input_opts2])
+      content_tag :div, class: "flex w-full mb-2 items-top" do
+        #Graph.Struct.Language.find(:code, language).name
+        [content_tag(:div, Graph.Struct.Language.find(:code, language).name, class: "w-1/3 font-medium leading-snug"),
+        content_tag :div, class: "flex-1 pl-8" do
+          input_opts2 = [
+            name: Phoenix.HTML.Form.input_name(form, field) <> "[#{language}]",
+            value: value
+          ]
+          apply(Phoenix.HTML.Form, :text_input, [form, field, input_opts ++ input_opts2])
+        end]
+      end
+
+
     end)
   end
 
@@ -48,11 +56,18 @@ defmodule FrontendWeb.InputHelper do
     Enum.map(values, fn(val) ->
       {language, value} = values(val)
 
-      input_opts2 = [
-        name: Phoenix.HTML.Form.input_name(form, field) <> "[#{language}]",
-        value: value
-      ]
-      apply(Phoenix.HTML.Form, :textarea, [form, field, input_opts ++ input_opts2])
+      content_tag :div, class: "flex w-full mb-2 items-top" do
+       [content_tag(:div, Graph.Struct.Language.find(:code, language).name, [class: "w-1/3 font-medium leading-snug"]),
+        content_tag :div, class: "flex-1 pl-8" do
+          input_opts2 = [
+            name: Phoenix.HTML.Form.input_name(form, field) <> "[#{language}]",
+            value: value
+          ]
+          apply(Phoenix.HTML.Form, :textarea, [form, field, input_opts ++ input_opts2])
+        end]
+      end
+
+
     end)
   end
 

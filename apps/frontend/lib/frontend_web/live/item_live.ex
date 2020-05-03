@@ -174,7 +174,6 @@ defmodule FrontendWeb.ItemLive do
         %{"item" => params},
         socket
       ) do
-        IO.inspect(params)
 
     changeset =
       socket.assigns.item.__struct__.changeset(socket.assigns.item,
@@ -182,8 +181,6 @@ defmodule FrontendWeb.ItemLive do
         |> set_language("label", params["label"])
         |> set_language("description", params["description"])
       )
-
-      IO.inspect(changeset)
 
     # |> Map.put(:action, :insert)
 
