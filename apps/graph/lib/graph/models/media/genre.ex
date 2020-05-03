@@ -28,6 +28,8 @@ defmodule Graph.Media.Genre do
     |> cast(params, [
       :label,
       :description
-    ])
+    ], empty_values: ["", []])
+    |> validate_length(:label, min: 1)
+    |> validate_length(:description, min: 1)
   end
 end

@@ -2,7 +2,7 @@ defmodule FrontendWeb.NewItemView do
   @moduledoc false
 
   import FrontendWeb.ItemHelpers
-
+  import FrontendWeb.InputHelper
   import FrontendWeb.ChangeHelpers
   import Phoenix.HTML.SimplifiedHelpers.TimeAgoInWords
 

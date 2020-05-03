@@ -81,9 +81,9 @@ defmodule Graph.Tv do
       :themoviedb_id,
       :thetvdb_id,
       :genre
-    ])
-    |> validate_required_list(:label)
-    |> validate_required_list(:description)
+    ], empty_values: ["", []])
+    |> validate_length(:label, min: 1)
+    |> validate_length(:description, min: 1)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)
     |> validate_format(:wikidata_id, ~r/^Q(\d+)$/)

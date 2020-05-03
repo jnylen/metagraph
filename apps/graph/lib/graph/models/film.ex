@@ -97,9 +97,9 @@ defmodule Graph.Film do
       :imdb_id,
       :themoviedb_id,
       :genre
-    ])
-    |> validate_required_list(:label)
-    |> validate_required_list(:description)
+    ], empty_values: ["", []])
+    |> validate_length(:label, min: 1)
+    |> validate_length(:description, min: 1)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_number(:budget, greater_than_or_equal_to: 1)
     |> validate_number(:revenue, greater_than_or_equal_to: 1)

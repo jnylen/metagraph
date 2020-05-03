@@ -21,6 +21,23 @@ defmodule FrontendWeb.GraphHelper do
     |> Map.get(name)
   end
 
+  def set_language(struct, key, map) do
+    IO.inspect(key)
+    IO.inspect(map)
+
+    values = Enum.map(map, fn {k, v} ->
+        if Enum.member?(["", nil], v) do
+          nil
+        else
+          %Dlex.Lang{language: k, value: v}
+        end
+      end)
+    |> Enum.reject(&is_nil/1)
+
+    struct
+    |> Map.put(key, values)
+  end
+
   def set_language(struct, _key, "", _), do: struct
   def set_language(struct, _key, nil, _), do: struct
 

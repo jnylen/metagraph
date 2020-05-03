@@ -20,11 +20,13 @@ defmodule Graph.Bloodtype do
     field_config(:description, sorted: 2)
   end
 
-  def changeset(genre, params \\ %{}) do
-    genre
+  def changeset(bloodtype, params \\ %{}) do
+    bloodtype
     |> cast(params, [
       :label,
       :description
-    ])
+    ], empty_values: ["", []])
+    |> validate_length(:label, min: 1)
+    |> validate_length(:description, min: 1)
   end
 end

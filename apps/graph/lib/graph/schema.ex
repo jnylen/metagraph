@@ -10,7 +10,7 @@ defmodule Graph.Schema do
       use Dlex.Node
       use Dlex.Changeset
 
-      import Graph.Schema, only: [schema_config: 1, validate_required_list: 2]
+      import Graph.Schema, only: [schema_config: 1]
     end
   end
 
@@ -121,22 +121,5 @@ defmodule Graph.Schema do
   def __node__(module, name, value) do
     config = {name, value}
     Module.put_attribute(module, :node_config, config |> Macro.escape())
-  end
-
-  def validate_required_list(%Ecto.Changeset{changes: changes} = changeset, field) do
-    unless Map.has_key?(changes, field) do
-      changeset
-      |> Ecto.Changeset.add_error(field, "is required")
-    else
-      Ecto.Changeset.validate_change(changeset, field, &required_list?(&1, &2))
-    end
-  end
-
-  defp required_list?(current_field, value) do
-    unless value |> Enum.count() do
-      [{current_field, "is required"}]
-    else
-      []
-    end
   end
 end

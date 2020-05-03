@@ -2,6 +2,7 @@ defmodule FrontendWeb.ItemLive do
   use FrontendWeb, :live_view
   import FrontendWeb.TemplateHelper
   import FrontendWeb.GraphHelper
+
   import Ecto.Query
 
   @doc """
@@ -170,34 +171,19 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event(
         "validate",
-        %{"item" => %{"type" => type} = params, "trans" => trans},
-        socket
-      ) do
-    changeset =
-      get_module(type).__struct__
-      |> get_module(type).changeset(
-        params
-        |> set_language("label", trans["label"], trans["language"])
-        |> set_language("description", trans["description"], trans["language"])
-      )
-
-    # |> Map.put(:action, :insert)
-
-    {:noreply, assign(socket, trans: trans, changeset: changeset)}
-  end
-
-  @doc """
-    Handle an validation event (aka changed values)
-  """
-  def handle_event(
-        "validate",
         %{"item" => params},
         socket
       ) do
+        IO.inspect(params)
+
     changeset =
-      socket.assigns.item
-      |> socket.assigns.item.__struct__.changeset(params)
-      |> IO.inspect()
+      socket.assigns.item.__struct__.changeset(socket.assigns.item,
+        params
+        |> set_language("label", params["label"])
+        |> set_language("description", params["description"])
+      )
+
+      IO.inspect(changeset)
 
     # |> Map.put(:action, :insert)
 
