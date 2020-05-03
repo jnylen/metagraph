@@ -6,9 +6,10 @@ defmodule Graph.MixProject do
 
   @deps [
     {:jason, "~> 1.0"},
-    {:dlex, "~> 0.4", github: "metagraph-wiki/dlex"},
+    #{:dlex, "~> 0.4", github: "metagraph-wiki/dlex", branch: "feat/updatecode"},
+    {:dlex, path: "/home/jnylen/Projects/metadata-by-design/dlex"},
     {:database, in_umbrella: true},
-    {:gun, "~> 2.0.0", override: true, hex: :grpc_gun}
+    {:grpc, "~> 0.5.0-beta.1", override: true}
   ]
 
   def project do
