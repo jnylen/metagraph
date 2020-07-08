@@ -25,9 +25,8 @@ defmodule Graph.Media.Genre do
 
   def changeset(genre, params \\ %{}) do
     genre
-    |> cast(params, [
-      :label,
-      :description
-    ])
+    |> cast(params, [])
+    |> cast_embed(:label)
+    |> cast_embed(:description)
   end
 end

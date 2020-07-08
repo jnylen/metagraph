@@ -20,11 +20,10 @@ defmodule Graph.Bloodtype do
     field_config(:description, sorted: 2)
   end
 
-  def changeset(genre, params \\ %{}) do
-    genre
-    |> cast(params, [
-      :label,
-      :description
-    ])
+  def changeset(bloodtype, params \\ %{}) do
+    bloodtype
+    |> cast(params, [])
+    |> cast_embed(:label)
+    |> cast_embed(:description)
   end
 end

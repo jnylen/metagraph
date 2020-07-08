@@ -6,7 +6,6 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 //const devMode = process.env.NODE_ENV !== 'production'
 
-
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
@@ -25,32 +24,35 @@ module.exports = (env, options) => ({
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false
+        sourceMap: false,
       }),
       new OptimizeCSSAssetsPlugin({}),
       new PurgecssPlugin({
         paths: glob.sync("../lib/frontend_web/templates/**/*.html.eex"),
-        extractors: [{
-          extractor: TailwindExtractor,
-          extensions: ["html", "js", "eex"]
-        }]
-      })
-    ]
+        extractors: [
+          {
+            extractor: TailwindExtractor,
+            extensions: ["html", "js", "eex"],
+          },
+        ],
+      }),
+    ],
   },
   entry: {
-    "./js/app.js": ["./js/app.js"].concat(glob.sync("./vendor/**/*.js"))
+    "./js/app.js": ["./js/app.js"].concat(glob.sync("./vendor/**/*.js")),
   },
   output: {
     filename: "app.js",
-    path: path.resolve(__dirname, "../priv/static/js")
+    path: path.resolve(__dirname, "../priv/static/js"),
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -58,22 +60,26 @@ module.exports = (env, options) => ({
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader"
-        ]
-      }
-    ]
+          "sass-loader",
+        ],
+      },
+    ],
   },
   resolve: {
     modules: ["node_modules", __dirname + "/static/js"],
-    extensions: ["*", ".js", ".json"]
+    extensions: ["*", ".js", ".json"],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "../css/app.css"
+      filename: "../css/app.css",
     }),
-    new CopyWebpackPlugin([{
-      from: "static/",
-      to: "../"
-    }])
-  ]
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "static/",
+          to: "../",
+        },
+      ],
+    }),
+  ],
 });

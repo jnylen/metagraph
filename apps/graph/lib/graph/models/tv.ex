@@ -73,8 +73,6 @@ defmodule Graph.Tv do
   def changeset(tv, params \\ %{}) do
     tv
     |> cast(params, [
-      :label,
-      :description,
       :website,
       :wikidata_id,
       :imdb_id,
@@ -82,8 +80,8 @@ defmodule Graph.Tv do
       :thetvdb_id,
       :genre
     ])
-    |> validate_required_list(:label)
-    |> validate_required_list(:description)
+    |> cast_embed(:label)
+    |> cast_embed(:description)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)
     |> validate_format(:wikidata_id, ~r/^Q(\d+)$/)

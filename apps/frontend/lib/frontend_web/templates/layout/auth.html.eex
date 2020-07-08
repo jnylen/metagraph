@@ -20,7 +20,8 @@
             <p class="text-sm font-bold text-red-dark" role="alert"><%= get_flash(@conn, :error) %></p>
           </div>
           <div>
-            <%= render @view_module, @view_template, assigns %>
+            <%#= render @view_module, @view_template, assigns %>
+            <%= @inner_content %>
           </div>
         </div>
         <div class="py-8 text-center">
@@ -28,7 +29,6 @@
         </div>
       </div>
     </div>
-    <%= @inner_content %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </bod>
 </html>

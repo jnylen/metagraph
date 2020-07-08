@@ -24,7 +24,7 @@ defmodule FrontendWeb.Router do
 
     # get("/new", ItemController, :new)
     live("/new", ItemLive, :new)
-    live("/new/:chosen_type", ItemLive, :new)
+    live("/new/:chosen_type", ItemLive, :new_item)
 
     # post("/new", ItemController, :create)
     get("/feed", FeedController, :index)

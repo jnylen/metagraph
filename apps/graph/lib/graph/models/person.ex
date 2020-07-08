@@ -68,12 +68,9 @@ defmodule Graph.Person do
     field_config(:wikidata_id, sorted: 20, external: true, depends_on: Graph.Core.Media)
   end
 
-  def changeset(film, params \\ %{}) do
-    film
-    |> IO.inspect()
+  def changeset(person, params \\ %{}) do
+    person
     |> cast(params, [
-      :label,
-      :description,
       :website,
       :birth_day,
       :death_day,
@@ -85,9 +82,8 @@ defmodule Graph.Person do
       :freebase_id,
       :wikidata_id
     ])
-    |> IO.inspect()
-    |> validate_required_list(:label)
-    |> validate_required_list(:description)
+    |> cast_embed(:label)
+    |> cast_embed(:description)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)
     |> validate_format(:wikidata_id, ~r/^Q(\d+)$/)

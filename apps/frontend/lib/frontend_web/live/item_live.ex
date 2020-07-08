@@ -17,6 +17,18 @@ defmodule FrontendWeb.ItemLive do
     {:ok, new_socket}
   end
 
+  def mount(%{"chosen_type" => chosen_type}, %{"current_user_id" => cuid}, %{assigns: %{live_action: :new_item}} = socket) do
+    new_socket =
+      socket
+      |> set_current_user(cuid)
+      |> assign(:chosen_type, chosen_type)
+      |> assign(:page_title, page_title("Create an #{chosen_type}"))
+      |> assign(:item, get_module(chosen_type).__struct__)
+      |> assign(:changeset, get_module(chosen_type).changeset(get_module(chosen_type).__struct__))
+
+    {:ok, new_socket}
+  end
+
   @doc """
     Handle a mount of a websocket for `show`
   """
@@ -107,13 +119,13 @@ defmodule FrontendWeb.ItemLive do
   @doc """
     Render a view form
   """
-  def render(%{live_action: :new, chosen_type: value} = assigns) when not is_nil(value) do
-    type = assigns.types |> Enum.find(&(&1.id == assigns.chosen_type))
+  def render(%{live_action: :new_item, chosen_type: value} = assigns) when not is_nil(value) do
+    #type = assigns.types |> Enum.find(&(&1.id == assigns.chosen_type))
 
     Phoenix.View.render(
       FrontendWeb.NewItemView,
-      "new/form.html",
-      assigns |> Map.put(:chosen_type, type)
+      "new_item.html",
+      assigns
     )
   end
 
@@ -145,14 +157,14 @@ defmodule FrontendWeb.ItemLive do
     Handle incoming params
   """
   def handle_params(%{"chosen_type" => chosen_type}, _uri, socket) do
-    new_socket =
-      socket
-      |> assign(:chosen_type, chosen_type)
-      |> assign(:trans, %{})
-      |> assign(:page_title, page_title("Create an #{chosen_type}"))
-      |> assign(:changeset, get_module(chosen_type).changeset(get_module(chosen_type).__struct__))
+    # new_socket =
+    #   socket
+    #   |> assign(:chosen_type, chosen_type)
+    #   |> assign(:page_title, page_title("Create an #{chosen_type}"))
+    #   |> assign(:item, get_module(chosen_type).__struct__)
+    #   |> assign(:changeset, get_module(chosen_type).changeset(get_module(chosen_type).__struct__))
 
-    {:noreply, new_socket}
+    {:noreply, socket}
   end
 
   def handle_params(_params, _uri, %{assigns: %{live_action: :edit}} = socket) do
@@ -168,38 +180,26 @@ defmodule FrontendWeb.ItemLive do
   @doc """
     Handle an validation event (aka changed values)
   """
+
   def handle_event(
         "validate",
-        %{"item" => %{"type" => type} = params, "trans" => trans},
-        socket
+        %{"item" => params},
+        %{assigns: %{item: %Ecto.Changeset{} = changeset}} = socket
       ) do
-    changeset =
-      get_module(type).__struct__
-      |> get_module(type).changeset(
-        params
-        |> set_language("label", trans["label"], trans["language"])
-        |> set_language("description", trans["description"], trans["language"])
-      )
-
-    # |> Map.put(:action, :insert)
-
-    {:noreply, assign(socket, trans: trans, changeset: changeset)}
+    {:noreply, assign(socket, changeset: changeset)}
   end
 
-  @doc """
-    Handle an validation event (aka changed values)
-  """
   def handle_event(
         "validate",
         %{"item" => params},
         socket
       ) do
+
     changeset =
       socket.assigns.item
+      |> IO.inspect()
       |> socket.assigns.item.__struct__.changeset(params)
       |> IO.inspect()
-
-    # |> Map.put(:action, :insert)
 
     {:noreply, assign(socket, changeset: changeset)}
   end
@@ -209,23 +209,28 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event("create", %{"item" => _params}, socket) do
     # Create item
-    socket.assigns.changeset
-    |> Editor.create(socket.assigns.current_user)
-    |> case do
-      {:ok, item} ->
-        {:noreply,
-         socket
-         |> put_flash(:info, "Item created successfully.")
-         |> redirect(to: "/uid/#{item.uid}")}
+    socket.assigns.item
+    |> Ecto.Changeset.apply_changes()
+    |> IO.inspect()
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        {
-          :noreply,
-          socket
-          |> put_flash(:error, "Couldn't create the item.")
-          |> assign(changeset: changeset)
-        }
-    end
+
+    # |> Editor.create(socket.assigns.current_user)
+    # |> case do
+    #   {:ok, item} ->
+    #     {:noreply,
+    #      socket
+    #      |> put_flash(:info, "Item created successfully.")
+    #      |> redirect(to: "/uid/#{item.uid}")}
+
+    #   {:error, %Ecto.Changeset{} = changeset} ->
+    #     {
+    #       :noreply,
+    #       socket
+    #       |> put_flash(:error, "Couldn't create the item.")
+    #       |> assign(changeset: changeset)
+    #     }
+    # end
+    {:noreply, assign(socket, changeset: socket.assigns.changeset)}
   end
 
   # Update item
@@ -234,7 +239,7 @@ defmodule FrontendWeb.ItemLive do
     |> Editor.update(socket.assigns.current_user)
     |> case do
       {:ok, item} ->
-        {:stop,
+        {:noreply,
          socket
          |> put_flash(:info, "Item updated successfully.")
          |> redirect(to: "/uid/#{item.uid}")}

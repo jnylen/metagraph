@@ -1,0 +1,5 @@
+<%= form_for @changeset, "#", [phx_change: :validate, phx_submit: "update", as: "item"], fn form -> %>
+    <%= for form_input <- inputs_for(form, :label) do %>
+        <%= live_component(@socket, FrontendWeb.ItemLive.Language, folder: "edit", type: "text", value: nil, form: form_input) %>
+    <% end %>
+<% end %>

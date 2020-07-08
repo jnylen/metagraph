@@ -2,14 +2,13 @@ defmodule Graph.Core.Common do
   use Graph.Schema
 
   shared "common" do
-    field(:label, :string, lang: true, index: ["trigram"], template: "special/lang_string")
+    field(:label, :string, lang: true, index: ["trigram"])
 
     field(:description, :string,
-      lang: true,
-      template: "special/lang_text"
+      lang: true
     )
 
-    field(:website, :string, template: "_string")
+    field(:website, :string)
   end
 
   schema_config do

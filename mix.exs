@@ -15,6 +15,9 @@ defmodule Umbrella.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    []
+    [
+      {:cowlib, "~> 2.9.1", override: true}
+
+    ]
   end
 end

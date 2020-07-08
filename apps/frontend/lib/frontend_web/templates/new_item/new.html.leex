@@ -6,7 +6,7 @@
     </div>
     <div class="flex flex-wrap pt-5">
       <%= for type <- @types do %>
-        <%= live_patch class: "flex w-1/2 pt-5 pr-2", to: Routes.item_path(FrontendWeb.ItemLive, :new, type.id), replace: true do %>
+        <%= live_redirect class: "flex w-1/2 pt-5 pr-2", to: Routes.item_path(FrontendWeb.ItemLive, :new, type.id), replace: true do %>
           <div class="flex items-center w-full p-4 bg-white border-2 border-transparent rounded shadow transition-border hover:border-indigo-500 hover:cursor-pointer"
                     >
             <div class="w-1/5 mr-3 text-4xl text-center text-indigo-500">

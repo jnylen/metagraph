@@ -6,6 +6,8 @@ import Config
 config :database,
   ecto_repos: [Database.Repo]
 
+config :dlex, repo: Graph.Repo
+
 config :auditor, repo: Database.Media.Change
 
 # Configures Elixir's Logger
@@ -32,10 +34,10 @@ config :ueberauth, Ueberauth,
        ]}
   ]
 
-config :scrivener_html,
-  routes_helper: FrontendWeb.Router.Helpers,
-  # If you use a single view style everywhere, you can configure it here. See View Styles below for more info.
-  view_style: :bootstrap
+# config :scrivener_html,
+#   routes_helper: FrontendWeb.Router.Helpers,
+#   # If you use a single view style everywhere, you can configure it here. See View Styles below for more info.
+#   view_style: :bootstrap
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

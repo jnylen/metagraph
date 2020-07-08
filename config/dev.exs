@@ -4,9 +4,9 @@ import Config
 config :database, Database.Repo,
   adapter: Ecto.Adapters.Postgres,
   host: "localhost",
-  port: 5432,
-  username: "metagraph",
-  password: "metagraph",
+  port: 5332,
+  username: "postgres",
+  password: "jnyeln",
   database: "metagraph"
 
 config :authorization, Authorization.Guardian,
