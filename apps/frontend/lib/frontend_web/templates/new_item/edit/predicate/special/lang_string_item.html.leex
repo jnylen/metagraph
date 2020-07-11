@@ -1,4 +1,25 @@
-<div class="flex w-full mb-2 items-top">
-  <div class="w-1/3 font-medium leading-snug"><%= Graph.Struct.Language.find(:code, @value.language).name %></div>
-  <div class="flex-1 pl-8"><%= @value.value %></div>
+<div class="flex items-start pt-2 nested-fields">
+  <div class="w-1/3">
+    <div class="relative">
+      <%= if is_nil(@form) do %>
+        <%= select_no_name("#{@form_name}[new_#{@association}]", "language", Enum.map(Graph.Struct.Language.all(), &{&1.name, &1.code}), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+      <% else %>
+        <%= select(@form, :language, Enum.map(Graph.Struct.Language.all(), &{&1.name, &1.code}), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+      <% end %>
+      <div class="absolute inset-y-0 right-0 flex items-center px-2 text-indigo-900 pointer-events-none">
+        <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+        </svg>
+      </div>
+    </div>
+    <%#= error_tag(@form, :language) %>
+  </div>
+  <div class="flex-1 pl-8">
+    <%= if is_nil(@form) do %>
+      <%= text_input_no_name("#{@form_name}[new_#{@association}]", "value", class: "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-700 w-full") %>
+    <% else %>
+      <%= text_input(@form, (if is_nil(@form), do: "#{@form_name}[new_#{@association}][value]", else: :value), class: "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-700 w-full") %>
+    <% end %>
+    <%#= error_tag(@form, :value) %>
+  </div>
 </div>

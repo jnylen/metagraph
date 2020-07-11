@@ -88,8 +88,6 @@ defmodule Graph.Film do
   def changeset(film, params \\ %{}) do
     film
     |> cast(params, [
-      :label,
-      :description,
       :website,
       :budget,
       :revenue,
@@ -98,8 +96,8 @@ defmodule Graph.Film do
       :themoviedb_id,
       :genre
     ])
-    |> validate_required_list(:label)
-    |> validate_required_list(:description)
+    |> cast_embed(:label)
+    |> cast_embed(:description)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_number(:budget, greater_than_or_equal_to: 1)
     |> validate_number(:revenue, greater_than_or_equal_to: 1)

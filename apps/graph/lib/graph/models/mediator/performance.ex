@@ -24,11 +24,10 @@ defmodule Graph.Mediator.Performance do
     field_config(:note, sorted: 3, template: "special/lang_string")
   end
 
-  def changeset(genre, params \\ %{}) do
-    genre
-    |> cast(params, [
-      :label,
-      :description
-    ])
+  def changeset(performance, params \\ %{}) do
+    performance
+    |> cast(params, [])
+    |> cast_embed(:label)
+    |> cast_embed(:description)
   end
 end
