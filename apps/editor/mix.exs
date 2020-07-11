@@ -5,7 +5,7 @@ defmodule Editor.MixProject do
   @version "0.1.0"
   @deps [
     {:auditor, github: "metagraph-wiki/auditor", override: true},
-    {:auditor_dlex, github: "metagraph-wiki/auditor_dlex"}
+    {:auditor_dlex, path: "/Users/joakimnylen/Work/Metagraph/auditor_dlex"} # , github: "metagraph-wiki/auditor_dlex"
   ]
 
   def project do

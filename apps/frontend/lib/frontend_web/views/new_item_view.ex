@@ -42,8 +42,8 @@ defmodule FrontendWeb.NewItemView do
   end
 
   def select_no_name(form, field, options, opts \\ []) when is_atom(field) or is_binary(field) do
-    #{selected, opts} = selected(form, field, opts)
-    options_html = options_for_select(options, nil)
+    {selected, opts} = selected(form, field, opts)
+    options_html = options_for_select(options, selected)
 
     {options_html, opts} =
       case Keyword.pop(opts, :prompt) do
@@ -58,6 +58,32 @@ defmodule FrontendWeb.NewItemView do
 
     content_tag(:select, options_html, opts)
   end
+
+  defp selected(form, field, opts) do
+    {value, opts} = Keyword.pop(opts, :value)
+    {selected, opts} = Keyword.pop(opts, :selected)
+
+
+
+    if value != nil do
+      {value, opts}
+    else
+      param = field_to_string(field)
+
+      case form do
+        %{params: %{^param => sent}} ->
+          {sent, opts}
+
+        _ ->
+          {selected || input_value2(form, field), opts}
+      end
+    end
+  end
+
+  defp field_to_string(field) when is_atom(field), do: Atom.to_string(field)
+  defp field_to_string(field) when is_binary(field), do: field
+  def input_value2(name, _field) when is_binary(name), do: nil
+  def input_value2(name, field), do: input_value(name, field)
 
   def text_input_no_name(form, field, opts \\ []) do
     generic_input_no_name(:text, form, field, opts)

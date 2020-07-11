@@ -18,10 +18,15 @@ defmodule FrontendWeb.ItemLive do
   end
 
   def mount(%{"chosen_type" => chosen_type}, %{"current_user_id" => cuid}, %{assigns: %{live_action: :new_item}} = socket) do
+    type = types() |> Enum.find(&(&1.id == chosen_type))
+
     new_socket =
       socket
       |> set_current_user(cuid)
       |> assign(:chosen_type, chosen_type)
+      |> assign(:chosen_type_data, type)
+      |> assign(:form_data, %{})
+      |> assign(:languages, Graph.Struct.Language.all())
       |> assign(:page_title, page_title("Create an #{chosen_type}"))
       |> assign(:item, get_module(chosen_type).__struct__)
       |> assign(:changeset, get_module(chosen_type).changeset(get_module(chosen_type).__struct__))
@@ -191,17 +196,15 @@ defmodule FrontendWeb.ItemLive do
 
   def handle_event(
         "validate",
-        %{"item" => params},
+        %{"item" => params} = e,
         socket
       ) do
 
     changeset =
       socket.assigns.item
-      |> IO.inspect()
       |> socket.assigns.item.__struct__.changeset(params)
-      |> IO.inspect()
 
-    {:noreply, assign(socket, changeset: changeset)}
+    {:noreply, assign(socket, changeset: changeset, form_data: Map.get(e, "item", %{}))}
   end
 
   @doc """
@@ -209,28 +212,24 @@ defmodule FrontendWeb.ItemLive do
   """
   def handle_event("create", %{"item" => _params}, socket) do
     # Create item
-    socket.assigns.item
-    |> Ecto.Changeset.apply_changes()
-    |> IO.inspect()
+    socket.assigns.changeset
+    |> Editor.create(socket.assigns.current_user)
+    |> case do
+      {:ok, item} ->
+        {:noreply,
+         socket
+         |> put_flash(:info, "Item created successfully.")
+         |> redirect(to: "/uid/#{item.uid}")}
 
-
-    # |> Editor.create(socket.assigns.current_user)
-    # |> case do
-    #   {:ok, item} ->
-    #     {:noreply,
-    #      socket
-    #      |> put_flash(:info, "Item created successfully.")
-    #      |> redirect(to: "/uid/#{item.uid}")}
-
-    #   {:error, %Ecto.Changeset{} = changeset} ->
-    #     {
-    #       :noreply,
-    #       socket
-    #       |> put_flash(:error, "Couldn't create the item.")
-    #       |> assign(changeset: changeset)
-    #     }
-    # end
-    {:noreply, assign(socket, changeset: socket.assigns.changeset)}
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {
+          :noreply,
+          socket
+          |> put_flash(:error, "Couldn't create the item.")
+          |> assign(changeset: changeset)
+        }
+    end
+    #{:noreply, assign(socket, changeset: socket.assigns.changeset)}
   end
 
   # Update item

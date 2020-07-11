@@ -1,5 +1,79 @@
-<%= form_for @changeset, "#", [phx_change: :validate, phx_submit: "update", as: "item"], fn form -> %>
-    <%= for form_input <- inputs_for(form, :label) do %>
-        <%= live_component(@socket, FrontendWeb.ItemLive.Language, folder: "edit", type: "text", value: nil, form: form_input) %>
-    <% end %>
-<% end %>
+<div class="flex items-center pt-24 vhwf">
+  <div class="w-1/2 mx-auto">
+    <div v-if="compType">
+      <div class="pb-4 font-roboto text-brand-ind">
+        <h1 class="mb-3 text-2xl font-bold">Create a <%= @chosen_type_data.label |> String.downcase %></h1>
+      </div>
+      <%= f = form_for @changeset, "#", phx_change: :validate, phx_submit: "create", as: "item" %>
+      <%= hidden_input(f, :type, value: @chosen_type_data.id) %>
+      <h5 class="text-sm font-semibold text-indigo-900">Common</h5>
+      <div class="px-6 pt-10 pb-6 mt-2 mb-10 bg-white rounded shadow">
+        <div class="flex flex-wrap mb-8">
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+            <%= label(:trans, "language", "Language *", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
+            <div class="relative">
+              <%= Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "language") %>
+              <%= select_no_name("item[label][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <div
+                  class="absolute inset-y-0 right-0 flex items-center px-2 text-indigo-900 pointer-events-none"
+                >
+                <svg
+                    class="w-4 h-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                  <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-3 md:w-1/2">
+              <%= label(:trans, "label", "Label *", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
+              <%= Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "value") %>
+              <%= text_input_no_name("item[label][0]", "value", placeholder: "Item name/label", value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "value"), class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <%= label(:trans, "description", "Description", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
+              <%= Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "language") %>
+              <%= select_no_name("item[description][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <%= Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "value") %>
+              <%= textarea_no_name("item[description][0]", "value", placeholder: "The description of an item", value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "value"), class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+            </div>
+          </div>
+        </div>
+        <%= unless Enum.empty?(@chosen_type_data.externals) do%>
+          <div>
+            <div class="flex items-center justify-between pt-8">
+              <h5 class="text-sm font-semibold text-indigo-900">Externals</h5>
+              <span class="text-sm font-light text-gray-700">Checks are done to check the uniqueness</span>
+            </div>
+            <div class="px-6 pt-10 pb-6 mt-2 bg-white rounded shadow">
+              <div class="flex flex-wrap">
+                <%= for check <- @chosen_type_data.externals do %>
+                  <div class="w-full px-3 mb-6 md:w-1/2">
+                    <%= label(f, check.name, check.label, class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
+                    <%= text_input(f, check.name, placeholder: check.example, class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+                    <%= error_tag(f, check.name) %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="mt-8 text-center">
+          <%= submit "Create item", class: "px-4 py-3 leading-none text-white bg-indigo-500 rounded-full font-oxygen#{if @changeset.valid?, do: '', else: ' disabled'}", disabled: !@changeset.valid? %>
+          <p
+            class="px-12 pt-8 text-sm leading-tight text-brand-ind"
+          >By clicking on "Create item" you allow us to relicense the contributed data under various licenses by our choice without being able to rescind the allowance.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
