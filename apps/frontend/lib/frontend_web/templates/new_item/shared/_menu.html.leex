@@ -1,44 +1,28 @@
-<div
-  class="fixed w-1/5 h-full h-screen pt-24 bg-indigo-100 border-r border-indigo-300 "
->
-  <div class="flex items-center justify-center pt-2 pb-10">
-    <div class="pr-8">
-      <svg
-        width="34"
-        height="20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4.52 1.17C5.39.65 6.34.25 7.35 0a2.5 2.5 0 0 0 4.74 0c1.01.25 1.96.65 2.82 1.17a2.5 2.5 0 0 0 3.36 3.36c.52.86.92 1.8 1.17 2.82a2.5 2.5 0 0 0 0 4.74c-.25 1.01-.65 1.96-1.17 2.82a2.5 2.5 0 0 0-3.36 3.36c-.86.52-1.8.92-2.82 1.17a2.5 2.5 0 0 0-4.74 0c-1.01-.25-1.96-.65-2.82-1.17a2.5 2.5 0 0 0-3.36-3.36A9.94 9.94 0 0 1 0 12.09a2.5 2.5 0 0 0 0-4.74c.25-1.01.65-1.96 1.17-2.82a2.5 2.5 0 0 0 3.36-3.36h-.01zm5.2 12.55a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-          fill="#667EEA"
-        />
-          <path d="M9.72 11.72a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="#7B93DB" />
-          <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M31.92 6.92a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3v.01z"
-          fill="#667EEA"
-        />
-          </svg>
-        </div>
-        <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :changes, @item.uid), replace: true, class: "px-5 py-3 font-sans leading-none text-white bg-indigo-500 rounded-full hover:bg-indigo-600" do %>
-          Changes
-        <% end %>
-        <a
-      class="px-5 py-3 ml-4 font-sans leading-none text-white bg-gray-600 rounded-full hover:bg-gray-700"
-      href="/uid/<%= @item.uid %>/edit"
-    >
-          Edit
-        </a>
-      </div>
-      <div class="submenu">
-        <%= for item <- @sections do %>
-          <a href="#<%= item["id"] %>">
-            <div class="menuitem">
-              <%= Gettext.dgettext(FrontendWeb.Gettext, "domain", item["name"]) %>
-            </div>
-          </a>
-        <% end %>
-      </div>
+<div class="w-full flex items-center justify-between pl-4 pr-8 pt-4">
+  <div class="item">
+    <div class="pl-8 header">
+      <h1 class="text-3xl font-bold text-indigo-900 font-oxygen">
+        <%= Map.get(get_lang(Map.get(@item, :label, []), "sv-SE"), :value,
+        "Unknown") %>
+      </h1>
+      <ul class="flex text-indigo-900 font-oxygen">
+        <li class="mr-8"><span class="font-bold">uid:</span> <%= @item.uid %></li>
+        <li class="mr-8">
+          <span class="font-bold">type:</span> <%= get_type(@item) %>
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <div class="flex">
+    <%= live_patch to: FrontendWeb.Router.Helpers.item_path(@socket, :changes, @item.uid), replace: true, class: "px-4 py-3 text-sm leading-none text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 flex items-center" do %>
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      <span class="ml-2">Changes</span>
+    <% end %>
+
+    <a class="px-4 py-3 text-sm leading-none text-white bg-indigo-800 hover:bg-indigo-900 ml-4 rounded-lg flex items-center" href="/uid/<%= @item.uid %>/edit">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
+      <span class="ml-2">Edit</span>
+    </a>
+  </div>
+</div>

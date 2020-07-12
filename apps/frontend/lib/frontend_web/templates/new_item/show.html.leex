@@ -1,6 +1,6 @@
 <%= live_component @socket, FrontendWeb.ItemLive.Menu, item: @item, sections: @sections %>
-<div class="flex flex-row-reverse w-full">
-  <div class="w-4/5 px-8 pt-24">
+<div class="pb-8">
+  <div class="px-8">
     <%= live_component @socket, FrontendWeb.ItemLive.Header, item: @item, sections: @sections %>
     <%= for domain <- @sections do %>
       <%= live_component(@socket, FrontendWeb.ItemLive.Domain, folder: "show", domain: domain, item: @item, types: @types, template: domain["config"][:template], type: domain["type"]) %>

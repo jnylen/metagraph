@@ -13,11 +13,13 @@
     <%= csrf_meta_tag() %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body class="antialiased bg-gray-100 font-roboto">
-    <div class="flex flex-col">
-      <%= render FrontendWeb.HeaderView, "_header.html", assigns %>
-      <%= @inner_content %>
-      <%= render FrontendWeb.FooterView, "_footer.html", assigns %>
+  <body class="antialiased bg-gray-50">
+    <div class="flex h-screen">
+      <%= render FrontendWeb.SharedView, "_sidebar.html", assigns %>
+      <div class="h-screen w-1/5 block"></div>
+      <main role="main" class="w-4/5 pull-right">
+        <%= @inner_content %>
+      </main>
     </div>
   </body>
 </html>

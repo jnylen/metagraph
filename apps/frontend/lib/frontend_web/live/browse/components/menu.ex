@@ -7,7 +7,7 @@ defmodule FrontendWeb.BrowseLive.Menu do
     if link != active_link do
       default_classes
     else
-      "#{default_classes} rounded-lg bg-brand-activemenubg text-brand-activemenutext"
+      "#{default_classes} rounded-lg bg-indigo-100 text-indigo-900"
     end
   end
 end

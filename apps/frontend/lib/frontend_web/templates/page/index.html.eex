@@ -1,9 +1,4 @@
-<div class="w-full border-b border-indigo-300 bg-start-gradient">
-  <div class="pt-16">
-    <div class="w-full py-6 font-semibold text-center text-white bg-indigo-500 text-oxygen">
-      Read our launch blog post explaining why Metagraph was created
-    </div>
-  </div>
+<div class="w-full border-b border-indigo-300 bg-start-gradient pt-8">
   <div class="flex items-center justify-between h-500">
     <div class="relative pl-20 text-indigo-900 font-oxygen">
       <h1 class="text-4xl font-light">
@@ -13,7 +8,7 @@
         metagraph is a community-curated metadata database.<br/>
       </p>
       <p class="mt-4 text-lg font-light">
-        We collect data about various things and makes it available to the public under an 
+        We collect data about various things and makes it available to the public under an
         <a class="underline hover:text-indigo-500" href="https://opendatacommons.org/licenses/by/summary/" target="_blank">open data license</a>.
       </p>
       <p class="mt-10 text-lg">
@@ -24,11 +19,11 @@
           <li class="pt-2">Set a standard that <strong>data should be in the public domain</strong>.</li>
         </ul>
       </p>
-      <div class="pt-16">
-        <button class="flex items-center justify-between px-6 py-4 text-white bg-indigo-500 rounded-full hover:bg-indigo-600">
-          <span class="mr-4 leading-none uppercase font-roboto">Start contributing</span>
+      <div class="py-16">
+        <button class="flex items-center justify-between px-6 py-4 text-indigo-100 bg-indigo-600 rounded-full hover:bg-indigo-700">
+          <span class="mr-4 leading-none">Start contributing</span>
           <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.917009 2.61225C0.681807 2.29784 0.567619 1.90893 0.595408 1.51692C0.623196 1.1249 0.791096 0.756091 1.06828 0.478195C1.34547 0.200299 1.71334 0.0319692 2.10436 0.00410956C2.49538 -0.0237501 2.8833 0.0907306 3.1969 0.326533L9.71087 6.85714C10.0093 7.16233 10.1764 7.57265 10.1764 8C10.1764 8.42735 10.0093 8.83767 9.71087 9.14286L3.1969 15.6735C2.8833 15.9093 2.49538 16.0238 2.10436 15.9959C1.71334 15.968 1.34547 15.7997 1.06828 15.5218C0.791096 15.2439 0.623196 14.8751 0.595408 14.4831C0.567619 14.0911 0.681807 13.7022 0.917009 13.3878L6.27475 8L0.900724 2.61225H0.917009Z" fill="white"/>
+            <path d="M0.917009 2.61225C0.681807 2.29784 0.567619 1.90893 0.595408 1.51692C0.623196 1.1249 0.791096 0.756091 1.06828 0.478195C1.34547 0.200299 1.71334 0.0319692 2.10436 0.00410956C2.49538 -0.0237501 2.8833 0.0907306 3.1969 0.326533L9.71087 6.85714C10.0093 7.16233 10.1764 7.57265 10.1764 8C10.1764 8.42735 10.0093 8.83767 9.71087 9.14286L3.1969 15.6735C2.8833 15.9093 2.49538 16.0238 2.10436 15.9959C1.71334 15.968 1.34547 15.7997 1.06828 15.5218C0.791096 15.2439 0.623196 14.8751 0.595408 14.4831C0.567619 14.0911 0.681807 13.7022 0.917009 13.3878L6.27475 8L0.900724 2.61225H0.917009Z" fill="currentColor"/>
           </svg>
         </button>
       </div>
