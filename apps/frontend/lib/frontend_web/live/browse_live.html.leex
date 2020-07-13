@@ -1,5 +1,5 @@
 <div class="flex-col pt-24 vhwf">
-  <div class="w-1/2 py-10 mx-auto font-roboto text-brand-ind">
+  <div class="w-1/2 py-10 mx-auto font-roboto text-indigo-900">
     <h1 class="mb-3 text-3xl font-bold">Explore the Metagraph</h1>
     <p class="text-lg">Select a type you want to explore.</p>
   </div>
@@ -16,8 +16,8 @@
                 ?
               <% end %>
             </div>
-            <div class="flex-col">
-              <h4 class="pb-1 font-extrabold"><%= type.label %></h4>
+            <div class="flex-col text-gray-900">
+              <h4 class="pb-1 font-bold"><%= type.label %></h4>
               <p class="text-sm"><%= :rand.uniform(50000) %> items</p>
             </div>
           </div>
