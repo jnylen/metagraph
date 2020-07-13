@@ -1,5 +1,5 @@
 %{
-  "auditor": {:git, "https://github.com/metagraph-wiki/auditor.git", "b106b7992883480be5b0e77944cee4bd14991555", []},
+  "auditor": {:git, "https://github.com/metagraph-wiki/auditor.git", "54c2044bf08dcb20f621461b0e8e0ca900690d14", []},
   "auditor_dlex": {:git, "https://github.com/metagraph-wiki/auditor_dlex.git", "c4db8952534274d221740b82235cc059a64ca086", []},
   "bcrypt_elixir": {:hex, :bcrypt_elixir, "2.2.0", "3df902b81ce7fa8867a2ae30d20a1da6877a2c056bfb116fd0bc8a5f0190cea4", [:make, :mix], [{:comeonin, "~> 5.3", [hex: :comeonin, repo: "hexpm", optional: false]}, {:elixir_make, "~> 0.6", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm", "762be3fcb779f08207531bc6612cca480a338e4b4357abb49f5ce00240a77d1e"},
   "canada": {:hex, :canada, "2.0.0", "ce5e058f576a0625959fc5427fcde15311fb28a5ebc13775eafd13468ad16553", [:mix], [], "hexpm", "49a648c48d8b0864380f38f02a7f316bd30fd45602205c48197432b5225d8596"},
