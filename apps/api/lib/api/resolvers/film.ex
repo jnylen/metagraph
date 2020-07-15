@@ -17,4 +17,17 @@ defmodule Api.Resolvers.Film do
     end
   end
 
+  @doc """
+  Create an item
+  """
+  #def create(_parent, _args, %{context: %{current_user: nil}}), do: {:error, "Access denied"}
+  def create(_parent, args, %{context: %{current_user: user}})  do
+    %Graph.Film{}
+    |> Graph.Film.changeset(args)
+    |> IO.inspect()
+    |> Graph.Repo.set()
+    |> IO.inspect()
+  end
+
+  def create(_parent, _args, _resolution), do: {:error, "Access denied"}
 end

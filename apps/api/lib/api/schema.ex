@@ -11,4 +11,8 @@ defmodule Api.Schema do
     import_fields :film_queries
     import_fields :person_queries
   end
+
+  mutation do
+    import_fields :film_mutations
+  end
 end

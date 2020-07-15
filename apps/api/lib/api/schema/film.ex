@@ -27,4 +27,22 @@ defmodule Api.Schema.Film do
       resolve &FilmResolver.find/3
     end
   end
+
+
+  object :film_mutations do
+    field :create_film, type: :film do
+      arg :label, list_of(:language_input)
+      arg :description, list_of(:language_input)
+      arg :website, :string
+      arg :budget, :integer
+      arg :revenue, :integer
+      arg :wikidata_id, :string
+      arg :imdb_id, :string
+      arg :freebase_id, :string
+      arg :themoviedb_id, :integer
+      arg :genre, list_of(:genre_input)
+
+      resolve(&FilmResolver.create/3)
+    end
+  end
 end

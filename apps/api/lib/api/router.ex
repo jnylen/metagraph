@@ -1,9 +1,15 @@
 defmodule Api.Router do
   use Api, :router
 
+  pipeline :graphql do
+    plug Api.Authentication
+  end
+
 
   scope "/" do
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Api.Schema
+    pipe_through :graphql
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Api.Schema, interface: :playground
     forward "/", Absinthe.Plug, schema: Api.Schema
   end
 

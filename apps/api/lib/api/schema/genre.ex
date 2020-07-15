@@ -9,6 +9,10 @@ defmodule Api.Schema.Genre do
     field :description, list_of(:language)
   end
 
+  input_object :genre_input do
+    field :uid, :string
+  end
+
   object :genre_queries do
     field :genres, list_of(:genre) do
       resolve &GenreResolver.list/3

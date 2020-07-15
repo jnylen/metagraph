@@ -5,4 +5,9 @@ defmodule Api.Schema.Language do
     field :value, :string
     field :language, :string
   end
+
+  input_object :language_input do
+    field :value, :string
+    field :language, :string
+  end
 end
