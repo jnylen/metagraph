@@ -19,6 +19,11 @@ defmodule Api.Schema.Film do
 
   object :film_queries do
     field :films, list_of(:film) do
+      arg :query_field, :string, default_value: "label"
+      arg :query, :string
+      arg :count, :integer, default_value: 10
+      arg :offset, :integer, default_value: 0
+
       resolve &FilmResolver.list/3
     end
 

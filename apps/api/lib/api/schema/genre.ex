@@ -15,6 +15,9 @@ defmodule Api.Schema.Genre do
 
   object :genre_queries do
     field :genres, list_of(:genre) do
+      arg :count, :integer, default_value: 10
+      arg :offset, :integer, default_value: 0
+
       resolve &GenreResolver.list/3
     end
 

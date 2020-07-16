@@ -1,10 +1,5 @@
-defmodule Api.Resolver.Genre do
+defmodule Api.Resolvers.Genre do
+  use Api.Resolver
 
-  def list(_, _, _) do
-    {:ok, []}
-  end
-
-  def find(_, _, _) do
-    {:ok, %{}}
-  end
+  def struct_name, do: Graph.Media.Genre
 end

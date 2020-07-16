@@ -2,7 +2,7 @@ defmodule Graph.Core.Common do
   use Graph.Schema
 
   shared "common" do
-    field(:label, :string, lang: true, index: ["trigram"])
+    field(:label, :string, lang: true, index: ["term", "trigram"])
 
     field(:description, :string,
       lang: true
