@@ -29,12 +29,15 @@ defmodule Database.Media.Change do
   def insert(
         %Auditor.Entry{action: action, actor: actor, subject: subject, changes: changes} = _entry
       ) do
+
     %Database.Media.Change{}
     |> Database.Media.Change.changeset(%{
       action: action |> to_string(),
       actor: actor,
       subject: subject.uid,
-      changes: changes
+      changes: changes |> Enum.filter(fn item ->
+        Enum.member?([:ins, :diff, :del], item.action)
+      end)
     })
     |> Database.Repo.insert()
   end

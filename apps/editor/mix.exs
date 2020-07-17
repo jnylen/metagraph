@@ -4,7 +4,7 @@ defmodule Editor.MixProject do
   @name :editor
   @version "0.1.0"
   @deps [
-    {:auditor, github: "metagraph-wiki/auditor", override: true},
+    {:auditor, path: "/Users/joakimnylen/Work/Metagraph/auditor", override: true}, # , github: "metagraph-wiki/auditor"
     {:auditor_dlex, path: "/Users/joakimnylen/Work/Metagraph/auditor_dlex"} # , github: "metagraph-wiki/auditor_dlex"
   ]
 

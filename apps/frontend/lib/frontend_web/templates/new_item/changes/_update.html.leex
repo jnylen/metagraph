@@ -1,5 +1,5 @@
-<div class="mt-2 mb-4 bg-white rounded-lg shadow-md" onclick="show('edits_<%= @change.id %>')">
-  <div class="flex items-center px-4 py-5">
+<div class="mt-2 mb-4 bg-white rounded-lg shadow-md" x-data="{ show: false }">
+  <div class="flex items-center px-4 py-5" @click="show = !show">
     <div class="relative pl-2">
       <div class="px-5 py-4 font-bold leading-none tracking-tighter text-green-900 bg-blue-200 rounded-full font-sourcesans">E</div>
       <div class="absolute bottom-0 right-0 w-4 h-4 leading-none text-white bg-red-600 border-2 border-white rounded-full"></div>
@@ -12,7 +12,7 @@
       <div class="flex items-center pr-8 text-indigo-900 font-sourcesans">
         <div class="text-right">
           <h5 class="font-semibold leading-normal text-normal">Changed by <%= @change.user.username %></h5>
-          <p class="leading-normal text-normal"><%#= time_ago_in_words @change.inserted_at %> ago</p>
+          <p class="leading-normal text-normal"><%= time_ago_in_words @change.inserted_at %> ago</p>
         </div>
       </div>
       <div class="w-10 mr-2">
@@ -20,11 +20,11 @@
       </div>
     </div>
   </div>
-  <div class="bg-gray-600 w-full rounded-b-lg py-4 px-6 shadow-inner<%= if (@show || false), do: "", else: " hidden" %>" id="edits_<%= @change.id %>">
+  <div class="bg-gray-600 w-full rounded-b-lg py-4 px-6 shadow-inner" :aria-expanded="show ? 'true' : 'false'" :class="{ 'hidden': !show }">
     <div class="flex flex-wrap">
-      <%= for {change_key, %{"changed" => action, "value" => change_val}} <- @change.changes |> remove_blanks!(@graph) do %>
+      <%= for %{"action" => action, "key" => change_key, "value" => change_val} <- @change.changes |> remove_blanks!(@graph) do %>
         <div class="flex items-center w-1/2 w-full py-2 font-sourcesans">
-          <div class="w-1/6 px-3 py-2 font-semibold text-green-900 bg-green-200 rounded shadow">
+          <div class="w-1/6 px-3 py-2 font-semibold text-<%= if action == "del", do: "red", else: "green" %>-900 bg-<%= if action == "del", do: "red", else: "green" %>-200 rounded shadow">
             <%= change_key %>
           </div>
           <div class="flex-1 pl-4 font-mono text-sm text-white">
