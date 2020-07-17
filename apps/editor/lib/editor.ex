@@ -12,15 +12,14 @@ defmodule Editor do
     do:
       changeset
       |> AuditorDlex.insert(actor)
-      |> IO.inspect()
 
   @doc """
   Update an item with values
   """
-  def update(changeset, actor),
+  def update(actual_item, changeset, actor),
     do:
-      changeset
-      |> Schema.check(:update, actor)
+      actual_item
+      |> Schema.check(changeset, :update, actor)
 
   def delete(uid, actor) do
   end

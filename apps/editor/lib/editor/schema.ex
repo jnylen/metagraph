@@ -1,18 +1,18 @@
 defmodule Editor.Schema do
-  def check(changeset, :update, actor) do
+  def check(actual_item, changeset, :update, actor) do
     changeset
     |> not_locked?()
     |> case do
       {:ok, item} ->
-        changeset
-        |> AuditorDlex.update(actor)
+        actual_item
+        |> AuditorDlex.update(changeset, actor)
 
       response ->
         response
     end
   end
 
-  def check(changeset, :delete, actor) do
+  def check(actual_item, changeset, :delete, actor) do
     :not_implemented
   end
 

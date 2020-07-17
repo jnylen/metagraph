@@ -234,8 +234,8 @@ defmodule FrontendWeb.ItemLive do
 
   # Update item
   def handle_event("update", %{"item" => _params}, socket) do
-    socket.assigns.changeset
-    |> Editor.update(socket.assigns.current_user)
+    socket.assigns.item
+    |> Editor.update(socket.assigns.changeset, socket.assigns.current_user)
     |> case do
       {:ok, item} ->
         {:noreply,

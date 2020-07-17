@@ -4,7 +4,7 @@ defmodule FrontendWeb.NewItemView do
   import FrontendWeb.ItemHelpers
 
   import FrontendWeb.ChangeHelpers
-  #import Phoenix.HTML.SimplifiedHelpers.TimeAgoInWords
+  import Phoenix.HTML.SimplifiedHelpers.TimeAgoInWords
 
   # import Phoenix.HTML.SimplifiedHelpers.NumberWithDelimiter
 

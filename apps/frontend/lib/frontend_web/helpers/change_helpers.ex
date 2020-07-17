@@ -12,46 +12,29 @@ defmodule FrontendWeb.ChangeHelpers do
   def remove_blanks!(map, graph) do
     map
     |> IO.inspect()
-    |> Enum.into([])
-    |> Enum.map(fn change ->
-      change
-      |> case do
-        {_key, %{"changed" => _, "value" => nil}} ->
-          nil
-
-        {_key, %{"changed" => _, "value" => []}} ->
-          nil
-
-        {key, %{"changed" => _, "value" => %{"uid" => _}} = changed_map} ->
-          {key,
-           changed_map
-           |> Map.put(
-             "value",
-             Map.get(changed_map, "value", nil)
-           )}
-
-        {_key, %{"changed" => _, "value" => %{}}} ->
-          nil
-
-        {key, %{"changed" => _, "added" => [%{"uid" => _} | _]} = changed_map} ->
-          {key,
-           changed_map
-           |> Map.put(
-             "value",
-             Map.get(changed_map, "added", nil)
-           )}
-
-        #  {key,
-        #  changed_map
-        #  |> Map.put(
-        #    "value",
-        #    Map.get(graph, key |> String.to_existing_atom(), Map.get(changed_map, "added", nil))
-        #  )}
-
-        val ->
-          val
-      end
-    end)
+    |> parse_items(graph)
+    |> List.flatten()
     |> Enum.reject(&is_nil/1)
   end
+
+  defp parse_items([], _graph), do: []
+  defp parse_items([item | items], graph) do
+
+    [ parse_item(item, graph) | parse_items(items, graph)]
+  end
+
+  defp parse_item(%{"action" => "eq"}, _), do: nil
+  defp parse_item(%{"value" => nil}, _), do: nil
+  defp parse_item(%{"value" => []}, _), do: nil
+  defp parse_item(%{"action" => "diff", "key" => real_key, "value" => value} = map, _) when is_map(value) do
+    for {key, val} <- value do
+      %{
+        "action" => key,
+        "key" => real_key,
+        "value" => val
+      }
+    end
+  end
+
+  defp parse_item(map, _), do: map
 end
