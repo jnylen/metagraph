@@ -11,7 +11,6 @@ defmodule FrontendWeb.ChangeHelpers do
 
   def remove_blanks!(map, graph) do
     map
-    |> IO.inspect()
     |> parse_items(graph)
     |> List.flatten()
     |> Enum.reject(&is_nil/1)
@@ -26,6 +25,7 @@ defmodule FrontendWeb.ChangeHelpers do
   defp parse_item(%{"action" => "eq"}, _), do: nil
   defp parse_item(%{"value" => nil}, _), do: nil
   defp parse_item(%{"value" => []}, _), do: nil
+  defp parse_item(%{"key" => "uid"}, _), do: nil
   defp parse_item(%{"action" => "diff", "key" => real_key, "value" => value} = map, _) when is_map(value) do
     for {key, val} <- value do
       %{

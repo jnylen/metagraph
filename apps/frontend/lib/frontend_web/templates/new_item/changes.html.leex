@@ -12,7 +12,7 @@
   <div class="container pt-10 pb-8 mx-auto">
     <div class="w-3/4 mx-auto">
       <%= for change <- @changes do %>
-        <%= live_component(@socket, FrontendWeb.ItemLive.Change, change: change, graph: @item) %>
+        <%= live_component(@socket, FrontendWeb.ItemLive.Change, item: change, graph: @item) %>
       <% end %>
       <%= if Enum.empty?(@changes) do %>
         <div class="">

@@ -57,14 +57,14 @@ defmodule Api.Resolver do
   @doc """
   Create an item
   """
-  #def create(_module, _parent, _args, %{context: %{current_user: nil}}), do: {:error, "Access denied"}
+  def create(_module, _parent, _args, %{context: %{current_user: nil}}), do: {:error, "Access denied"}
   def create(module, _parent, args, %{context: %{current_user: user}})  do
     model = module.struct_name
 
     model
     |> struct()
     |> model.changeset(args)
-    |> Graph.Repo.set()
+    |> Editor.create(user)
   end
 
   def create(_module, _parent, _args, _resolution), do: {:error, "Access denied"}
