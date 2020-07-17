@@ -11,6 +11,7 @@ defmodule Database.Account do
     field(:hashed_password, :string)
     field(:email, :string)
     field(:text, :string)
+    field(:token, :binary_id)
 
     # Add a virtual attribute to hold plain text passwords.
     field(:password, :string, virtual: true)

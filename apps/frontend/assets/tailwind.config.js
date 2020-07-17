@@ -3,6 +3,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    cursor: ["responsive", "hover"],
+  },
   plugins: [require("@tailwindcss/ui"), require("@tailwindcss/custom-forms")],
 };

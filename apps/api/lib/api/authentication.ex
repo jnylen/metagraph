@@ -33,6 +33,8 @@ defmodule Api.Authentication do
       nil -> {:error, "invalid authorization token"}
       user -> {:ok, user}
     end
+  rescue
+    _ -> {:error, "invalid authorization token"}
   end
 
 end
