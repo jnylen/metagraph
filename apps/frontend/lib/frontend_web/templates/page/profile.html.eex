@@ -1,0 +1,44 @@
+<div class="pt-16">
+  <div class="bg-brand-activemenubg py-10">
+    <div class="container mx-auto text-indigo-900">
+      <div class="w-3/4 mx-auto">
+        <h1 class="font-oxygen text-3xl font-bold">Profile</h1>
+        <p class="font-oxygen">
+          The settings for your profile is listed here
+        </p>
+        <div class="stats"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto pt-10 pb-8">
+    <%= form = form_for @changeset, Routes.page_path(@conn, :profile), class: "w-3/4 mx-auto" %>
+        <label class="block">
+            <span class="text-indigo-900 font-bold">Name</span>
+            <%= text_input(form, :name, class: "form-input mt-1 block w-full h-12") %>
+            <%= error_tag(form, :name) %>
+        </label>
+        <label class="block pt-6">
+            <span class="text-indigo-900 font-bold">Email</span>
+            <%= text_input(form, :email, class: "form-input mt-1 block w-full h-12 text-gray-400 hover:cursor-not-allowed", disabled: true) %>
+            <%= error_tag(form, :email) %>
+        </label>
+        <label class="block pt-6">
+            <span class="text-indigo-900 font-bold">Username</span>
+            <%= text_input(form, :username, class: "form-input mt-1 block w-full h-12 text-gray-400 hover:cursor-not-allowed", disabled: true) %>
+            <%= error_tag(form, :username) %>
+        </label>
+        <label class="block pt-6">
+            <div class="flex items-center">
+                <span class="text-indigo-900 font-bold">Token</span>
+                <p class="leading-0 ml-4 text-gray-600 text-sm">Use this when using the API for adding/editing.</p>
+            </div>
+            <p class="form-input mt-1 w-full h-12 bg-gray-200 text-gray-800 border-gray-300 items-center flex">
+                <%= @current_user.token %>
+            </p>
+        </label>
+        <div class="pt-12">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-roboto leading-none uppercase py-4 px-4 rounded w-full">Save</div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -35,6 +35,22 @@ defmodule Database.Account do
     |> put_hashed_password()
   end
 
+  def update_changeset(channel, params \\ %{}) do
+    channel
+    |> cast(params, [
+      :name,
+      :username,
+      :password,
+      :email,
+      :text
+    ])
+    |> validate_required([:username, :email])
+    |> unique_constraint(:username)
+
+    # Hash passwords before saving them to the database.
+    |> put_hashed_password()
+  end
+
   defp put_hashed_password(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
