@@ -19,8 +19,6 @@ defmodule FrontendWeb.PageController do
         |> put_flash(:info, "Saved!")
         |> render("profile.html", changeset: Database.Account.update_changeset(user))
       {:error, changeset} ->
-        changeset |> IO.inspect()
-
         conn
         |> put_flash(:error, "Unable to save!")
         |> render("profile.html", changeset: changeset)
