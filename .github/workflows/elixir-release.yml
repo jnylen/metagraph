@@ -29,15 +29,15 @@ jobs:
         run: mix deps.get --only prod
       # - name: Recompile sentry
       #   run: mix sentry_recompile
-      - name: Install node dependencies for main subapp
+      - name: Install node dependencies for frontend subapp
         run: yarn
-        working-directory: ./apps/main/assets
-      - name: Deploy node dependencies for main subapp
+        working-directory: ./apps/frontend/assets
+      - name: Deploy node dependencies for frontend subapp
         run: yarn run deploy
-        working-directory: ./apps/main/assets
-      - name: Digest Phoenix Assets
+        working-directory: ./apps/frontend/assets
+      - name: Digest Phoenix Assets for frontend subapp
         run: mix phx.digest
-        working-directory: ./apps/main
+        working-directory: ./apps/frontend
       - name: Build release
         run: mix release
       - name: Upload binaries to release
