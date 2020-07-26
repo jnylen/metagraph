@@ -3,7 +3,7 @@ import Config
 config :api, Api.Endpoint,
   http: [
     transport_options: [socket_opts: [:inet6]]
-  ]
+  ],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :frontend, FrontendWeb.Endpoint,
