@@ -25,7 +25,7 @@ defmodule Umbrella.MixProject do
             graph: :permanent
           ],
           steps: [:assemble, &PkgDeb.create(&1, deb_config())],
-          config_providers: [{Skogsra.Provider.Yaml, ["/etc/metagraph/metagraph.yml"]}]
+          config_providers: [{Skogsra.Provider.Yaml, "/etc/metagraph/metagraph.yml"}]
         ]
       ]
     ]
