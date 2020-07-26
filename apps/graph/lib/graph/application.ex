@@ -6,6 +6,8 @@ defmodule Graph.Application do
   use Application
 
   def start(_type, _args) do
+    Graph.Config.preload(Graph.Repo)
+
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: Graph.Worker.start_link(arg)

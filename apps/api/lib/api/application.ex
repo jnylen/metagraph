@@ -6,6 +6,8 @@ defmodule Api.Application do
   use Application
 
   def start(_type, _args) do
+    Api.Config.preload(Api.Endpoint)
+
     children = [
       # Start the Telemetry supervisor
       Api.Telemetry,

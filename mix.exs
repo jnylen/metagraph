@@ -3,7 +3,9 @@ defmodule Umbrella.MixProject do
 
   @deps [
     {:pkg_deb, "~> 0.3"},
-    {:cowlib, "~> 2.9.1", override: true}
+    {:cowlib, "~> 2.9.1", override: true},
+    {:skogsra, "~> 2.3"},
+    {:yamerl, "~> 0.7"}
   ]
 
   def project do
@@ -13,7 +15,7 @@ defmodule Umbrella.MixProject do
       deps: @deps,
       version: File.read!("VERSION") |> String.trim(),
       releases: [
-        vind: [
+        metagraph: [
           include_executables_for: [:unix],
           applications: [
             runtime_tools: :permanent,
@@ -22,7 +24,8 @@ defmodule Umbrella.MixProject do
             database: :permanent,
             graph: :permanent
           ],
-          steps: [:assemble, &PkgDeb.create(&1, deb_config())]
+          steps: [:assemble, &PkgDeb.create(&1, deb_config())],
+          config_providers: [{Skogsra.Provider.Yaml, ["/etc/metagraph/metagraph.yml"]}]
         ]
       ]
     ]
