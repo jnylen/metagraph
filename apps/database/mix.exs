@@ -9,7 +9,11 @@ defmodule Database.MixProject do
     {:jason, "~> 1.0"},
 
     # Pagination
-    {:scrivener_ecto, "~> 2.0"}
+    {:scrivener_ecto, "~> 2.0"},
+
+    # Config
+    {:skogsra, "~> 2.3"},
+    {:yamerl, "~> 0.7"}
   ]
   @aliases [
     "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
