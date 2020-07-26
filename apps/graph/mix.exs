@@ -7,7 +7,8 @@ defmodule Graph.MixProject do
   @deps [
     {:jason, "~> 1.0"},
     {:dlex, "~> 0.4", github: "metagraph-wiki/dlex"},
-    {:database, in_umbrella: true}
+    {:database, in_umbrella: true},
+    {:cowlib, "~> 2.9.1", override: true}
   ]
 
   def project do
