@@ -11,15 +11,18 @@ jobs:
       MIX_ENV: prod
     steps:
       - uses: actions/checkout@v2
+      - name: Read .tool-versions
+        uses: marocchino/tool-versions-action@v1
+        id: versions
       - name: Setup elixir
         uses: actions/setup-elixir@v1
         with:
-          elixir-version: 1.10.0 # Define the elixir version [required]
-          otp-version: 22.2 # Define the OTP version [required]
+          elixir-version: ${{ steps.versions.outputs.elixir}}
+          otp-version: ${{ steps.versions.outputs.erlang}}
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
         with:
-          version: 12
+          version: ${{ steps.versions.outputs.nodejs}}
       - name: Setup Rust toolchain
         uses: hecrj/setup-rust-action@v1.3.1
       - name: Install dependencies
