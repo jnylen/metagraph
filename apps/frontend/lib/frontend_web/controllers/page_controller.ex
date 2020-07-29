@@ -24,4 +24,8 @@ defmodule FrontendWeb.PageController do
         |> render("profile.html", changeset: changeset)
     end
   end
+
+  def help(conn, _params) do
+    render(conn, "help.html")
+  end
 end

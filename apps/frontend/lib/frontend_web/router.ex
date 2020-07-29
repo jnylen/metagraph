@@ -21,6 +21,7 @@ defmodule FrontendWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+    get("/help", PageController, :help)
     get("/profile", PageController, :profile)
     put("/profile", PageController, :update)
 
