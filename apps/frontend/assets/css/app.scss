@@ -22,4 +22,52 @@ ul.menu {
   }
 }
 
+pre {
+  @apply bg-gray-800 text-sm pt-4 relative;
+
+  .status {
+    @apply absolute right-0 top-0 mt-1 mr-1 rounded-tr-lg rounded-bl-lg py-1 px-2 font-bold;
+  }
+
+  .status-ok {
+    @apply bg-green-500 text-green-100;
+  }
+
+  .status-error {
+    @apply bg-red-500 text-red-100;
+  }
+}
+
+.hljs {
+  display: inline-block;
+  @apply text-gray-300;
+}
+
+code::after {
+  content: "";
+}
+
+code::before {
+  content: "";
+}
+
+code.language-json,
+pre.language-json {
+  .token.operator {
+    @apply text-code-blue;
+  }
+  .token.punctuation {
+    @apply text-code-white;
+  }
+  .hljs-boolean {
+    @apply text-code-red;
+  }
+  .hljs-string {
+    @apply text-code-white;
+  }
+  .hljs-attr {
+    @apply text-code-yellow;
+  }
+}
+
 @tailwind utilities;
