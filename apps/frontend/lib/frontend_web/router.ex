@@ -23,7 +23,8 @@ defmodule FrontendWeb.Router do
 
     # Root
     get("/", PageController, :index)
-
+    get("/help", PageController, :help)
+    
     # Profile
     get("/profile", PageController, :profile)
     put("/profile", PageController, :update)
