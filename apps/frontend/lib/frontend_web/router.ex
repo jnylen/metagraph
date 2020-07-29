@@ -57,16 +57,6 @@ defmodule FrontendWeb.Router do
     post("/identity/callback", AuthController, :callback)
   end
 
-  scope "/ajax", FrontendWeb do
-    pipe_through([:api])
-
-    # post("/save_item", AjaxController, :save_item)
-
-    get("/find_edges", AjaxController, :find_edges)
-    post("/find_edges", AjaxController, :find_edges)
-    post("/save", AjaxController, :save)
-  end
-
   # Other scopes may use custom stacks.
   # scope "/api", FrontendWeb do
   #   pipe_through :api
