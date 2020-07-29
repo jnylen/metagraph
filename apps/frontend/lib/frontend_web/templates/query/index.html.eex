@@ -1,0 +1,19 @@
+<div class="mx-8 text-indigo-900" x-data="queryPage()">
+    <div class="py-6">
+        <h1 class="font-oxygen text-3xl font-bold">Query</h1>
+        <p class="font-oxygen">
+          Need to find something in our database? Try our query tool!
+        </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg mt-8 p-2">
+        <textarea rows="10" col="10" class="w-full p-4" placeholder="Write your GraphQL query here.." x-model="textInput"></textarea>
+        <div class="pt-4 pb-2 text-right">
+            <button class="px-4 py-3 leading-none text-white bg-indigo-500 rounded-full font-oxygen" x-on:click="run()">Query</button>
+        </div>
+    </div>
+
+    <pre id="precode" class="my-4 rounded-lg shadow language-json hidden">
+        <div class="status"></div>
+        <code id="code" class="language-json"></code>
+    </pre>
+</div>

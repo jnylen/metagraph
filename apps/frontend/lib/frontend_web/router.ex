@@ -14,39 +14,40 @@ defmodule FrontendWeb.Router do
   pipeline :api do
     plug(:accepts, ["json"])
     plug(:fetch_session)
+    plug(:protect_from_forgery)
     plug(FrontendWeb.Plugs.SetCurrentUser)
   end
 
   scope "/", FrontendWeb do
     pipe_through(:browser)
 
+    # Root
     get("/", PageController, :index)
     get("/help", PageController, :help)
+    
+    # Profile
     get("/profile", PageController, :profile)
     put("/profile", PageController, :update)
 
-    # get("/new", ItemController, :new)
+    # Item new
     live("/new", ItemLive, :new)
     live("/new/:chosen_type", ItemLive, :new_item)
 
-    # post("/new", ItemController, :create)
+    # Changes
     get("/feed", FeedController, :index)
 
-    # get("/browse", ItemController, :index)
-    # get("/browse/:type", ItemController, :list)
-
+    # Browse types
     live("/browse", BrowseLive, :index)
     live("/browse/:type", BrowseLive.Show, :show)
     live("/browse/:type/:menu", BrowseLive.Show, :show)
 
+    # Item view
     live("/uid/:uid", ItemLive, :show)
     live("/uid/:uid/changes", ItemLive, :changes)
     live("/uid/:uid/edit", ItemLive, :edit)
 
-    # get("/uid/:uid", ItemController, :show)
-    # get("/uid/:uid/edit", ItemController, :edit)
-    # post("/uid/:uid/update", ItemController, :update)
-    # get("/uid/:uid/changes", ItemController, :changes)
+    # Query
+    get("/query", QueryController, :index)
   end
 
   scope "/auth", FrontendWeb do
@@ -59,7 +60,9 @@ defmodule FrontendWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", FrontendWeb do
-  #   pipe_through :api
-  # end
+  scope "/", FrontendWeb do
+    pipe_through :api
+
+    post("/query", QueryController, :query)
+  end
 end
