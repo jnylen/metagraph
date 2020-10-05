@@ -6,7 +6,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "@kollegorna/cocoon-vanilla-js": "^1.0.6",
+    "@kollegorna/cocoon-vanilla-js": "^1.0.7",
     "@kollegorna/js-utils": "^1.0.4",
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/ui": "^0.6.2",
