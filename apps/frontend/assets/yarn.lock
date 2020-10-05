@@ -846,10 +846,10 @@
     postcss "7.0.27"
     purgecss "^2.1.2"
 
-"@kollegorna/cocoon-vanilla-js@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@kollegorna/cocoon-vanilla-js/-/cocoon-vanilla-js-1.0.6.tgz#37a54550936a57d8dcdb99e63340d379bb99589d"
-  integrity sha512-DeGUU6GKdpE1QBz6FS35u4E5JPYcwiP8ZsrmUquhjCKNXNbQ7EKhBwprF9DyUpZ2NYGVgkwYof8b4iAPx0X9bg==
+"@kollegorna/cocoon-vanilla-js@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@kollegorna/cocoon-vanilla-js/-/cocoon-vanilla-js-1.0.7.tgz#af897b69227f3ff1bd96a6618b86d4a983c94da4"
+  integrity sha512-ceu4Mtx7R6Lw7rUdDiODEcMBJCWxog+pO4OEEQKRRERrBqQeGM5zb6qSM5Z5/DJJooqmpY9ANyxt7XbfJMDVWQ==
 
 "@kollegorna/js-utils@^1.0.4":
   version "1.0.4"
