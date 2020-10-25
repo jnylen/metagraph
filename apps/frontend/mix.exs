@@ -12,7 +12,7 @@ defmodule Frontend.MixProject do
     # {:phoenix_pubsub, "~> 1.1"},
     # {:phoenix_html, "~> 2.14"},
     {:phoenix_live_reload, "~> 1.2", only: :dev},
-    {:phoenix_active_link, "~> 0.3", github: "jnylen/phoenix-active-link"},
+    {:phoenix_active_link, "~> 0.3"},
     {:phoenix_html_simplified_helpers, ">= 0.0.0"},
     {:phoenix_ecto, "~> 4.1"},
     {:gettext, "~> 0.11"},

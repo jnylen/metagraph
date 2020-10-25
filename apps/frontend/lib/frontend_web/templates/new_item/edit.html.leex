@@ -1,7 +1,7 @@
 <%= live_component @socket, FrontendWeb.ItemLive.Menu, item: @item, sections: @sections %>
 <div class="w-full">
   <div class="px-8">
-    <%= live_component @socket, FrontendWeb.ItemLive.Header, item: @item, sections: @sections %>
+    <%= live_component @socket, FrontendWeb.ItemLive.Header, assigns %>
     <%= form = form_for @changeset, "#", phx_change: :validate, phx_submit: "update", as: "item" %>
     <%= hidden_input(form, :uid, value: @item.uid) %>
     <%= for domain <- @sections do %>

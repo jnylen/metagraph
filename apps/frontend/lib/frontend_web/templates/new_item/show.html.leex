@@ -1,7 +1,7 @@
-<%= live_component @socket, FrontendWeb.ItemLive.Menu, item: @item, sections: @sections %>
+<%= live_component @socket, FrontendWeb.ItemLive.Menu, assigns %>
 <div class="pb-8">
   <div class="px-8">
-    <%= live_component @socket, FrontendWeb.ItemLive.Header, item: @item, sections: @sections %>
+    <%= live_component @socket, FrontendWeb.ItemLive.Header, assigns %>
     <%= for domain <- @sections do %>
       <%= live_component(@socket, FrontendWeb.ItemLive.Domain, folder: "show", domain: domain, item: @item, types: @types, template: domain["config"][:template], type: domain["type"]) %>
     <% end %>

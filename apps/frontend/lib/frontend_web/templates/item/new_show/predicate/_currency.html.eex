@@ -1,6 +1,0 @@
-<div class="flex items-center pt-2">
-  <%= render @view_module, "new_show/type/_predicate.html", predicate: @predicate %>
-  <div class="pl-8">
-    <%= @item || "-" %>
-  </div>
-</div>

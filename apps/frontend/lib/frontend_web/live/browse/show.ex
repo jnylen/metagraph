@@ -4,13 +4,17 @@ defmodule FrontendWeb.BrowseLive.Show do
   import FrontendWeb.GraphHelper
   import Ecto.Query
 
+  def mount(_params, %{"current_user_id" => user_id}, socket) do
+    {:ok, assign_new(socket, :current_user, fn -> Database.get_user(user_id) end)}
+  end
+
   @doc """
     Handle a mount of a websocket for `index`
   """
   def mount(
         %{"type" => type} = params,
         _session,
-        socket
+        %{assigns: %{live_action: :show} = assigns} = socket
       ) do
     type = types(false) |> Enum.find(&(&1.id == type))
 
@@ -19,6 +23,7 @@ defmodule FrontendWeb.BrowseLive.Show do
       |> assign(:type, type)
       |> assign(:menu, Map.get(params, "menu", "data"))
       |> assign(:page_title, page_title("Browse #{Map.get(type, :label)}"))
+      |> assign(:current_user, Map.get(assigns, :current_user))
 
     {:ok, new_socket}
   end

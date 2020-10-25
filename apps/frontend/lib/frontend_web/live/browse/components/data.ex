@@ -8,6 +8,6 @@ defmodule FrontendWeb.BrowseLive.Data do
       |> Map.get(:model)
       |> Graph.Repo.paginate(nil)
 
-    {:ok, assign(socket, type: assigns.type, items: items)}
+    {:ok, assign(socket, type: assigns.type, items: items, current_user: assigns.current_user)}
   end
 end

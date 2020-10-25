@@ -12,7 +12,9 @@
           Example queries
         <% end %>
       </ul>
-      <a href="/new/<%= @type.id %>" class="px-4 py-2 text-indigo-900 rounded-lg bg-brand-activemenubg pull-right text-brand-activemenutext">Create item</a>
+      <%= if @current_user do %>
+        <a href="/new/<%= @type.id %>" class="px-4 py-2 text-indigo-900 rounded-lg bg-brand-activemenubg pull-right text-brand-activemenutext">Create item</a>
+      <% end %>
     </div>
   </div>
 </div>

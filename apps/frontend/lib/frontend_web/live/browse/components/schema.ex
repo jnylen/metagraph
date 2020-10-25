@@ -9,7 +9,7 @@ defmodule FrontendWeb.BrowseLive.Schema do
       |> schema()
       |> IO.inspect()
 
-    {:ok, assign(socket, type: assigns.type, schema: schema)}
+    {:ok, assign(socket, type: assigns.type, schema: schema, current_user: assigns.current_user)}
   end
 
   defp schema(module) do

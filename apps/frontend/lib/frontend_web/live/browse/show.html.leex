@@ -33,6 +33,6 @@
     </div>
   </div>
   <%= if @menu != nil do %>
-    <%= live_component(@socket, menu_component(@menu), menu: @menu, type: @type) %>
+    <%= live_component(@socket, menu_component(@menu), menu: @menu, type: @type, current_user: @current_user) %>
   <% end %>
 </div>
