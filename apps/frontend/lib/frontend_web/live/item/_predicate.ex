@@ -11,8 +11,6 @@ defmodule FrontendWeb.ItemLive.Predicate do
           )
         rescue
           e ->
-            e |> IO.inspect()
-
             assigns
             |> Map.delete(:template)
             |> render()

@@ -7,4 +7,3 @@ Logger.debug("Inserting language schema")
 <language.code>: string @index(exact) .
 """
 |> Database.alter()
-|> IO.inspect

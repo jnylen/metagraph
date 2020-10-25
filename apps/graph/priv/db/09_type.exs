@@ -11,4 +11,3 @@ Logger.debug("Inserting type schema")
 <type.can_create>: bool @index(bool) .
 """
 |> Database.alter()
-|> IO.inspect()

@@ -6,8 +6,6 @@ defmodule Database.Application do
   use Application
 
   def start(_type, _args) do
-    Database.Config.preload(Database.Repo)
-
     children = [
       Database.Repo
     ]

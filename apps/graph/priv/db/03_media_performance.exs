@@ -13,4 +13,3 @@ Logger.debug("Inserting media performance schema")
 <performance.note>: string @lang .
 """
 |> Database.alter()
-|> IO.inspect

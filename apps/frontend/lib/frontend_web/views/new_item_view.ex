@@ -160,8 +160,6 @@ defmodule FrontendWeb.NewItemView do
   def cleanup_map!(var), do: var
 
   def parse_type(:reverse_relation, predicate) do
-    predicate |> IO.inspect()
-
     {
       "Reverse Relation",
       [Map.get(predicate, :depends_on)]

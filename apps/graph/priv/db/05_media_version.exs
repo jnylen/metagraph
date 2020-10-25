@@ -8,4 +8,3 @@ Logger.debug("Inserting media version schema")
 <version.release>: uid @reverse .
 """
 |> Database.alter()
-|> IO.inspect

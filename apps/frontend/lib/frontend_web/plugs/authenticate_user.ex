@@ -6,8 +6,6 @@ defmodule FrontendWeb.Plugs.AuthenicateUser do
   end
 
   def call(conn, params) do
-    IO.inspect params
-
     if conn.assigns.user_signed_in? do
       conn
     else

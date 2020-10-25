@@ -35,8 +35,6 @@ defmodule FrontendWeb.ItemView do
   end
 
   def render_item_template(predicate, item, "domain", folder) do
-    IO.inspect(predicate)
-
     cond do
       predicate["config"][:template] ->
         render_existing(

@@ -6,8 +6,6 @@ defmodule Frontend.Application do
   use Application
 
   def start(_type, _args) do
-    FrontendWeb.Config.preload(FrontendWeb.Endpoint)
-
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts

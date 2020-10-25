@@ -9,4 +9,3 @@ Logger.debug("Inserting core schema")
 <common.website>: string .
 """
 |> Database.alter()
-|> IO.inspect()

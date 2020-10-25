@@ -21,4 +21,3 @@ Logger.debug("Inserting media schema")
 <media.themoviedb_id>: int @index(int) .
 """
 |> Database.alter()
-|> IO.inspect

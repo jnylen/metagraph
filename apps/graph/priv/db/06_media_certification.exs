@@ -7,4 +7,3 @@ Logger.debug("Inserting media certification schema")
 <certification.order>: int .
 """
 |> Database.alter()
-|> IO.inspect()

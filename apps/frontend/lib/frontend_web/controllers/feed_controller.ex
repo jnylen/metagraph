@@ -15,7 +15,6 @@ defmodule FrontendWeb.FeedController do
       |> Enum.map(& &1.subject)
       |> Graph.get_all()
       |> to_map()
-      |> IO.inspect()
 
     conn
     |> render("index.html",

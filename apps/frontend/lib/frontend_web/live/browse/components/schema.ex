@@ -7,7 +7,6 @@ defmodule FrontendWeb.BrowseLive.Schema do
       |> Map.get(:type)
       |> Map.get(:model)
       |> schema()
-      |> IO.inspect()
 
     {:ok, assign(socket, type: assigns.type, schema: schema, current_user: assigns.current_user)}
   end
@@ -30,8 +29,6 @@ defmodule FrontendWeb.BrowseLive.Schema do
   end
 
   def parse_type(:reverse_relation, predicate) do
-    predicate |> IO.inspect()
-
     {
       "Reverse Relation",
       [Map.get(predicate, :depends_on)]

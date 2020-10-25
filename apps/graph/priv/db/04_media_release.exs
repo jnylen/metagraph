@@ -9,4 +9,3 @@ Logger.debug("Inserting media release schema")
 <release.note>: string @lang .
 """
 |> Database.alter()
-|> IO.inspect

@@ -136,7 +136,7 @@ defmodule FrontendWeb.ItemController do
           )
           |> Enum.sort_by(fn i -> item.__struct__.__schema__(:sorted_fields)[i["name"]] end)
 
-        sections = FrontendWeb.ItemHelpers.get_sections(types) |> IO.inspect()
+        sections = FrontendWeb.ItemHelpers.get_sections(types)
 
         render(conn, "show.html",
           page_title: "Item",

@@ -6,7 +6,6 @@ defmodule FrontendWeb.Plugs.CheckPermsForUser do
   def init(params), do: params
 
   def call(conn, [perms: perms] = _params) do
-    IO.inspect _params
     case check_lists(perms, conn.assigns.current_user.access) do
       false ->
         conn

@@ -4,7 +4,6 @@ defmodule Umbrella.MixProject do
   @deps [
     {:pkg_deb, "~> 0.3"},
     {:cowlib, "~> 2.9.1", override: true},
-    {:skogsra, "~> 2.3"},
     {:yamerl, "~> 0.7"}
   ]
 
@@ -25,7 +24,7 @@ defmodule Umbrella.MixProject do
             graph: :permanent
           ],
           steps: [:assemble, &PkgDeb.create(&1, deb_config())],
-          config_providers: [{Skogsra.Provider.Yaml, "/etc/metagraph/metagraph.yml"}]
+          config_providers: [{Config.Reader, "/etc/metagraph/metagraph.exs"}]
         ]
       ]
     ]

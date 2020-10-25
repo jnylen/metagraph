@@ -7,4 +7,3 @@ Logger.debug("Inserting country schema")
 <country.exist>: bool .
 """
 |> Database.alter()
-|> IO.inspect
