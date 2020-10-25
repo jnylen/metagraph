@@ -33,11 +33,11 @@ defmodule Umbrella.MixProject do
   defp deb_config() do
     [
       vendor: "Joakim Nylén",
-      maintainers: ["Joakim Nylén <joakim@nylen.nu>"],
+      maintainers: ["Joakim Nylén <joakim@pixelmonster.ee>"],
       homepage: "https://metagraph.wiki",
       base_path: "/opt",
       external_dependencies: [],
-      owner: [user: "ubuntu", group: "ftpgroup"],
+      owner: [user: "jnylen", group: "jnylen"],
       description: "Metagraph Application"
     ]
   end
