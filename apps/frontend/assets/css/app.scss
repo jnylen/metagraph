@@ -9,7 +9,7 @@ ul.menu {
     @apply py-3 mx-3 text-indigo-900 opacity-50;
 
     &.active {
-      @apply bg-indigo-200 rounded-lg text-indigo-900 opacity-100;
+      @apply bg-indigo-100 rounded-lg text-indigo-900 opacity-100;
 
       .text {
         @apply font-medium;
@@ -18,6 +18,21 @@ ul.menu {
 
     &:hover {
       @apply opacity-100;
+    }
+  }
+}
+ul.auth_menu {
+  @apply px-4 flex justify-around pb-4;
+
+  li {
+    @apply rounded-lg py-3 px-4 font-medium text-indigo-900;
+
+    &.active {
+      @apply bg-indigo-100;
+    }
+
+    &:hover {
+      @apply bg-indigo-100;
     }
   }
 }

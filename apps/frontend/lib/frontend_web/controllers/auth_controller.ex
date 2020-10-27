@@ -5,8 +5,8 @@ defmodule FrontendWeb.AuthController do
 
   use FrontendWeb, :controller
   plug(Ueberauth)
-  plug(:put_root_layout, "auth.html")
-  plug(:put_layout, false)
+  #plug(:put_root_layout, "auth.html")
+  plug(:put_layout, "auth.html")
 
   alias Ueberauth.Strategy.Helpers
 
