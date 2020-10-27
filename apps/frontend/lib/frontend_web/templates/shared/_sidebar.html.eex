@@ -67,9 +67,13 @@
 
       </div>
     <% else %>
-      <div class="px-4 flex justify-around pb-4">
-        <a href="/auth/signup" class="text-indigo-900 rounded-lg py-3 px-4 font-medium hover:bg-indigo-100">Sign up</a>
-        <a href="/auth/login" class="text-indigo-900 rounded-lg py-3 px-4 font-medium hover:bg-indigo-100">Sign in</a>
-      </div>
+      <ul class="auth_menu">
+        <%= active_link(@conn, to: "/auth/signup", active: [{FrontendWeb.AuthController, :signup}], wrap_tag: :li, class_active: "active") do %>
+          Sign up
+        <% end %>
+        <%= active_link(@conn, to: "/auth/login", active: [{FrontendWeb.AuthController, :login}], wrap_tag: :li, class_active: "active") do %>
+          Sign in
+        <% end %>
+      </ul>
     <% end %>
 </div>

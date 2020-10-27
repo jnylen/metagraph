@@ -5,17 +5,17 @@ defmodule FrontendWeb.AuthController do
 
   use FrontendWeb, :controller
   plug(Ueberauth)
-  plug(:put_root_layout, "auth.html")
-  plug(:put_layout, false)
+  #plug(:put_root_layout, "auth.html")
+  plug(:put_layout, "auth.html")
 
   alias Ueberauth.Strategy.Helpers
 
   def login(conn, _params) do
-    render(conn, "login.html", callback_url: Helpers.callback_url(conn, type: "login"))
+    render(conn, "login.html", callback_url: Helpers.callback_url(conn, type: "login"), page_title: "Sign in")
   end
 
   def signup(conn, _params) do
-    render(conn, "signup.html", callback_url: Helpers.callback_url(conn, type: "signup"))
+    render(conn, "signup.html", callback_url: Helpers.callback_url(conn, type: "signup"), page_title: "Sign up")
   end
 
   def delete(conn, _params) do

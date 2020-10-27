@@ -1,0 +1,11 @@
+<footer>
+    <span>
+        Source code licensed under GNU AGPLv3.
+    </span>
+    <ul class="space-x-4">
+        <li>Privacy Policy</li>
+        <li>Terms of Conditions</li>
+        <li><a href="https://github.com/pixelmonster-ou/metagraph/issues">Contact us</a></li>
+        <li><a href="https://github.com/pixelmonster-ou/metagraph">Github</a></li>
+    </ul>
+</footer>

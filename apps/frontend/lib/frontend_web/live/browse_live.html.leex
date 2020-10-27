@@ -1,10 +1,17 @@
-<div class="flex-col pt-24 vhwf">
-  <div class="w-1/2 py-10 mx-auto font-roboto text-indigo-900">
-    <h1 class="mb-3 text-3xl font-bold">Explore the Metagraph</h1>
-    <p class="text-lg">Select a type you want to explore.</p>
+<div class="pt-16">
+  <div class="bg-brand-activemenubg py-10">
+    <div class="container mx-auto text-indigo-900">
+      <div class="w-3/4 mx-auto">
+        <h1 class="font-oxygen text-3xl font-bold">Explore the Metagraph</h1>
+        <p class="font-oxygen">
+          Select a type you want to explore.
+        </p>
+        <div class="stats"></div>
+      </div>
+    </div>
   </div>
-  <div class="w-1/2 mx-auto vhwf">
-    <div class="flex flex-wrap pt-5">
+  <div class="w-3/4 mx-auto">
+    <div class="container mx-auto pt-10 pb-8 flex flex-wrap items-center justify-between">
       <%= for type <- @types do %>
         <%= live_patch class: "flex w-1/2 pt-5 pr-2", to: Routes.browse_show_path(@socket, :show, type.id), replace: true do %>
           <div class="flex items-center w-full p-4 bg-white border-2 border-transparent rounded shadow transition-border hover:border-indigo-500 hover:cursor-pointer"
