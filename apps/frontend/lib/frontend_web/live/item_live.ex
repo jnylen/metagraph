@@ -48,25 +48,29 @@ defmodule FrontendWeb.ItemLive do
       ) do
     {:ok, item} = Graph.Repo.get(uid)
 
-    types =
-      FrontendWeb.ItemHelpers.get_predicate_types(
-        item.__struct__,
-        item.__struct__.__schema__(:alter),
-        item.__struct__.__schema__(:field_config)
-      )
-      |> Enum.sort_by(fn i -> item.__struct__.__schema__(:sorted_fields)[i["name"]] end)
+    if is_map(item) do
+      types =
+        FrontendWeb.ItemHelpers.get_predicate_types(
+          item.__struct__,
+          item.__struct__.__schema__(:alter),
+          item.__struct__.__schema__(:field_config)
+        )
+        |> Enum.sort_by(fn i -> item.__struct__.__schema__(:sorted_fields)[i["name"]] end)
 
-    sections = FrontendWeb.ItemHelpers.get_sections(types)
+      sections = FrontendWeb.ItemHelpers.get_sections(types)
 
-    new_socket =
-      socket
-      |> assign(:item, item)
-      |> assign(:sections, sections)
-      |> assign(:types, types)
-      |> assign(:page_title, page_title("Item"))
-      |> assign(:current_user, Map.get(assigns, :current_user))
+      new_socket =
+        socket
+        |> assign(:item, item)
+        |> assign(:sections, sections)
+        |> assign(:types, types)
+        |> assign(:page_title, page_title("Item"))
+        |> assign(:current_user, Map.get(assigns, :current_user))
 
-    {:ok, new_socket}
+      {:ok, new_socket}
+    else
+      raise Frontend.Error.NotFound, message: "Item is not found"
+    end
   end
 
   @doc """
