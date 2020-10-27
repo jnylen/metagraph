@@ -1,4 +1,6 @@
 defmodule Graph.Struct.Language do
+  use Dlex.Changeset
+
   defstruct code: nil, name: nil, country: nil
 
   @moduledoc """
@@ -808,6 +810,8 @@ defmodule Graph.Struct.Language do
     }
   ]
 
+  @list_codes Enum.map(@list, & &1.code)
+
   @doc """
   Find ONE property of value in @list
   """
@@ -822,4 +826,14 @@ defmodule Graph.Struct.Language do
   Return all languages
   """
   def all(), do: @list
+
+  def changeset(language, params \\ %{}) do
+    language
+    |> cast(params, [
+      :language,
+      :value
+    ])
+    |> validate_required([:language, :value])
+    |> validate_inclusion(:language, @list_codes)
+  end
 end

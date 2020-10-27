@@ -82,8 +82,8 @@ defmodule Graph.Person do
       :freebase_id,
       :wikidata_id
     ])
-    |> cast_embed(:label)
-    |> cast_embed(:description)
+    |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
+    |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)
     |> validate_format(:wikidata_id, ~r/^Q(\d+)$/)
