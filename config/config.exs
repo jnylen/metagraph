@@ -29,8 +29,9 @@ config :logger, :console,
 
 config :frontend, FrontendWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: FrontendWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: Frontend.PubSub
+  render_errors: [view: FrontendWeb.ErrorView, accepts: ~w(html json), root_layout: {FrontendWeb.LayoutView, "root.html"}, layout: {FrontendWeb.LayoutView, "app.html"}],
+  pubsub_server: Frontend.PubSub,
+  debug_errors: false
 
 # Via Authorizations app
 config :ueberauth, Ueberauth,
