@@ -64,7 +64,7 @@ config :authorization, Authorization.Guardian,
 
 config :frontend, FrontendWeb.Endpoint,
   http: [port: 4000],
-  debug_errors: false,
+  debug_errors: true,
   code_reloader: true,
   check_origin: false,
   secret_key_base: "8GRJk6d3CycYP8xk8Wde3xLbBhqr6eGUut7v/nrC6hD2+tHEP5rOVXi8m1nPWRJX",
