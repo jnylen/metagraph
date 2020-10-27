@@ -23,7 +23,8 @@ defmodule FrontendWeb.FeedController do
       page_number: changes.page_number,
       page_size: changes.page_size,
       total_pages: changes.total_pages,
-      total_entries: changes.total_entries
+      total_entries: changes.total_entries,
+      page_title: "Feed"
     )
   end
 

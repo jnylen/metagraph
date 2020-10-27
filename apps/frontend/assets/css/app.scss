@@ -37,6 +37,26 @@ ul.auth_menu {
   }
 }
 
+footer {
+  @apply px-8 pb-4 pt-8 text-gray-400 text-sm flex items-center;
+
+  span {
+    @apply flex-1;
+  }
+
+  ul {
+    @apply flex items-center;
+
+    li {
+      a {
+        &:hover {
+          @apply text-gray-900;
+        }
+      }
+    }
+  }
+}
+
 pre {
   @apply bg-gray-800 text-sm pt-4 relative;
 
