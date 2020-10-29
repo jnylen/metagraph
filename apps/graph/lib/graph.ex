@@ -9,7 +9,7 @@ defmodule Graph do
   Get items for all uids in a list
   """
   def get_all(uids) do
-        langs =
+    langs =
       Map.get(Graph.Repo.meta(), :modules, [])
       |> Enum.map(&Dlex.Repo.grab_all_langs/1)
       |> Enum.concat()
@@ -25,7 +25,7 @@ defmodule Graph do
 
     with {:ok, %{"uid_get" => nodes}} <- Graph.Repo.all(statement) do
       nodes
-      #|> Enum.reject(&is_nil(&1["dgraph.type"]))
+      # |> Enum.reject(&is_nil(&1["dgraph.type"]))
     end
   end
 

@@ -7,6 +7,7 @@ defmodule Api.Resolver do
 
       def list(parent, args, resolution),
         do: Api.Resolver.list(__MODULE__, parent, args, resolution)
+
       defoverridable list: 3
 
       defdelegate find(_parent, _args, _resolution), to: Api.Resolver
@@ -14,12 +15,13 @@ defmodule Api.Resolver do
 
       def create(parent, args, resolution),
         do: Api.Resolver.create(__MODULE__, parent, args, resolution)
+
       defoverridable create: 3
     end
   end
 
   def list(module, _parent, %{count: count, offset: offset} = args, _resolution) do
-    %{lookup: lookup} = Graph.Repo.meta
+    %{lookup: lookup} = Graph.Repo.meta()
 
     statement(module, args)
     |> case do
@@ -28,7 +30,8 @@ defmodule Api.Resolver do
     end
     |> case do
       {:ok, %{"uid_get" => nodes}} ->
-        val = nodes
+        val =
+          nodes
           |> Enum.map(fn node ->
             {:ok, data} = Dlex.Repo.decode(node, lookup)
 
@@ -37,7 +40,8 @@ defmodule Api.Resolver do
 
         {:ok, val}
 
-      {:error, msg} -> {:error, msg}
+      {:error, msg} ->
+        {:error, msg}
     end
   end
 
@@ -48,17 +52,21 @@ defmodule Api.Resolver do
       {:ok, nil} ->
         {:error, "Item not found"}
 
-      {:ok, {:error, _}} -> {:error, "Error occur"}
+      {:ok, {:error, _}} ->
+        {:error, "Error occur"}
 
-      val -> val
+      val ->
+        val
     end
   end
 
   @doc """
   Create an item
   """
-  def create(_module, _parent, _args, %{context: %{current_user: nil}}), do: {:error, "Access denied"}
-  def create(module, _parent, args, %{context: %{current_user: user}})  do
+  def create(_module, _parent, _args, %{context: %{current_user: nil}}),
+    do: {:error, "Access denied"}
+
+  def create(module, _parent, args, %{context: %{current_user: user}}) do
     model = module.struct_name
 
     model
@@ -75,10 +83,18 @@ defmodule Api.Resolver do
 
     query_text(module, field_name, query)
     |> case do
-      :error -> {:error, "Unable to filter on that query"}
+      :error ->
+        {:error, "Unable to filter on that query"}
+
       query_text ->
         [
-          "{uid_get(func: ", query_text |> Enum.join(""), ", first: ", to_string(count),", offset: ", to_string(offset),") @filter(type(",
+          "{uid_get(func: ",
+          query_text |> Enum.join(""),
+          ", first: ",
+          to_string(count),
+          ", offset: ",
+          to_string(offset),
+          ") @filter(type(",
           source_name,
           ")) {uid dgraph.type expand(_all_) { uid dgraph.type expand(_all_)}}}"
         ]
@@ -92,7 +108,11 @@ defmodule Api.Resolver do
     [
       "{uid_get(func: type(",
       source_name,
-      "), first: ", to_string(count),", offset: ", to_string(offset),") {uid dgraph.type expand(_all_) { uid dgraph.type expand(_all_)}}}"
+      "), first: ",
+      to_string(count),
+      ", offset: ",
+      to_string(offset),
+      ") {uid dgraph.type expand(_all_) { uid dgraph.type expand(_all_)}}}"
     ]
   end
 
@@ -103,6 +123,7 @@ defmodule Api.Resolver do
   end
 
   defp query_text(_module, :error, _), do: :error
+
   defp query_text(module, field_name, query) do
     module.struct_name.__schema__(:field, field_name)
     |> case do
@@ -110,8 +131,8 @@ defmodule Api.Resolver do
       {_, :integer} -> ["eq(", field_name, ", ", query |> String.to_integer(), ")"]
       {_, :string} -> ["anyofterms(", field_name, ", \"", query, "\"", ")"]
       _ -> :error
-      end
-    rescue
-      _ -> :error
+    end
+  rescue
+    _ -> :error
   end
 end

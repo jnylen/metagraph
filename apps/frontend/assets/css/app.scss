@@ -105,4 +105,26 @@ pre.language-json {
   }
 }
 
+ul.pagination {
+  @apply inline-flex items-center py-8 mt-8;
+
+  li {
+    a {
+      @apply p-4 rounded-lg leading-none opacity-50 text-indigo-900;
+
+      &:hover {
+        @apply bg-indigo-50 opacity-100;
+      }
+
+      &:not([href]) {
+        @apply bg-indigo-100 text-indigo-900 opacity-100 font-medium;
+      }
+    }
+
+    span {
+      @apply p-4 rounded-lg leading-none opacity-50 text-indigo-900;
+    }
+  }
+}
+
 @tailwind utilities;

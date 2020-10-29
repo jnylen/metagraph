@@ -4,9 +4,7 @@ defmodule Graph.Core.Common do
   shared "common" do
     field(:label, :string, lang: true, index: ["term", "trigram"])
 
-    field(:description, :string,
-      lang: true
-    )
+    field(:description, :string, lang: true)
 
     field(:website, :string)
   end

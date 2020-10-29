@@ -31,7 +31,7 @@ defmodule Frontend.MixProject do
     {:logger_file_backend_with_formatters, "~> 0.0.1"},
 
     # Pagination
-    #{:scrivener_html, "~> 1.8"}
+    {:scrivener_html_semi, "~> 3.0"}
   ]
 
   def project do

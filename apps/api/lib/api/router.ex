@@ -2,15 +2,14 @@ defmodule Api.Router do
   use Api, :router
 
   pipeline :graphql do
-    plug Api.Authentication
+    plug(Api.Authentication)
   end
 
-
   scope "/" do
-    pipe_through :graphql
+    pipe_through(:graphql)
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Api.Schema, interface: :playground
-    forward "/", Absinthe.Plug, schema: Api.Schema
+    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: Api.Schema, interface: :playground)
+    forward("/", Absinthe.Plug, schema: Api.Schema)
   end
 
   # Enables LiveDashboard only for development
@@ -24,8 +23,8 @@ defmodule Api.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: Api.Telemetry
+      pipe_through([:fetch_session, :protect_from_forgery])
+      live_dashboard("/dashboard", metrics: Api.Telemetry)
     end
   end
 end

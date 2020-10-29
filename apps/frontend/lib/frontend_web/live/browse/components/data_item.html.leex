@@ -1,5 +1,5 @@
 <a href="/uid/<%= @item.uid %>">
-  <div class="flex px-4 py-3 mb-4 text-indigo-900 bg-white rounded shadow">
+  <div class="flex px-4 py-3 mb-4 text-indigo-900 bg-white rounded shadow border-2 border-transparent transition-border hover:border-indigo-500 hover:cursor-pointer">
     <div class="">
       <h3 class="flex items-center py-1 text-lg font-bold">
         <%= Map.get(get_lang(Map.get(@item, :label, []), "sv-SE"), :value, "Unknown") %>

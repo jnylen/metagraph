@@ -13,9 +13,13 @@ defmodule FrontendWeb.BrowseLive do
         _session,
         %{assigns: %{live_action: :index}} = socket
       ) do
+    types = types(false)
+    {:ok, counts} = count_types(types)
+
     new_socket =
       socket
-      |> assign(:types, types(false))
+      |> assign(:types, types)
+      |> assign(:counts, counts)
       |> assign(:page_title, page_title("Browse"))
 
     {:ok, new_socket}
@@ -59,5 +63,23 @@ defmodule FrontendWeb.BrowseLive do
         hidden: module.hidden?
       }
     end)
+  end
+
+  defp count_types(types) do
+    query = """
+    {
+      #{Enum.map(types, &count_type_query/1) |> Enum.join("\n")}
+    }
+    """
+
+    Graph.Repo.all(query)
+  end
+
+  defp count_type_query(%{id: id}) do
+    """
+    #{id}(func: type("#{id}")) {
+      count(uid)
+    }
+    """
   end
 end

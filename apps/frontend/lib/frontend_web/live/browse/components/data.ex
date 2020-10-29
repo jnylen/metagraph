@@ -1,13 +1,17 @@
 defmodule FrontendWeb.BrowseLive.Data do
   use FrontendWeb, :live_component
+  use Scrivener.HTML
 
   def update(assigns, socket) do
-    {:ok, %{"queries" => items}} =
-      assigns
-      |> Map.get(:type)
-      |> Map.get(:model)
-      |> Graph.Repo.paginate(nil)
+    scrivener =
+      Graph.PaginateQuery.for_model(
+        assigns
+        |> Map.get(:type)
+        |> Map.get(:model)
+      )
+      |> Graph.PaginateQuery.paginate(assigns)
 
-    {:ok, assign(socket, type: assigns.type, items: items, current_user: assigns.current_user)}
+    {:ok,
+     assign(socket, type: assigns.type, scrivener: scrivener, current_user: assigns.current_user)}
   end
 end
