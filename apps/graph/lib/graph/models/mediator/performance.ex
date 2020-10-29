@@ -27,7 +27,7 @@ defmodule Graph.Mediator.Performance do
   def changeset(performance, params \\ %{}) do
     performance
     |> cast(params, [])
-    |> cast_embed(:label)
-    |> cast_embed(:description)
+    |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
+    |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
   end
 end

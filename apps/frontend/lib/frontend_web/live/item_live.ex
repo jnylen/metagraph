@@ -21,7 +21,11 @@ defmodule FrontendWeb.ItemLive do
     {:ok, new_socket}
   end
 
-  def mount(%{"chosen_type" => chosen_type}, %{"current_user_id" => cuid}, %{assigns: %{live_action: :new_item}} = socket) do
+  def mount(
+        %{"chosen_type" => chosen_type},
+        %{"current_user_id" => cuid},
+        %{assigns: %{live_action: :new_item}} = socket
+      ) do
     type = types() |> Enum.find(&(&1.id == chosen_type))
 
     new_socket =
@@ -134,7 +138,7 @@ defmodule FrontendWeb.ItemLive do
     Render a view form
   """
   def render(%{live_action: :new_item, chosen_type: value} = assigns) when not is_nil(value) do
-    #type = assigns.types |> Enum.find(&(&1.id == assigns.chosen_type))
+    # type = assigns.types |> Enum.find(&(&1.id == assigns.chosen_type))
 
     Phoenix.View.render(
       FrontendWeb.NewItemView,
@@ -208,7 +212,6 @@ defmodule FrontendWeb.ItemLive do
         %{"item" => params} = e,
         socket
       ) do
-
     changeset =
       socket.assigns.item
       |> socket.assigns.item.__struct__.changeset(params)
@@ -238,7 +241,8 @@ defmodule FrontendWeb.ItemLive do
           |> assign(changeset: changeset)
         }
     end
-    #{:noreply, assign(socket, changeset: socket.assigns.changeset)}
+
+    # {:noreply, assign(socket, changeset: socket.assigns.changeset)}
   end
 
   # Update item
