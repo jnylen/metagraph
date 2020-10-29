@@ -25,7 +25,7 @@
             </div>
             <div class="flex-col text-gray-900">
               <h4 class="pb-1 font-bold"><%= type.label %></h4>
-              <p class="text-sm"><strong title="to do.">?</strong> items</p>
+              <p class="text-sm"><strong><%= Map.get(@counts, type.id, []) |> List.first() |> Map.get("count") |> number_with_delimiter() %></strong> items</p>
             </div>
           </div>
         <% end %>
