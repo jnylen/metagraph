@@ -10,18 +10,14 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto pt-10 pb-8">
-    <div class="w-3/4 mx-auto">
-      <%= for change <- @changes do %>
+  <div class="container mx-auto pt-10 pb-8 flex flex-col items-center">
+    <div class="w-3/4">
+      <%= for change <- @scrivener.entries do %>
         <%= render("_item.#{change.action}.html",
           item: change, show: false, graph: Map.get(@graphs, change.subject, %{}))
         %>
       <% end %>
-      <%= if Enum.empty?(@changes) do %>
-        <div class="">
-          Empty...
-        </div>
-      <% end %>
     </div>
+    <%= if @scrivener.total_entries > 0, do: pagination(@scrivener, html_attrs: [class: "pagination space-x-3"], prev: Phoenix.HTML.raw("&leftarrow;"), next: Phoenix.HTML.raw("&rightarrow;")) %>
   </div>
 </div>

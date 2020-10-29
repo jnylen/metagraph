@@ -24,6 +24,7 @@ defmodule FrontendWeb.BrowseLive.Show do
       |> assign(:menu, Map.get(params, "menu", "data"))
       |> assign(:page_title, page_title("Browse #{Map.get(type, :label)}"))
       |> assign(:current_user, Map.get(assigns, :current_user))
+      |> assign(:page, Map.get(params, "page"))
 
     {:ok, new_socket}
   end

@@ -11,6 +11,7 @@ defmodule Graph.Film do
     field(:imdb_id, :auto, depends_on: Graph.Core.Media)
     field(:freebase_id, :auto, depends_on: Graph.Core.Media)
     field(:themoviedb_id, :integer, index: true)
+    field(:omdb_id, :integer, index: true)
 
     field(:genre, :auto,
       depends_on: Graph.Core.Media,
@@ -54,7 +55,9 @@ defmodule Graph.Film do
       sorted: 5,
       external: true,
       label: "Wikidata ID",
+      example: "Q121212",
       depends_on: Graph.Core.Media,
+      url: "https://www.wikidata.org/wiki/:value:",
       template: "_url"
     )
 
@@ -67,18 +70,37 @@ defmodule Graph.Film do
       template: "_url"
     )
 
-    field_config(:budget,
+    field_config(:omdb_id,
       sorted: 7,
+      external: true,
+      label: "Open Media Database ID",
+      example: "11212121",
+      url: "https://www.omdb.org/movie/:value:",
+      template: "_url"
+    )
+
+    field_config(:wikidata_id,
+      sorted: 8,
+      external: true,
+      label: "Freebase ID",
+      example: "/m/0dr_4",
+      depends_on: Graph.Core.Media,
+      url: "https://tools.wmflabs.org/freebase/:value:",
+      template: "_url"
+    )
+
+    field_config(:budget,
+      sorted: 9,
       template: "_currency"
     )
 
     field_config(:revenue,
-      sorted: 8,
+      sorted: 10,
       template: "_currency"
     )
 
     field_config(:genre,
-      sorted: 10,
+      sorted: 11,
       relations: true,
       label: "Genre",
       template: "relations/simple_many"
@@ -94,11 +116,14 @@ defmodule Graph.Film do
       :wikidata_id,
       :imdb_id,
       :themoviedb_id,
+      :freebase_id,
+      :omdb_id,
       :genre
     ])
     |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
     |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
+    |> validate_number(:omdb_id, greater_than_or_equal_to: 1)
     |> validate_number(:budget, greater_than_or_equal_to: 1)
     |> validate_number(:revenue, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)

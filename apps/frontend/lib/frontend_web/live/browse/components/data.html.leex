@@ -1,11 +1,10 @@
 <%= live_component(@socket, FrontendWeb.BrowseLive.Menu, menu: "data", type: @type, current_user: @current_user) %>
-<div class="container mx-auto mt-10">
-  <%= for item <- @items do %>
-    <%= live_component(@socket, FrontendWeb.BrowseLive.DataItem, item: item) %>
-  <% end %>
-  <%= if Enum.empty?(@items) do %>
-    <div class="">
-      Empty...
-    </div>
-  <% end %>
+<div class="container mx-auto mt-10 flex flex-col items-center">
+  <div class="w-5/6">
+    <%= for item <- @scrivener.entries do %>
+      <%= live_component(@socket, FrontendWeb.BrowseLive.DataItem, item: item) %>
+    <% end %>
+  </div>
+
+  <%= if @scrivener.total_entries > 0, do: pagination(@scrivener, html_attrs: [class: "pagination space-x-3"], prev: Phoenix.HTML.raw("&leftarrow;"), next: Phoenix.HTML.raw("&rightarrow;")) %>
 </div>

@@ -18,7 +18,7 @@ defmodule Api.Authentication do
   """
   def build_context(conn) do
     with ["Bearer " <> token] <- get_req_header(conn, "authorization"),
-    {:ok, current_user} <- authorize(token) do
+         {:ok, current_user} <- authorize(token) do
       %{current_user: current_user}
     else
       _ -> %{current_user: nil}
@@ -28,7 +28,7 @@ defmodule Api.Authentication do
   defp authorize(token) do
     Account
     |> where(token: ^token)
-    |> Repo.one
+    |> Repo.one()
     |> case do
       nil -> {:error, "invalid authorization token"}
       user -> {:ok, user}
@@ -36,5 +36,4 @@ defmodule Api.Authentication do
   rescue
     _ -> {:error, "invalid authorization token"}
   end
-
 end
