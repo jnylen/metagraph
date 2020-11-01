@@ -12,6 +12,7 @@ defmodule Graph.Film do
     field(:freebase_id, :auto, depends_on: Graph.Core.Media)
     field(:themoviedb_id, :integer, index: true)
     field(:omdb_id, :integer, index: true)
+    field(:elonet_id, :integer, index: true)
 
     field(:genre, :auto,
       depends_on: Graph.Core.Media,
@@ -79,8 +80,17 @@ defmodule Graph.Film do
       template: "_url"
     )
 
-    field_config(:wikidata_id,
+    field_config(:elonet_id,
       sorted: 8,
+      external: true,
+      label: "Elonet ID",
+      example: "11212121",
+      url: "https://elonet.finna.fi/Record/kavi.elonet_elokuva_:value:",
+      template: "_url"
+    )
+
+    field_config(:wikidata_id,
+      sorted: 9,
       external: true,
       label: "Freebase ID",
       example: "/m/0dr_4",
@@ -90,17 +100,17 @@ defmodule Graph.Film do
     )
 
     field_config(:budget,
-      sorted: 9,
-      template: "_currency"
-    )
-
-    field_config(:revenue,
       sorted: 10,
       template: "_currency"
     )
 
-    field_config(:genre,
+    field_config(:revenue,
       sorted: 11,
+      template: "_currency"
+    )
+
+    field_config(:genre,
+      sorted: 12,
       relations: true,
       label: "Genre",
       template: "relations/simple_many"
@@ -118,12 +128,14 @@ defmodule Graph.Film do
       :themoviedb_id,
       :freebase_id,
       :omdb_id,
+      :elonet_id,
       :genre
     ])
     |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
     |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
     |> validate_number(:omdb_id, greater_than_or_equal_to: 1)
+    |> validate_number(:elonet_id, greater_than_or_equal_to: 1)
     |> validate_number(:budget, greater_than_or_equal_to: 1)
     |> validate_number(:revenue, greater_than_or_equal_to: 1)
     |> validate_format(:website, ~r/^http(s|)\:\/\//)
