@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.12.1",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.0.0",
-    "copy-webpack-plugin": "^6.2.1",
+    "copy-webpack-plugin": "^6.3.0",
     "css-loader": "^5.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
     "mini-css-extract-plugin": "^1.2.1",
