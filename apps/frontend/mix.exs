@@ -27,7 +27,7 @@ defmodule Frontend.MixProject do
     {:graph, in_umbrella: true},
     {:editor, in_umbrella: true},
     {:authorization, in_umbrella: true},
-    {:cowlib, "~> 2.9.1", override: true},
+    {:cowlib, "~> 2.10.0", override: true},
     {:logger_file_backend_with_formatters, "~> 0.0.1"},
 
     # Pagination
