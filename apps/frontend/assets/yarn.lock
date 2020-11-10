@@ -845,10 +845,10 @@
   resolved "https://registry.yarnpkg.com/@kollegorna/cocoon-vanilla-js/-/cocoon-vanilla-js-1.0.7.tgz#af897b69227f3ff1bd96a6618b86d4a983c94da4"
   integrity sha512-ceu4Mtx7R6Lw7rUdDiODEcMBJCWxog+pO4OEEQKRRERrBqQeGM5zb6qSM5Z5/DJJooqmpY9ANyxt7XbfJMDVWQ==
 
-"@kollegorna/js-utils@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@kollegorna/js-utils/-/js-utils-1.0.4.tgz#0f8ad2ca6f64fa43cac0eef101ea596dd7b34915"
-  integrity sha512-Smdg5qo379+FHtzHPb/HI5V9nHRKKy8cUH9C4EACfNQfIFgUTb+ha5d5qCzLUPPDr7JYLlHosp3lWqqkXwNyng==
+"@kollegorna/js-utils@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@kollegorna/js-utils/-/js-utils-1.0.7.tgz#8836634e92936e3ab7b8e79813ed4842e312f8a2"
+  integrity sha512-2FSzm7nT4TCRxtanDLMqFIUbDW9xCF4cz07aFlNxhyqarHlwj7oYtTJl3IdjqROsC16v6vHsK3Ia4hbTiis97w==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
