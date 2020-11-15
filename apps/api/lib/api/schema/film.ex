@@ -15,6 +15,8 @@ defmodule Api.Schema.Film do
     field(:freebase_id, :string)
     field(:themoviedb_id, :integer)
     field(:omdb_id, :integer)
+    field(:elonet_id, :integer)
+    field(:adult, :boolean)
     field(:genre, list_of(:genre))
   end
 
@@ -46,6 +48,8 @@ defmodule Api.Schema.Film do
       arg(:freebase_id, :string)
       arg(:themoviedb_id, :integer)
       arg(:omdb_id, :integer)
+      arg(:elonet_id, :integer)
+      arg(:adult, :boolean)
       arg(:genre, list_of(:genre_input))
 
       resolve(&FilmResolver.create/3)

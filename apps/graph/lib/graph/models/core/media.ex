@@ -4,6 +4,7 @@ defmodule Graph.Core.Media do
   shared "media" do
     field(:budget, :integer)
     field(:revenue, :integer)
+    field(:adult, :boolean)
     field(:wikidata_id, :string, index: ["term"])
     field(:imdb_id, :string, index: ["term"])
     field(:freebase_id, :string, index: ["term"])

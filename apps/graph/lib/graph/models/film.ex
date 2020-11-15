@@ -10,6 +10,7 @@ defmodule Graph.Film do
     field(:wikidata_id, :auto, depends_on: Graph.Core.Media)
     field(:imdb_id, :auto, depends_on: Graph.Core.Media)
     field(:freebase_id, :auto, depends_on: Graph.Core.Media)
+    field(:adult, :auto, depends_on: Graph.Core.Media)
     field(:themoviedb_id, :integer, index: true)
     field(:omdb_id, :integer, index: true)
     field(:elonet_id, :integer, index: true)
@@ -89,7 +90,7 @@ defmodule Graph.Film do
       template: "_url"
     )
 
-    field_config(:wikidata_id,
+    field_config(:freebase_id,
       sorted: 9,
       external: true,
       label: "Freebase ID",
@@ -115,6 +116,13 @@ defmodule Graph.Film do
       label: "Genre",
       template: "relations/simple_many"
     )
+
+    field_config(:adult,
+      sorted: 13,
+      external: true,
+      label: "Adult",
+      template: "_boolean"
+    )
   end
 
   def changeset(film, params \\ %{}) do
@@ -129,7 +137,8 @@ defmodule Graph.Film do
       :freebase_id,
       :omdb_id,
       :elonet_id,
-      :genre
+      :genre,
+      :adult
     ])
     |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
     |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)

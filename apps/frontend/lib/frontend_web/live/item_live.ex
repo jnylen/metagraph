@@ -4,9 +4,9 @@ defmodule FrontendWeb.ItemLive do
   import FrontendWeb.GraphHelper
   import Ecto.Query
 
-  def mount(_params, %{"current_user_id" => user_id}, socket) do
-    {:ok, assign_new(socket, :current_user, fn -> Database.get_user(user_id) end)}
-  end
+  # def mount(_params, %{"current_user_id" => user_id}, socket) do
+  #   {:ok, assign_new(socket, :current_user, fn -> Database.get_user(user_id) end)}
+  # end
 
   @doc """
     Handle a mount of a websocket for `new`
@@ -47,7 +47,7 @@ defmodule FrontendWeb.ItemLive do
   """
   def mount(
         %{"uid" => uid},
-        _session,
+        session,
         %{assigns: %{live_action: :show} = assigns} = socket
       ) do
     {:ok, item} = Graph.Repo.get(uid)
@@ -65,11 +65,11 @@ defmodule FrontendWeb.ItemLive do
 
       new_socket =
         socket
+        |> set_current_user(Map.get(session, "current_user_id"))
         |> assign(:item, item)
         |> assign(:sections, sections)
         |> assign(:types, types)
         |> assign(:page_title, page_title("Item"))
-        |> assign(:current_user, Map.get(assigns, :current_user))
 
       {:ok, new_socket}
     else
