@@ -6,7 +6,8 @@ defmodule Graph.MixProject do
 
   @deps [
     {:jason, "~> 1.0"},
-    {:dlex, "~> 0.4", github: "metagraph-wiki/dlex"},
+    # {:dlex, "~> 0.4", github: "metagraph-wiki/dlex"},
+    {:dlex, path: "/Users/joakimnylen/Work/Pixelmonster/dlex"},
     {:database, in_umbrella: true},
     {:cowlib, "~> 2.10.0", override: true}
   ]

@@ -8,9 +8,11 @@
       <%#= live_component(@socket, FrontendWeb.ItemLive.RelationTag, value: value, predicate: @predicate) %>
     <%# end %>
 
+    <%#%{label: "Action", uid: "0x4"} %>
+
 
     <div phx-update="ignore">
-      <div x-data="relationSelect(<%= [%{label: "Action", uid: "0x4"}] |> Jason.encode!() %>)" @click.away="clearSearch()" @keydown.escape="clearSearch()">
+      <div x-data="relationSelect(<%= [] |> Jason.encode!() %>)" @click.away="clearSearch()" @keydown.escape="clearSearch()">
         <div class="relative">
           <input x-model="textInput" x-ref="textInput" @input="searchRelation($event.target.value)" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter some tags">
         </div>

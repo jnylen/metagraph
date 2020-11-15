@@ -1,0 +1,7 @@
+<div class="flex items-center pt-2">
+  <%= live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "edit", predicate: @predicate) %>
+  <div class="flex-1 pl-8">
+    <%= checkbox(@form, @predicate["name"], class: "input-checkbox") %>
+    <%= error_tag(@form, @predicate["name"]) %>
+  </div>
+</div>

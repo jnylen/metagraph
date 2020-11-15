@@ -1,4 +1,4 @@
-<%= live_component @socket, FrontendWeb.ItemLive.Menu, item: @item, sections: @sections %>
+<%= live_component @socket, FrontendWeb.ItemLive.Menu, item: @item, sections: @sections, current_user: @current_user %>
 <div class="w-full">
   <div class="px-8">
     <%= live_component @socket, FrontendWeb.ItemLive.Header, assigns %>
