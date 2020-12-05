@@ -37,7 +37,7 @@ defmodule Database.Media.Change do
 
     Que.add(
       Worker.Editor.Auditor,
-      %{action: action, actor: actor, subject: subject, changes: changes}
+      %{action: action, actor: actor.id, subject: subject, changes: changes}
     )
   end
 end
