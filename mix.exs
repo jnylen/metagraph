@@ -22,7 +22,7 @@ defmodule Umbrella.MixProject do
             frontend: :permanent,
             database: :permanent,
             graph: :permanent,
-            que: :permanent
+            worker: :permanent
           ],
           steps: [:assemble, &PkgDeb.create(&1, deb_config())],
           config_providers: [{Config.Reader, "/etc/metagraph/metagraph.exs"}]
