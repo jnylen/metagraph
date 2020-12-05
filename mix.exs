@@ -21,7 +21,8 @@ defmodule Umbrella.MixProject do
             api: :permanent,
             frontend: :permanent,
             database: :permanent,
-            graph: :permanent
+            graph: :permanent,
+            que: :permanent
           ],
           steps: [:assemble, &PkgDeb.create(&1, deb_config())],
           config_providers: [{Config.Reader, "/etc/metagraph/metagraph.exs"}]
