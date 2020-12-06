@@ -1,11 +1,11 @@
-<div class="mt-2 mb-4 bg-white rounded-lg shadow-md border-2 border-transparent transition-border hover:border-indigo-500 hover:cursor-pointer overflow-hidden" x-data="{ show: false }">
+<div class="mt-2 mb-4 bg-white rounded-lg shadow-md border-2 border-transparent transition-border hover:border-indigo-500 hover:cursor-pointer overflow-hidden" x-data="{ show: false }" :class="{ 'border-indigo-500': show }">
   <div class="flex items-center px-4 py-5" @click="show = !show" >
     <div class="relative pl-2">
       <div class="px-5 py-4 font-bold leading-none tracking-tighter text-green-900 bg-blue-200 rounded-full font-sourcesans">E</div>
       <div class="absolute bottom-0 right-0 w-4 h-4 leading-none text-white bg-red-600 border-2 border-white rounded-full"></div>
     </div>
     <div class="pl-6 text-indigo-900 font-sourcesans">
-      <h3 class="text-lg font-semibold leading-normal"><a href="/uid/<%= @item.subject %>"><%= Map.get(get_lang(Map.get(@graph, :label, []), "sv-SE"), :value, "Unknown") %></a></h3>
+      <h3 class="text-lg font-semibold leading-normal hover:underline"><a href="/uid/<%= @item.subject %>"><%= Map.get(get_lang(Map.get(@graph, :label, []), "sv-SE"), :value, "Unknown") %></a></h3>
       <p class="leading-normal text-md"><%= get_type(@graph) %></p>
     </div>
     <div class="flex items-center justify-end flex-1">
