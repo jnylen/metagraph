@@ -1,5 +1,5 @@
-<%= live_component(@socket, FrontendWeb.BrowseLive.Menu, menu: "data", type: @type, current_user: @current_user) %>
-<div class="container mx-auto mt-10 flex flex-col items-center">
+<%#= live_component(@socket, FrontendWeb.BrowseLive.Menu, menu: "data", type: @type, current_user: @current_user) %>
+<div class="container pt-8 mx-auto flex flex-col items-center">
   <div class="w-5/6">
     <%= for item <- @scrivener.entries do %>
       <%= live_component(@socket, FrontendWeb.BrowseLive.DataItem, item: item) %>

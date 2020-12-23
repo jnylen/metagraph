@@ -17,8 +17,8 @@
     <div class="flex h-screen">
       <%= render FrontendWeb.SharedView, "_sidebar.html", assigns %>
       <div class="h-screen w-1/5 block"></div>
-      <main role="main" class="w-4/5 pull-right flex flex-col">
-        <div class="flex-1">
+      <main role="main" class="w-4/5 flex flex-col">
+        <div class="flex-1 p-4">
           <%= @inner_content %>
         </div>
 

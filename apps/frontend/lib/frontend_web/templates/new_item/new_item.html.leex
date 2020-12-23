@@ -13,7 +13,7 @@
             <%= label(:trans, "language", "Language *", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
             <div class="relative">
               <%= Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "language") %>
-              <%= select_no_name("item[label][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <%= select_no_name("item[label][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
               <div
                   class="absolute inset-y-0 right-0 flex items-center px-2 text-indigo-900 pointer-events-none"
                 >
@@ -32,16 +32,16 @@
             <div class="w-full px-3 md:w-1/2">
               <%= label(:trans, "label", "Label *", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
               <%= Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "value") %>
-              <%= text_input_no_name("item[label][0]", "value", placeholder: "Item name/label", value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "value"), class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <%= text_input_no_name("item[label][0]", "value", placeholder: "Item name/label", value: Map.get(Map.get(Map.get(@form_data, "label", %{}), "0", %{}), "value"), class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
             </div>
           </div>
           <div class="mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
               <%= label(:trans, "description", "Description", class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
               <%= Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "language") %>
-              <%= select_no_name("item[description][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <%= select_no_name("item[description][0]", "language", Enum.map(@languages, &{&1.name, &1.code}), value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "language"), class: "block w-full px-4 py-3 pr-8 leading-tight text-indigo-900 bg-gray-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
               <%= Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "value") %>
-              <%= textarea_no_name("item[description][0]", "value", placeholder: "The description of an item", value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "value"), class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+              <%= textarea_no_name("item[description][0]", "value", placeholder: "The description of an item", value: Map.get(Map.get(Map.get(@form_data, "description", %{}), "0", %{}), "value"), class: "mt-2 block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
                 <%= for check <- @chosen_type_data.externals do %>
                   <div class="w-full px-3 mb-6 md:w-1/2">
                     <%= label(f, check.name, check.label, class: "block mb-2 text-xs font-bold tracking-wide text-indigo-900 uppercase" ) %>
-                    <%= text_input(f, check.name, placeholder: check.example, class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
+                    <%= text_input(f, check.name, placeholder: check.example, class: "block w-full px-4 py-3 leading-tight text-indigo-900 bg-gray-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500") %>
                     <%= error_tag(f, check.name) %>
                   </div>
                 <% end %>
@@ -73,7 +73,4 @@
       </form>
     </div>
   </div>
-</div>
-</div>
-</div>
 </div>

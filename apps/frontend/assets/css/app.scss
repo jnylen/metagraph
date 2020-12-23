@@ -6,10 +6,10 @@ ul.menu {
   @apply flex-1;
 
   li {
-    @apply py-3 mx-3 text-indigo-900 opacity-50;
+    @apply py-3 mx-3 text-gray-900 opacity-50;
 
     &.active {
-      @apply bg-indigo-100 rounded-lg text-indigo-900 opacity-100;
+      @apply bg-gray-100 rounded-lg text-gray-900 opacity-100;
 
       .text {
         @apply font-medium;

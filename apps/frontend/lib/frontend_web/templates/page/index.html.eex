@@ -1,4 +1,4 @@
-<div class="w-full bg-white shadow pt-8">
+<div class="w-full bg-white shadow pt-8 rounded-lg">
   <div class="flex items-center justify-between h-500">
     <div class="relative px-20 text-indigo-900 font-oxygen">
       <h1 class="text-4xl font-light">
