@@ -7,7 +7,9 @@ defmodule FrontendWeb.PageController do
 
   def profile(conn, _params) do
     conn
-    |> render("profile.html", changeset: Database.Account.update_changeset(conn.assigns.current_user))
+    |> render("profile.html",
+      changeset: Database.Account.update_changeset(conn.assigns.current_user)
+    )
   end
 
   def update(conn, %{"account" => params}) do
@@ -18,6 +20,7 @@ defmodule FrontendWeb.PageController do
         conn
         |> put_flash(:info, "Saved!")
         |> render("profile.html", changeset: Database.Account.update_changeset(user))
+
       {:error, changeset} ->
         conn
         |> put_flash(:error, "Unable to save!")
@@ -26,6 +29,14 @@ defmodule FrontendWeb.PageController do
   end
 
   def help(conn, _params) do
-    render(conn, "help.html")
+    render(conn, "help.html", page_title: "Help")
+  end
+
+  def terms(conn, _params) do
+    render(conn, "terms.html", page_title: "Terms of Service")
+  end
+
+  def privacy(conn, _params) do
+    render(conn, "privacy.html", page_title: "Privacy Policy")
   end
 end

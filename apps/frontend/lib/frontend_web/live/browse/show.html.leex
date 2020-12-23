@@ -1,5 +1,5 @@
-<div class="">
-  <div class="p-10 bg-white">
+<div class="bg-white shadow overflow-hidden rounded-lg">
+  <div class="p-10">
     <div class="container mx-auto text-indigo-900">
       <div class="mx-auto">
         <div class="flex items-center pb-8">
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <%= if @menu != nil do %>
-    <%= live_component(@socket, menu_component(@menu), menu: @menu, type: @type, current_user: @current_user, page: @page) %>
-  <% end %>
+  <%= live_component(@socket, FrontendWeb.BrowseLive.Menu, menu: @menu, type: @type, current_user: @current_user) %>
 </div>
+
+<%= live_component(@socket, menu_component(@menu), menu: @menu, type: @type, current_user: @current_user, page: @page) %>

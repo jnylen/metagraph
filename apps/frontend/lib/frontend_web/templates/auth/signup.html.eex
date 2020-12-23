@@ -1,23 +1,23 @@
 <div class="px-4 pb-12">
-  <%= form_tag "/auth/identity/callback?type=signup", method: "post", class: "w-full max-w-md", novalidate: true do %>
-    <div class="mb-4 mt-4">
-      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="text" id="username" name="username" value="<%= @conn.params["username"] %>" required placeholder="Username">
+  <%= form_tag "/auth/identity/callback?type=signup", method: "post", class: "w-full max-w-md mx-auto", novalidate: true do %>
+    <div class="my-4">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray" type="text" id="username" name="username" value="<%= @conn.params["username"] %>" required placeholder="Username">
     </div>
 
-    <div class="mb-4 mt-4">
-      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="email" id="email" name="email" value="<%= @conn.params["email"] %>" required placeholder="E-mail">
-    </div>
-
-    <div class="mb-4">
-      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="password" id="password" name="password" required placeholder="Password">
+    <div class="my-4">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray" type="email" id="email" name="email" value="<%= @conn.params["email"] %>" required placeholder="E-mail">
     </div>
 
     <div class="mb-4">
-      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" type="password" id="password" name="password_confirmation" required placeholder="Password again">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray" type="password" id="password" name="password" required placeholder="Password">
+    </div>
+
+    <div class="mb-4">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray" type="password" id="password" name="password_confirmation" required placeholder="Password again">
     </div>
 
     <div>
-      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-roboto leading-none uppercase py-4 px-4 rounded w-full">Sign up</div>
+      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-roboto leading-none uppercase py-4 px-4 rounded w-full">Sign up</button>
       <div class="text-xs text-gray-500 text-center pt-8">By signing up you agree to our terms and privacy policy.</div>
     </div>
   <% end %>

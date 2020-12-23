@@ -1,4 +1,7 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
+  darkMode: "media",
   purge: [
     "../lib/frontend_web/templates/**/*.html.eex",
     "../lib/frontend_web/templates/**/*.html.leex",
@@ -6,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         code: {
           green: "#b5f4a5",
@@ -19,7 +25,13 @@ module.exports = {
     },
   },
   variants: {
-    cursor: ["responsive", "hover"],
+    extend: {
+      cursor: ["responsive", "hover"],
+    },
   },
-  plugins: [require("@tailwindcss/ui"), require("@tailwindcss/custom-forms")],
+  plugins: [
+    // require("@tailwindcss/ui"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

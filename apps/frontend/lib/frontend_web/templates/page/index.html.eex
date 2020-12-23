@@ -1,4 +1,4 @@
-<div class="w-full bg-white shadow pt-8">
+<div class="w-full bg-white shadow pt-8 rounded-lg">
   <div class="flex items-center justify-between h-500">
     <div class="relative px-20 text-indigo-900 font-oxygen">
       <h1 class="text-4xl font-light">
@@ -19,13 +19,13 @@
           <li class="pt-2">Set a standard that <strong>data should be in the public domain</strong>.</li>
         </ul>
       </p>
-      <div class="py-16">
-        <button class="flex items-center justify-between px-6 py-4 text-indigo-100 bg-indigo-600 rounded-full hover:bg-indigo-700">
+      <div class="py-16 w-1/3">
+        <a href="/auth/signup" class="flex items-center justify-between px-6 py-4 text-indigo-100 bg-indigo-600 rounded-full hover:bg-indigo-700">
           <span class="mr-4 leading-none">Start contributing</span>
           <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.917009 2.61225C0.681807 2.29784 0.567619 1.90893 0.595408 1.51692C0.623196 1.1249 0.791096 0.756091 1.06828 0.478195C1.34547 0.200299 1.71334 0.0319692 2.10436 0.00410956C2.49538 -0.0237501 2.8833 0.0907306 3.1969 0.326533L9.71087 6.85714C10.0093 7.16233 10.1764 7.57265 10.1764 8C10.1764 8.42735 10.0093 8.83767 9.71087 9.14286L3.1969 15.6735C2.8833 15.9093 2.49538 16.0238 2.10436 15.9959C1.71334 15.968 1.34547 15.7997 1.06828 15.5218C0.791096 15.2439 0.623196 14.8751 0.595408 14.4831C0.567619 14.0911 0.681807 13.7022 0.917009 13.3878L6.27475 8L0.900724 2.61225H0.917009Z" fill="currentColor"/>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
     <div class="pr-20">
@@ -33,23 +33,35 @@
     </div>
   </div>
 </div>
-<div class="flex items-center justify-center py-10 text-indigo-900 font-sourcesans">
-  <div class="flex flex-col w-1/3 text-center">
-    <div class="w-16 h-16 mx-auto">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-cloud-download"><path class="primary" d="M15 15v-3a3 3 0 0 0-6 0v3H6a4 4 0 0 1-.99-7.88 5.5 5.5 0 0 1 10.86-.82A4.49 4.49 0 0 1 22 10.5a4.5 4.5 0 0 1-4.5 4.5H15z" fill="#667EEA" /><path class="secondary" d="M11 18.59V12a1 1 0 0 1 2 0v6.59l1.3-1.3a1 1 0 0 1 1.4 1.42l-3 3a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l1.3 1.3z" fill="#667EEA"/></svg>
+
+<div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-6xl lg:px-8 py-10 mt-10">
+  <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8">
+    <div>
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path></svg>
+      </div>
+      <div class="mt-5 text-center">
+        <dt class="text-lg leading-6 font-medium text-gray-900">
+          Database Dump
+        </dt>
+        <dd class="mt-2 text-base text-gray-500">
+          Most of the data in <strong>Metagraph</strong> is released into the <strong>Public Domain</strong> and can be downloaded for free.
+        </dd>
+      </div>
     </div>
-    <h1 class="pt-4 text-xl font-bold">Database Dump</h1>
-    <p class="w-2/3 pt-3 mx-auto leading-tight">
-      Most of the data in <strong>Metagraph</strong> is released into the <strong>Public Domain</strong> and can be downloaded for free.
-    </p>
-  </div>
-  <div class="flex flex-col w-1/3 text-center">
-    <div class="w-16 h-16 mx-auto">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-code"><rect width="18" height="18" x="3" y="3" class="primary" rx="2" fill="#667EEA"/><path class="secondary" d="M8.7 13.3a1 1 0 0 1-1.4 1.4l-2-2a1 1 0 0 1 0-1.4l2-2a1 1 0 1 1 1.4 1.4L7.42 12l1.3 1.3zm6.6 0l1.29-1.3-1.3-1.3a1 1 0 1 1 1.42-1.4l2 2a1 1 0 0 1 0 1.4l-2 2a1 1 0 0 1-1.42-1.4zm-3.32 3.9a1 1 0 0 1-1.96-.4l2-10a1 1 0 0 1 1.96.4l-2 10z" fill="#fff"/></svg>
+
+     <div>
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+      </div>
+      <div class="mt-5 text-center">
+        <dt class="text-lg leading-6 font-medium text-gray-900">
+          Developers
+        </dt>
+        <dd class="mt-2 text-base text-gray-500">
+          Use our <strong>GraphQL API</strong> to create an application using our data under a <a class="font-bold hover:text-indigo-500" href="https://opendatacommons.org/licenses/by/summary/" target="_blank">open data license</a>.
+        </dd>
+      </div>
     </div>
-    <h1 class="pt-4 text-xl font-bold">Developers</h1>
-    <p class="w-2/3 pt-3 mx-auto leading-tight">
-      Use our <strong>GraphQL API</strong> to create an application using our data under a <a class="font-bold hover:text-indigo-500" href="https://opendatacommons.org/licenses/by/summary/" target="_blank">open data license</a>.
-    </p>
-  </div>
+  </dl>
 </div>
