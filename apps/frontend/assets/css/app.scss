@@ -22,17 +22,17 @@ ul.menu {
   }
 }
 ul.auth_menu {
-  @apply px-4 flex justify-around pb-4;
+  @apply px-4 flex justify-center pb-4;
 
   li {
     @apply rounded-lg py-3 px-4 font-medium text-indigo-900;
 
     &.active {
-      @apply bg-indigo-100;
+      @apply bg-gray-100;
     }
 
     &:hover {
-      @apply bg-indigo-100;
+      @apply bg-gray-100;
     }
   }
 }
@@ -113,11 +113,11 @@ ul.pagination {
       @apply p-4 rounded-lg leading-none opacity-50 text-indigo-900;
 
       &:hover {
-        @apply bg-indigo-50 opacity-100;
+        @apply bg-gray-50 opacity-100;
       }
 
       &:not([href]) {
-        @apply bg-indigo-100 text-indigo-900 opacity-100 font-medium;
+        @apply bg-gray-100 text-indigo-900 opacity-100 font-medium;
       }
     }
 

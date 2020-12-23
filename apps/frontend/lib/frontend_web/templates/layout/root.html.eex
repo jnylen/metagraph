@@ -13,7 +13,7 @@
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body class="antialiased bg-gray-50">
-    <div class="flex h-screen">
+    <div class="h-screen flex overflow-hidden">
       <%= render FrontendWeb.SharedView, "_sidebar.html", assigns %>
       <div class="h-screen w-1/5 block"></div>
       <main role="main" class="w-4/5 flex flex-col">

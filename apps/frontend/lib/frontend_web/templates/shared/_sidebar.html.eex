@@ -1,4 +1,4 @@
-<div class="h-screen w-1/5 fixed z-10 flex flex-col">
+<div class="h-screen w-1/7 fixed z-10 flex flex-col">
     <div class="flex justify-center py-8">
       <%= active_link(@conn, to: "/", active: [{FrontendWeb.PageController, :any}], class_active: "text-indigo-600", class_inactive: "text-indigo-900") do %>
         <span class="flex flex-col">
