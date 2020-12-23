@@ -22,7 +22,7 @@ ul.menu {
   }
 }
 ul.auth_menu {
-  @apply px-4 flex justify-center pb-4;
+  @apply px-4 flex justify-center pb-4 w-full;
 
   li {
     @apply rounded-lg py-3 px-4 font-medium text-indigo-900;

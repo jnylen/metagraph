@@ -24,7 +24,9 @@ defmodule FrontendWeb.Router do
     # Root
     get("/", PageController, :index)
     get("/help", PageController, :help)
-    
+    get("/terms", PageController, :terms)
+    get("/privacy", PageController, :privacy)
+
     # Profile
     get("/profile", PageController, :profile)
     put("/profile", PageController, :update)
@@ -61,7 +63,7 @@ defmodule FrontendWeb.Router do
 
   # Other scopes may use custom stacks.
   scope "/", FrontendWeb do
-    pipe_through :api
+    pipe_through(:api)
 
     post("/query", QueryController, :query)
   end
