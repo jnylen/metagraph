@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   darkMode: "media",
   purge: [
@@ -7,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         code: {
           green: "#b5f4a5",
@@ -20,7 +25,9 @@ module.exports = {
     },
   },
   variants: {
-    cursor: ["responsive", "hover"],
+    extend: {
+      cursor: ["responsive", "hover"],
+    },
   },
   plugins: [
     // require("@tailwindcss/ui"),

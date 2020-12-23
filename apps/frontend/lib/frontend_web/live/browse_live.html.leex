@@ -1,32 +1,25 @@
 <div class="pt-16">
-  <div class="bg-brand-activemenubg py-10">
-    <div class="container mx-auto text-indigo-900">
-      <div class="w-3/4 mx-auto">
-        <h1 class="font-oxygen text-3xl font-bold">Explore the Metagraph</h1>
-        <p class="font-oxygen">
-          Select a type you want to explore.
-        </p>
-        <div class="stats"></div>
-      </div>
-    </div>
+  <div class="w-3/4 mx-auto text-indigo-900 py-10">
+    <h1 class="font-oxygen text-3xl font-bold">Explore the Metagraph</h1>
+    <p class="font-oxygen">
+      Select a type you want to explore.
+    </p>
+    <div class="stats"></div>
   </div>
   <div class="w-3/4 mx-auto">
-    <div class="container mx-auto pt-10 pb-8 flex flex-wrap items-center justify-between">
-      <%= for type <- @types do %>
-        <%= live_patch class: "flex w-1/2 pt-5 pr-2", to: Routes.browse_show_path(@socket, :show, type.id), replace: true do %>
-          <div class="flex items-center w-full p-4 bg-white border-2 border-transparent rounded shadow transition-border hover:border-indigo-500 hover:cursor-pointer"
-                    >
-            <div class="w-1/5 mr-3 text-4xl text-center text-indigo-500">
+    <div class="mt-3 grid grid-cols-1 gap-2 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-1 lg:grid-cols-3">
+      <%= for type <- @types |> Enum.sort_by(fn type -> Map.get(@counts, type.id, []) |> List.first() |> Map.get("count") end) |> Enum.reverse do %>
+        <%= live_patch class: "bg-white col-span-1 flex shadow-sm rounded-md hover:cursor-pointer group", to: Routes.browse_show_path(@socket, :show, type.id), replace: true do %>
+          <div class="flex-shrink-0 flex items-center justify-center w-1/4 bg-indigo-900 text-white text-xl rounded-l-md">
               <%= unless is_nil(type.icon) do %>
                 <i class="<%= type.icon %>"></i>
               <% else %>
                 ?
               <% end %>
-            </div>
-            <div class="flex-col text-gray-900">
-              <h4 class="pb-1 font-bold"><%= type.label %></h4>
-              <p class="text-sm"><strong><%= Map.get(@counts, type.id, []) |> List.first() |> Map.get("count") |> number_with_delimiter() %></strong> items</p>
-            </div>
+          </div>
+          <div class="flex-1 px-4 py-4 text-sm truncate">
+            <h4 class="text-gray-700 font-medium text-lg group-hover:text-gray-900 py-1"><%= type.label %></h4>
+            <p class="text-gray-500"><strong><%= Map.get(@counts, type.id, []) |> List.first() |> Map.get("count") |> number_with_delimiter() %></strong> items</p>
           </div>
         <% end %>
       <% end %>

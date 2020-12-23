@@ -33,23 +33,35 @@
     </div>
   </div>
 </div>
-<div class="flex items-center justify-center py-10 text-indigo-900 font-sourcesans">
-  <div class="flex flex-col w-1/3 text-center">
-    <div class="w-16 h-16 mx-auto">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-cloud-download"><path class="primary" d="M15 15v-3a3 3 0 0 0-6 0v3H6a4 4 0 0 1-.99-7.88 5.5 5.5 0 0 1 10.86-.82A4.49 4.49 0 0 1 22 10.5a4.5 4.5 0 0 1-4.5 4.5H15z" fill="#667EEA" /><path class="secondary" d="M11 18.59V12a1 1 0 0 1 2 0v6.59l1.3-1.3a1 1 0 0 1 1.4 1.42l-3 3a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l1.3 1.3z" fill="#667EEA"/></svg>
+
+<div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-6xl lg:px-8 py-10">
+  <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8">
+    <div>
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path></svg>
+      </div>
+      <div class="mt-5 text-center">
+        <dt class="text-lg leading-6 font-medium text-gray-900">
+          Database Dump
+        </dt>
+        <dd class="mt-2 text-base text-gray-500">
+          Most of the data in <strong>Metagraph</strong> is released into the <strong>Public Domain</strong> and can be downloaded for free.
+        </dd>
+      </div>
     </div>
-    <h1 class="pt-4 text-xl font-bold">Database Dump</h1>
-    <p class="w-2/3 pt-3 mx-auto leading-tight">
-      Most of the data in <strong>Metagraph</strong> is released into the <strong>Public Domain</strong> and can be downloaded for free.
-    </p>
-  </div>
-  <div class="flex flex-col w-1/3 text-center">
-    <div class="w-16 h-16 mx-auto">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-code"><rect width="18" height="18" x="3" y="3" class="primary" rx="2" fill="#667EEA"/><path class="secondary" d="M8.7 13.3a1 1 0 0 1-1.4 1.4l-2-2a1 1 0 0 1 0-1.4l2-2a1 1 0 1 1 1.4 1.4L7.42 12l1.3 1.3zm6.6 0l1.29-1.3-1.3-1.3a1 1 0 1 1 1.42-1.4l2 2a1 1 0 0 1 0 1.4l-2 2a1 1 0 0 1-1.42-1.4zm-3.32 3.9a1 1 0 0 1-1.96-.4l2-10a1 1 0 0 1 1.96.4l-2 10z" fill="#fff"/></svg>
+
+     <div>
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+      </div>
+      <div class="mt-5 text-center">
+        <dt class="text-lg leading-6 font-medium text-gray-900">
+          Developers
+        </dt>
+        <dd class="mt-2 text-base text-gray-500">
+          Use our <strong>GraphQL API</strong> to create an application using our data under a <a class="font-bold hover:text-indigo-500" href="https://opendatacommons.org/licenses/by/summary/" target="_blank">open data license</a>.
+        </dd>
+      </div>
     </div>
-    <h1 class="pt-4 text-xl font-bold">Developers</h1>
-    <p class="w-2/3 pt-3 mx-auto leading-tight">
-      Use our <strong>GraphQL API</strong> to create an application using our data under a <a class="font-bold hover:text-indigo-500" href="https://opendatacommons.org/licenses/by/summary/" target="_blank">open data license</a>.
-    </p>
-  </div>
+  </dl>
 </div>
