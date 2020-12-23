@@ -1,20 +1,30 @@
 <%= for domain <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>
+  <div class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] |> String.replace("~", "") %>">
   <%= if Map.get(@item, domain["name"], []) != [] do %>
-    <div class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] %>">
-      <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
-        <div class="flex">
-          <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
-          <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
-        </div>
-        <a href="/uid/<%= @item.uid %>" class="text-brand-ind">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 fill-current"><path d="M4 14a1 1 0 01.3-.7l11-11a1 1 0 011.4 0l3 3a1 1 0 010 1.4l-11 11a1 1 0 01-.7.3H5a1 1 0 01-1-1v-3z" class="primary"/><rect width="20" height="2" x="2" y="20" class="secondary" rx="1"/></svg>
-        </a>
+    <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
+      <div class="flex">
+        <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
+        <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
       </div>
-      <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
-        List items
-      </div>
+      <span @click="showModal = true" class="text-brand-ind hover:cursor-pointer">
+        <svg class="w-5 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
+      </span>
+    </div>
+    <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
+      List items
     </div>
   <% else %>
-    Missing <%= domain["name"] %> values
+    <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
+      <div class="flex">
+        <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
+        <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
+      </div>
+      <span @click="showModal = true" class="text-brand-ind hover:cursor-pointer">
+        <svg class="w-5 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
+      </span>
+    </div>
+    <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
+    </div>
   <% end  %>
+  </div>
 <% end %>
