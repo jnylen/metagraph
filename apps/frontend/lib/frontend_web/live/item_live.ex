@@ -50,7 +50,7 @@ defmodule FrontendWeb.ItemLive do
         session,
         %{assigns: %{live_action: :show} = assigns} = socket
       ) do
-    {:ok, item} = Graph.Repo.get(uid)
+    {:ok, item} = Graph.Repo.get_new(uid)
 
     if is_map(item) do
       types =

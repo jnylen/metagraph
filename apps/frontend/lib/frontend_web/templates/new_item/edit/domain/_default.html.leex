@@ -4,9 +4,6 @@
       <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
       <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
     </div>
-    <a href="/uid/<%= @item.uid %>" class="text-brand-ind">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 fill-current"><path d="M4 14a1 1 0 01.3-.7l11-11a1 1 0 011.4 0l3 3a1 1 0 010 1.4l-11 11a1 1 0 01-.7.3H5a1 1 0 01-1-1v-3z" class="primary"/><rect width="20" height="2" x="2" y="20" class="secondary" rx="1"/></svg>
-    </a>
   </div>
   <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
     <%= for predicate <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>

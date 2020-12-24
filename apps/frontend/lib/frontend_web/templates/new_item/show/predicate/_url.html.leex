@@ -1,5 +1,5 @@
 <div class="flex items-center pt-2">
-  <%= live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "show", predicate: @predicate) %>
+  <%= unless Map.get(assigns, :only_values, false), do: live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "show", predicate: @predicate) %>
   <div class="pl-8">
     <%= if is_nil(@value) do %>
       -

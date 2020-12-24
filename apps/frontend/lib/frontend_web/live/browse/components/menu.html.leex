@@ -1,6 +1,6 @@
 <div class="border-t border-gray-200 py-5">
   <div class="container mx-auto">
-    <div class="flex justify-between mx-auto">
+    <div class="flex justify-between mx-auto px-4">
       <ul class="flex">
         <%= live_patch to: FrontendWeb.Router.Helpers.browse_show_path(@socket, :show, @type.id, "data"), replace: true, class: active_link?(@menu, "data") do %>
           Data
@@ -13,7 +13,7 @@
         <% end %>
       </ul>
       <%= if @current_user do %>
-        <a href="/new/<%= @type.id %>" class="px-4 py-2 text-indigo-900 rounded-lg bg-brand-activemenubg pull-right text-brand-activemenutext">Create item</a>
+        <a href="/new/<%= @type.id %>" class="pl-4 py-2 text-indigo-900 rounded-lg bg-brand-activemenubg pull-right text-brand-activemenutext">Create item</a>
       <% end %>
     </div>
   </div>

@@ -1,9 +1,6 @@
 <div class="flex items-center pt-2">
-  <div class="flex items-center justify-between w-1/3">
-    <h2 class="text-lg font-semibold text-indigo-900"><%= Gettext.dgettext(FrontendWeb.Gettext, "predicate", @predicate["name"] |> prettify_predicate()) %></h2>
-    <span class="ml-4 text-gray-500">(<%= @predicate["real_name"] %>)</span>
-  </div>
-  <div class="w-1/3 pl-8 ">
+  <%= unless Map.get(assigns, :only_values, false), do: live_component(@socket, FrontendWeb.ItemLive.PredicateHeader, folder: "show", predicate: @predicate) %>
+  <div class="<%= unless Map.get(assigns, :only_values, false), do: "pl-8", else: "" %>">
     <%= for value <- (@value || []) do %>
       <%= live_component(@socket, FrontendWeb.ItemLive.RelationTag, value: value, predicate: @predicate) %>
     <% end %>

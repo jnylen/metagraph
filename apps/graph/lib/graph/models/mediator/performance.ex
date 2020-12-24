@@ -8,7 +8,7 @@ defmodule Graph.Mediator.Performance do
     # relation(:tv_episode, :one, models: [Graph.Tv.Episode], reverse: true)
     # relation(:spoken_language, :one, models: [Graph.Language])
     # relation(:roles, :many, models: [Graph.Character])
-    field(:note, :string, lang: true, index: ["trigram"])
+    # field(:note, :string, lang: true, index: ["trigram"])
   end
 
   schema_config do
@@ -19,15 +19,35 @@ defmodule Graph.Mediator.Performance do
 
     # node_config(:allow_image_upload, true)
 
-    field_config(:film, sorted: 1, template: "relations/simple_one")
-    field_config(:person, sorted: 2, template: "relations/simple_one")
-    field_config(:note, sorted: 3, template: "special/lang_string")
+    field_config(:film,
+      relations: true,
+      sorted: 1,
+      label: "Film",
+      depends_on: Graph.Film,
+      template: "relations/simple_one"
+    )
+
+    field_config(:person,
+      relations: true,
+      sorted: 2,
+      label: "Person",
+      depends_on: Graph.Person,
+      template: "relations/simple_one"
+    )
+
+    # field_config(:note, sorted: 3, template: "special/lang_string")
   end
 
   def changeset(performance, params \\ %{}) do
     performance
     |> cast(params, [])
-    |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
-    |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
+    |> fill_relation(params, :film)
+    |> fill_relation(params, :person)
+    |> validate_relation(:film)
+    |> validate_relation(:person)
+    |> validate_required([:person])
+
+    # |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
+    # |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
   end
 end

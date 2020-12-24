@@ -52,6 +52,15 @@ defmodule FrontendWeb.Router do
     get("/query", QueryController, :index)
   end
 
+  # Ajax
+  scope "/ajax", FrontendWeb do
+    pipe_through([:api])
+
+    get("/relations", AjaxController, :relations)
+    post("/relations", AjaxController, :relations)
+    post("/save", AjaxController, :save)
+  end
+
   scope "/auth", FrontendWeb do
     pipe_through([:browser])
     # should be #DELETE

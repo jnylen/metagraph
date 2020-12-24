@@ -22,6 +22,9 @@ defmodule FrontendWeb.ItemController do
     types() |> Enum.map(& &1.id)
   end
 
+  def modal(conn, %{"uid" => uid, "field" => field} = _params) do
+  end
+
   @doc """
   Changes for an item
   """

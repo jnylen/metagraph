@@ -65,7 +65,25 @@ defmodule Graph.Person do
       template: "relations/simple_one"
     )
 
-    field_config(:wikidata_id, sorted: 20, external: true, depends_on: Graph.Core.Media)
+    field_config(:freebase_id,
+      sorted: 9,
+      external: true,
+      label: "Freebase ID",
+      example: "/m/0dr_4",
+      depends_on: Graph.Core.Media,
+      url: "https://tools.wmflabs.org/freebase/:value:",
+      template: "_url"
+    )
+
+    field_config(:wikidata_id,
+      sorted: 5,
+      external: true,
+      label: "Wikidata ID",
+      example: "Q121212",
+      depends_on: Graph.Core.Media,
+      url: "https://www.wikidata.org/wiki/:value:",
+      template: "_url"
+    )
   end
 
   def changeset(person, params \\ %{}) do

@@ -132,6 +132,22 @@ defmodule Graph.Schema do
     end
   end
 
+  def fill_relation(%Ecto.Changeset{} = changeset, params, field) do
+    unless Map.has_key?(params, field) do
+      changeset
+    else
+      value = Map.get(params, field)
+
+      if is_binary(value) do
+        changeset
+        |> Ecto.Changeset.put_change(field, Graph.Repo.get!(value))
+      else
+        changeset
+        |> Ecto.Changeset.put_change(field, value)
+      end
+    end
+  end
+
   defp required_list?(current_field, value) do
     unless value |> Enum.count() do
       [{current_field, "is required"}]

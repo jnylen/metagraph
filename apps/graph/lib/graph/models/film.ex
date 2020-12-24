@@ -113,6 +113,7 @@ defmodule Graph.Film do
     field_config(:genre,
       sorted: 12,
       relations: true,
+      depends_on: Graph.Media.Genre,
       label: "Genre",
       template: "relations/simple_many"
     )
