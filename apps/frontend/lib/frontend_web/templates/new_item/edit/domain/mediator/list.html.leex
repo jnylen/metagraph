@@ -1,30 +1,21 @@
 <%= for domain <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>
-  <div class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] |> String.replace("~", "") %>">
-  <%= if Map.get(@item, domain["name"], []) != [] do %>
+  <div x-data="Modal(<%= %{ Map.get(domain, "config").field_name => @item.uid, "type" => Map.get(domain, "config").depends_on.__schema__(:source) } |> Jason.encode! %>)" class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] |> String.replace("~", "") %>">
     <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
       <div class="flex">
         <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
         <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
       </div>
-      <span @click="showModal = true" class="text-brand-ind hover:cursor-pointer">
+      <span @click="show_modal = true" class="text-brand-ind hover:cursor-pointer">
         <svg class="w-5 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
       </span>
     </div>
     <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
-      List items
+      <%= if Map.get(@item, domain["name"], []) != [] do %>
+        List items
+      <% else %>
+        Nothing found, add one please senpai.
+      <% end %>
     </div>
-  <% else %>
-    <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
-      <div class="flex">
-        <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
-        <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
-      </div>
-      <span @click="showModal = true" class="text-brand-ind hover:cursor-pointer">
-        <svg class="w-5 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
-      </span>
-    </div>
-    <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
-    </div>
-  <% end  %>
+    <%= live_component(@socket, FrontendWeb.ModalLive, item: @item, domain: Map.get(domain, "config")) %>
   </div>
 <% end %>

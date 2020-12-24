@@ -12,7 +12,7 @@
     <%= csrf_meta_tag() %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body class="antialiased bg-gray-50" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+  <body class="antialiased bg-gray-50" x-cloak>
     <div class="flex h-screen">
       <%= render FrontendWeb.SharedView, "_sidebar.html", assigns %>
       <div class="h-screen w-1/5 block"></div>

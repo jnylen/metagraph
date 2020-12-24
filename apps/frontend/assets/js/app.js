@@ -16,8 +16,12 @@ import "@kollegorna/cocoon-vanilla-js";
 
 require("./liveview.js").default;
 
-import relationSelect from "./components/add-relation";
+import { relationsSelect, relationSelect } from "./components/add-relation";
 window.relationSelect = relationSelect;
+window.relationsSelect = relationsSelect;
 
 import queryPage from "./components/query-page";
 window.queryPage = queryPage;
+
+import { Modal } from "./components/modal";
+window.Modal = Modal;
