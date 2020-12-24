@@ -56,17 +56,13 @@ defmodule FrontendWeb.AjaxController do
       struct(GraphHelper.get_module(Map.get(params, "type"))),
       params |> Map.new(fn {k, v} -> {String.to_existing_atom(k), v} end) |> IO.inspect()
     )
-    |> IO.inspect()
+    |> Editor.create(conn.assigns.current_user)
+    |> case do
+      {:ok, item} ->
+        render(conn, "save.json", response: {:ok, item})
 
-    # |> Editor.create(conn.assigns.current_user)
-    # |> case do
-    #   {:ok, item} ->
-    #     IO.inspect(item)
-    #     render(conn, "save.json", response: {:ok, item})
-
-    #   {:error, %Ecto.Changeset{} = changeset} ->
-    #     IO.inspect(changeset)
-    #     render(conn, "save.json", response: {:error, changeset})
-    # end
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "save.json", response: {:error, changeset})
+    end
   end
 end

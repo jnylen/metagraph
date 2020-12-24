@@ -8,7 +8,9 @@
       </div>
       <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
         <%= if Map.get(@item, domain["name"], []) != [] do %>
-          List items
+          <%= for value <- Map.get(@item, domain["name"], []) do %>
+            <%= live_component(@socket, FrontendWeb.ItemLive.MediatorItem, value: value) %>
+          <% end %>
         <% else %>
           No items found.
         <% end  %>
