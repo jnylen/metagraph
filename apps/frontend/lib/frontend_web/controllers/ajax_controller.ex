@@ -30,7 +30,6 @@ defmodule FrontendWeb.AjaxController do
         "$label" => regex,
         "$type" => String.downcase(type)
       })
-      |> IO.inspect()
 
     render(conn, "relations.json", results: results)
   end

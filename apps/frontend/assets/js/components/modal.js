@@ -35,7 +35,11 @@ export function Modal(models) {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
+          if (json.status == "ok") {
+            this.show_modal = false;
+          } else {
+            console.log("couldnt save..");
+          }
         });
     },
   };

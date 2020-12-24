@@ -29,8 +29,6 @@ defmodule Graph.Repo do
     ]
 
     with {:ok, %{"uid_get" => nodes}} <- Dlex.query(Graph.Repo, statement) do
-      nodes |> IO.inspect()
-
       case nodes do
         [%{"uid" => _, "dgraph.type" => types} = map] when map_size(map) < 2 and types != [] ->
           {:ok, nil}
