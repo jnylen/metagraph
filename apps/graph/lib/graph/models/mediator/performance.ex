@@ -45,7 +45,7 @@ defmodule Graph.Mediator.Performance do
     |> fill_relation(params, :person)
     |> validate_relation(:film)
     |> validate_relation(:person)
-    |> validate_required([:person])
+    |> validate_required_list(:person)
 
     # |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
     # |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)

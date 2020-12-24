@@ -138,21 +138,36 @@ defmodule Graph.Schema do
     else
       value = Map.get(params, field)
 
-      if is_binary(value) do
-        changeset
-        |> Ecto.Changeset.put_change(field, Graph.Repo.get!(value))
-      else
-        changeset
-        |> Ecto.Changeset.put_change(field, value)
+      cond do
+        is_it_binary?(value) ->
+          changeset
+          |> Ecto.Changeset.put_change(field, Graph.Repo.get!(value))
+
+        is_map(value) ->
+          changeset
+          |> Ecto.Changeset.put_change(field, value)
+
+        true ->
+          changeset
       end
     end
   end
 
-  defp required_list?(current_field, value) do
+  defp required_list?(current_field, nil), do: [{current_field, "is required"}]
+  defp required_list?(current_field, ""), do: [{current_field, "is required"}]
+
+  defp required_list?(current_field, value) when is_list(value) do
     unless value |> Enum.count() do
       [{current_field, "is required"}]
     else
       []
     end
   end
+
+  defp required_list?(_, _), do: []
+
+  defp is_it_binary?(""), do: nil
+  defp is_it_binary?(nil), do: nil
+  defp is_it_binary?(value) when is_binary(value), do: true
+  defp is_it_binary?(_), do: false
 end

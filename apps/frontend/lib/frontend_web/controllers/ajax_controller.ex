@@ -53,7 +53,7 @@ defmodule FrontendWeb.AjaxController do
   def save(conn, %{"modal" => params}) do
     GraphHelper.get_module(Map.get(params, "type")).changeset(
       struct(GraphHelper.get_module(Map.get(params, "type"))),
-      params |> Map.new(fn {k, v} -> {String.to_existing_atom(k), v} end) |> IO.inspect()
+      params |> Map.new(fn {k, v} -> {String.to_existing_atom(k), v} end)
     )
     |> Editor.create(conn.assigns.current_user)
     |> case do

@@ -8,6 +8,8 @@ defmodule Editor do
   @doc """
   Create an item with the specific values
   """
+  def create(%Ecto.Changeset{valid?: false} = changeset, _actor), do: {:error, changeset}
+
   def create(changeset, actor),
     do:
       changeset
@@ -16,6 +18,8 @@ defmodule Editor do
   @doc """
   Update an item with values
   """
+  def update(_, %Ecto.Changeset{valid?: false} = changeset, _actor), do: {:error, changeset}
+
   def update(actual_item, changeset, actor),
     do:
       actual_item
