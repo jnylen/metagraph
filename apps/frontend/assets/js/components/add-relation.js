@@ -50,7 +50,7 @@ export const relationSelect = (relation_type, relation) => {
     },
     addRelation(data) {
       this.relation = data;
-      this.results = this.results.filter((item) => item !== data);
+      this.results = [];
     },
     removeRelation(data) {
       this.relation = null;
