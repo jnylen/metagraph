@@ -21,6 +21,7 @@ defmodule Graph.Film do
     )
 
     relation(:performances, :reverse, model: Graph.Mediator.Performance, name: :film)
+    relation(:crew, :reverse, model: Graph.Mediator.Crew, name: :film)
   end
 
   schema_config do
@@ -33,6 +34,16 @@ defmodule Graph.Film do
     field_config(:label, sorted: 1, template: "special/lang_string")
     field_config(:description, sorted: 2, template: "special/lang_text")
     field_config(:website, sorted: 3, template: "_string")
+
+    field_config(:crew,
+      sorted: 2,
+      label: "Crew",
+      tags: ["mediator"],
+      mediator: true,
+      depends_on: Graph.Mediator.Crew,
+      field_name: :film,
+      template: "mediator/list"
+    )
 
     field_config(:performances,
       sorted: 3,
