@@ -7,6 +7,7 @@ defmodule Graph.Repo do
       Graph.Media.Genre,
       Graph.Person,
       Graph.Bloodtype,
+      Graph.Mediator.Crew,
       Graph.Mediator.Performance
     ]
 

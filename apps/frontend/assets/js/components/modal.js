@@ -19,7 +19,7 @@ export function Modal(models) {
         "[name~=csrf-token][content]"
       ).content;
 
-      const query = formToJSON(this.$el.getElementsByTagName("input"));
+      const query = formToJSON(this.$el.querySelectorAll("input,select"));
 
       const response = fetch("/ajax/save", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
