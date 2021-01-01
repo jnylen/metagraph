@@ -10,7 +10,10 @@ defmodule Api.Authentication do
 
   def call(conn, _) do
     context = build_context(conn)
-    Absinthe.Plug.put_options(conn, context: context)
+
+    conn
+    |> assign(:current_user, context.current_user)
+    |> Absinthe.Plug.put_options(context: context)
   end
 
   @doc """

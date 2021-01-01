@@ -2,8 +2,8 @@ defmodule Graph.Film do
   use Graph.Schema
 
   schema "film" do
-    field(:label, :auto, lang: true, depends_on: Graph.Core.Common)
-    field(:description, :auto, lang: true, depends_on: Graph.Core.Common)
+    field(:label, :auto, lang: true, depends_on: Graph.Core.Common, on_replace: :update)
+    field(:description, :auto, lang: true, depends_on: Graph.Core.Common, on_replace: :update)
     field(:website, :auto, depends_on: Graph.Core.Common)
     field(:budget, :auto, depends_on: Graph.Core.Media)
     field(:revenue, :auto, depends_on: Graph.Core.Media)
