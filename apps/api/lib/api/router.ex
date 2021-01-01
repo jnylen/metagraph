@@ -5,6 +5,18 @@ defmodule Api.Router do
     plug(Api.Authentication)
   end
 
+  pipeline :api do
+    plug(:accepts, ["json"])
+    plug(Api.Authentication)
+  end
+
+  scope "/custom", Api.Custom do
+    pipe_through(:api)
+
+    post("/create", ItemController, :create)
+    post("/update", ItemController, :update)
+  end
+
   scope "/" do
     pipe_through(:graphql)
 
