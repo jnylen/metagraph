@@ -2,8 +2,8 @@ defmodule Graph.Film do
   use Graph.Schema
 
   schema "film" do
-    field(:label, :auto, lang: true, depends_on: Graph.Core.Common, on_replace: :update)
-    field(:description, :auto, lang: true, depends_on: Graph.Core.Common, on_replace: :update)
+    field(:label, :auto, lang: true, depends_on: Graph.Core.Common)
+    field(:description, :auto, lang: true, depends_on: Graph.Core.Common)
     field(:website, :auto, depends_on: Graph.Core.Common)
     field(:budget, :auto, depends_on: Graph.Core.Media)
     field(:revenue, :auto, depends_on: Graph.Core.Media)
@@ -12,8 +12,10 @@ defmodule Graph.Film do
     field(:freebase_id, :auto, depends_on: Graph.Core.Media)
     field(:adult, :auto, depends_on: Graph.Core.Media)
     field(:themoviedb_id, :integer, index: true)
+    field(:thetvdb_id, :integer, index: true)
     field(:omdb_id, :integer, index: true)
     field(:elonet_id, :integer, index: true)
+    field(:sfdb_id, :auto, depends_on: Graph.Core.Media)
 
     field(:genre, :auto,
       depends_on: Graph.Core.Media,
@@ -83,6 +85,15 @@ defmodule Graph.Film do
       template: "_url"
     )
 
+    field_config(:thetvdb_id,
+      sorted: 6,
+      external: true,
+      label: "TheTVDB ID",
+      example: "11212121",
+      url: "https://www.thetvdb.com/dereferrer/movies/:value:",
+      template: "_url"
+    )
+
     field_config(:omdb_id,
       sorted: 7,
       external: true,
@@ -98,6 +109,15 @@ defmodule Graph.Film do
       label: "Elonet ID",
       example: "11212121",
       url: "https://elonet.finna.fi/Record/kavi.elonet_elokuva_:value:",
+      template: "_url"
+    )
+
+    field_config(:sfdb_id,
+      sorted: 17,
+      external: true,
+      label: "SFDb ID",
+      example: "11212121",
+      url: "http://www.svenskfilmdatabas.se/sv/item/?type=film&itemid=:value:",
       template: "_url"
     )
 
@@ -150,11 +170,15 @@ defmodule Graph.Film do
       :omdb_id,
       :elonet_id,
       :genre,
-      :adult
+      :adult,
+      :thetvdb_id,
+      :sfdb_id
     ])
     |> cast_embed(:label, with: &Graph.Struct.Language.changeset/2)
     |> cast_embed(:description, with: &Graph.Struct.Language.changeset/2)
     |> validate_number(:themoviedb_id, greater_than_or_equal_to: 1)
+    |> validate_number(:sfdb_id, greater_than_or_equal_to: 1)
+    |> validate_number(:thetvdb_id, greater_than_or_equal_to: 1)
     |> validate_number(:omdb_id, greater_than_or_equal_to: 1)
     |> validate_number(:elonet_id, greater_than_or_equal_to: 1)
     |> validate_number(:budget, greater_than_or_equal_to: 1)

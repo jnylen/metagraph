@@ -68,6 +68,9 @@ defmodule FrontendWeb.ItemHelpers do
     |> Enum.sort_by(&(&1["config"].sorted || &1["id"]))
   end
 
+  def prettify_predicate(%{"config" => %{label: label}}) when not is_nil(label), do: label
+  def prettify_predicate(%{"name" => name}) when not is_nil(name), do: prettify_predicate(name)
+
   def prettify_predicate(name) do
     name
     |> to_string()

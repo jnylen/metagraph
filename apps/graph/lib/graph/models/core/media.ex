@@ -8,6 +8,7 @@ defmodule Graph.Core.Media do
     field(:wikidata_id, :string, index: ["term"])
     field(:imdb_id, :string, index: ["term"])
     field(:freebase_id, :string, index: ["term"])
+    field(:sfdb_id, :string, index: ["term"])
 
     relation(:genre, :many, models: [Graph.Media.Genre], reverse: true)
   end
