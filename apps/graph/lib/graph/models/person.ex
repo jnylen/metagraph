@@ -23,6 +23,9 @@ defmodule Graph.Person do
     field(:imdb_id, :string, index: ["term"])
     field(:freebase_id, :auto, depends_on: Graph.Core.Media)
     field(:wikidata_id, :auto, depends_on: Graph.Core.Media)
+
+    relation(:performances, :reverse, model: Graph.Mediator.Performance, name: :person)
+    relation(:crew, :reverse, model: Graph.Mediator.Crew, name: :person)
   end
 
   schema_config do
@@ -39,6 +42,26 @@ defmodule Graph.Person do
     field_config(:death_day, sorted: 6, template: "_date")
     field_config(:weight, sorted: 11, template: "_integer")
     field_config(:height, sorted: 12, template: "_integer")
+
+    field_config(:crew,
+      sorted: 2,
+      label: "Crew",
+      tags: ["mediator"],
+      mediator: true,
+      depends_on: Graph.Mediator.Crew,
+      field_name: :person,
+      template: "mediator/list"
+    )
+
+    field_config(:performances,
+      sorted: 3,
+      label: "Performances",
+      tags: ["mediator"],
+      mediator: true,
+      depends_on: Graph.Mediator.Performance,
+      field_name: :person,
+      template: "mediator/list"
+    )
 
     field_config(:themoviedb_id,
       sorted: 18,

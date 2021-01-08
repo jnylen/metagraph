@@ -23,11 +23,13 @@ defmodule Graph.Repo do
       |> Enum.join(" ")
       |> String.trim()
 
-    statement = [
-      "{uid_get(func: uid(",
-      uid,
-      ")) {uid dgraph.type #{langs} expand(_all_) { uid dgraph.type #{langs} expand(_all_) { uid dgraph.type expand(_all_) }}}}"
-    ]
+    statement =
+      [
+        "{uid_get(func: uid(",
+        uid,
+        ")) {uid dgraph.type #{langs} expand(_all_) { uid dgraph.type #{langs} expand(_all_) { uid dgraph.type expand(_all_) }}}}"
+      ]
+      |> IO.inspect()
 
     with {:ok, %{"uid_get" => nodes}} <- Dlex.query(Graph.Repo, statement) do
       case nodes do
