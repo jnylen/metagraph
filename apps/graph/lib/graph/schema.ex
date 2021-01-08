@@ -133,11 +133,18 @@ defmodule Graph.Schema do
   end
 
   def fill_relation(%Ecto.Changeset{} = changeset, params, field) do
-    unless Map.has_key?(params, field) do
+    value =
+      cond do
+        is_atom(field) ->
+          Map.get(params, field) || Map.get(params, to_string(field))
+
+        is_binary(field) ->
+          Map.get(params, field) || Map.get(params, String.to_existing_atom(field))
+      end
+
+    if is_nil(value) do
       changeset
     else
-      value = Map.get(params, field)
-
       cond do
         is_it_binary?(value) ->
           changeset
