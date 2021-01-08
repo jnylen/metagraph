@@ -10,10 +10,14 @@ defmodule Api.Schema.Person do
     field(:website, :string)
     field(:birth_day, :date)
     field(:death_day, :date)
+    field(:wikidata_id, :string)
+    field(:imdb_id, :string)
   end
 
   object :person_queries do
     field :people, list_of(:person) do
+      arg(:query_field, :string, default_value: "label")
+      arg(:query, :string)
       arg(:count, :integer, default_value: 10)
       arg(:offset, :integer, default_value: 0)
 

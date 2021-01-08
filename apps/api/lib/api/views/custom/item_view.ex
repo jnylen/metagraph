@@ -7,6 +7,7 @@ defmodule Api.Custom.ItemView do
     %{status: "ok", item: item}
   end
 
-  def render("result.json", %{result: {:error, _}}),
-    do: %{status: "error", message: "Couldn't update/create item"}
+  def render("result.json", %{result: {:error, _} = _e}) do
+    %{status: "error", message: "Couldn't update/create item"}
+  end
 end
