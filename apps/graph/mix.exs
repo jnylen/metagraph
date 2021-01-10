@@ -8,7 +8,8 @@ defmodule Graph.MixProject do
     {:jason, "~> 1.0"},
     {:dlex, "~> 0.4", github: "pixelmonster-ou/dlex"},
     {:database, in_umbrella: true},
-    {:cowlib, "~> 2.10.0", override: true}
+    {:cowlib, "~> 2.10.0", override: true},
+    {:meilisearch, "~> 0.2.0-beta"}
   ]
 
   def project do

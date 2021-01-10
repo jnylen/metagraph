@@ -15,6 +15,7 @@ defmodule Api.Router do
 
     post("/create", ItemController, :create)
     post("/update", ItemController, :update)
+    get("/search", ItemController, :search)
   end
 
   scope "/" do
