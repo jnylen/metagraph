@@ -85,6 +85,7 @@ defmodule Graph.Person do
       sorted: 15,
       relations: true,
       label: "Bloodtype",
+      depends_on: Graph.Bloodtype,
       template: "relations/simple_one"
     )
 

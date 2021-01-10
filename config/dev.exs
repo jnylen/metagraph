@@ -102,3 +102,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :meilisearch,
+  endpoint: "http://127.0.0.1:7700",
+  api_key: "tst"

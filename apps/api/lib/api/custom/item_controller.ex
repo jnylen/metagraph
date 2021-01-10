@@ -5,6 +5,11 @@ defmodule Api.Custom.ItemController do
 
   use Api, :controller
 
+  def search(conn, %{"query" => query}) do
+    conn
+    |> render("results.json", result: Meilisearch.Search.search("items", query))
+  end
+
   def update(conn, %{"uid" => uid, "values" => values}) do
     {:ok, item} = Graph.Repo.get_new(uid)
     changeset = item.__struct__.changeset(item, values)

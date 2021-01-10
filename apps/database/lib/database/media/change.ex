@@ -40,4 +40,19 @@ defmodule Database.Media.Change do
       %{action: action, actor: actor.id, subject: subject, changes: changes}
     )
   end
+
+  def update_meili({:ok, %{uid: uid}}), do: update_meili(uid)
+  def update_meili(%{uid: uid}), do: update_meili(uid)
+
+  def update_meili(uid) do
+    statement = [
+      "{ query(func: uid(",
+      uid,
+      ")) { uid type : dgraph.type label : common.label@* description : common.description@* } }"
+    ]
+
+    with {:ok, %{"query" => nodes}} <- Dlex.query(Graph.Repo, statement) do
+      Meilisearch.Document.add_or_replace("items", nodes)
+    end
+  end
 end

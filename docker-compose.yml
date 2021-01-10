@@ -8,3 +8,16 @@ services:
       - 8000:8000
       - 8080:8080
       - 9080:9080
+  meili:
+    image: getmeili/meilisearch
+    #command: ./run.sh
+    restart: on-failure
+    ports:
+      - 7700:7700
+    environment:
+      MEILI_MASTER_KEY: tst
+    volumes:
+      - meili:/data.ms
+
+volumes:
+  meili:
