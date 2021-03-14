@@ -16,6 +16,8 @@
       <input class="appearance-none block w-full bg-gray-200 text-gray-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray" type="password" id="password" name="password_confirmation" required placeholder="Password again">
     </div>
 
+    <%= raw Hcaptcha.Template.display(size: "100%") %>
+
     <div>
       <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-roboto leading-none uppercase py-4 px-4 rounded w-full">Sign up</button>
       <div class="text-xs text-gray-500 text-center pt-8">By signing up you agree to our terms and privacy policy.</div>
