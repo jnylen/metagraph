@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,11 @@ jobs:
         with:
           elixir-version: ${{ steps.versions.outputs.elixir}}
           otp-version: ${{ steps.versions.outputs.erlang}}
+          experimental-otp: true
+      - name: Setup Node.js for use with actions
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.versions.outputs.nodejs }}
       - name: Install Dependencies
         run: mix deps.get
       - name: Install node dependencies for frontend subapp
