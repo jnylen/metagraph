@@ -27,7 +27,7 @@
     "css-minimizer-webpack-plugin": "^2.0.0",
     "mini-css-extract-plugin": "^1.5.0",
     "node-sass": "^5.0.0",
-    "postcss": "^8.2.12",
+    "postcss": "^8.2.13",
     "postcss-loader": "^5.2.0",
     "purgecss-webpack-plugin": "^4.0.3",
     "sass-loader": "^11.0.1",
