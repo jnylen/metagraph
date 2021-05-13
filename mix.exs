@@ -3,7 +3,7 @@ defmodule Umbrella.MixProject do
 
   @deps [
     {:pkg_deb, "~> 0.3"},
-    {:cowlib, "~> 2.10.0", override: true},
+    {:cowlib, "~> 2.11.0", override: true},
     {:yamerl, "~> 0.7"}
   ]
 
