@@ -2,37 +2,26 @@
 
 @tailwind components;
 
-ul.menu {
-  @apply flex-1;
-
-  li {
-    @apply py-3 mx-3 text-gray-900 opacity-50;
-
-    &.active {
-      @apply bg-gray-100 rounded-lg text-gray-900 opacity-100;
-
-      .text {
-        @apply font-medium;
-      }
-    }
-
-    &:hover {
-      @apply opacity-100;
-    }
+div.logo {
+  a {
+    @apply mx-auto flex items-center flex-shrink-0 px-6 space-x-4;
   }
 }
-ul.auth_menu {
-  @apply px-4 flex justify-center pb-4 w-full;
 
-  li {
-    @apply rounded-lg py-3 px-4 font-medium text-indigo-900;
+nav.menu {
+  a.active {
+    @apply bg-indigo-50 text-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md;
 
-    &.active {
-      @apply bg-gray-100;
+    svg {
+      @apply text-indigo-500 mr-3 flex-shrink-0 h-6 w-6;
     }
+  }
 
-    &:hover {
-      @apply bg-gray-100;
+  a:not(.active) {
+    @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md;
+
+    svg {
+      @apply text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6;
     }
   }
 }
