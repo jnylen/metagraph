@@ -15,34 +15,34 @@
       <% end %>
       <%= active_link(@conn, to: "/browse", active: [{FrontendWeb.ItemLive, :any}, {FrontendWeb.BrowseLive, :any}, {FrontendWeb.BrowseLive.Show, :any}], class_active: "active") do %>
           <span class="px-4 flex items-center">
-              <svg class="h-4 h-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
               <span class="pl-2 text">Browse</span>
           </span>
       <% end %>
       <%= active_link(@conn, to: "/feed", active: [{FrontendWeb.FeedController, :any}], class_active: "active") do %>
           <span class="px-4 flex items-center">
-              <svg class="h-4 h-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" /></svg>
               <span class="pl-2 text">Feed</span>
           </span>
       <% end %>
       <%= active_link(@conn, to: "/query", active: [{FrontendWeb.QueryController, :any}], class_active: "active") do %>
           <span class="px-4 flex items-center">
-              <svg class="h-4 h-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
               <span class="pl-2 text">Query</span>
           </span>
       <% end %>
       <%= active_link(@conn, to: "/help", active: [{FrontendWeb.PageController, :help}], class_active: "active") do %>
           <span class="px-4 flex items-center">
-              <svg class="h-4 h-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               <span class="pl-2 text">Help</span>
           </span>
       <% end %>
     </nav>
   </div>
-  <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
+  <div class="flex-shrink-0 flex border-t border-gray-200">
     <%= if @user_signed_in? do %>
-      <div class="relative inline-block" x-data="{ open: false }">
-        <div class="flex items-center bg-gray-100 hover:bg-gray-200 transition-all hover:cursor-pointer rounded-lg p-3 mx-2 mb-2" @click="open = ! open">
+      <div class="w-full relative p-1" x-data="{ open: false }">
+        <div class="flex items-center transition-all hover:cursor-pointer rounded-lg p-3" @click="open = ! open">
           <div class="w-8 h-8 bg-center bg-cover shadow-inner rounded-full hover:cursor-pointer" style="background-image: url('https://i.imgur.com/Pk3sdKY.jpg');" @click="open = ! open"></div>
           <div class="ml-3 flex-1">
             <h4 class="font-semibold text-indigo-900"><%= @current_user.username %></h4>
@@ -60,14 +60,14 @@
         </div>
       </div>
     <% else %>
-      <ul class="auth_menu">
+      <div class="auth_menu p-4 flex justify-between w-full">
         <%= active_link(@conn, to: "/auth/signup", active: [{FrontendWeb.AuthController, :signup}], class_active: "active") do %>
-          Sign up
+          Join us
         <% end %>
         <%= active_link(@conn, to: "/auth/login", active: [{FrontendWeb.AuthController, :login}], class_active: "active") do %>
           Sign in
         <% end %>
-      </ul>
+      </div>
     <% end %>
   </div>
 </div>

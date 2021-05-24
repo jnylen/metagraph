@@ -27,6 +27,7 @@ module.exports = {
   variants: {
     extend: {
       cursor: ["responsive", "hover"],
+      mixBlendMode: ["responsive"],
     },
   },
   plugins: [
