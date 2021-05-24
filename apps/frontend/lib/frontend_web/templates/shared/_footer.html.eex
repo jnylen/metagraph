@@ -1,6 +1,6 @@
 <footer>
     <span>
-        Source code licensed under GNU AGPLv3.
+        Source code licensed under GNU AGPLv3. Database dumps under <a target="_blank" class="underline" href="https://opendatacommons.org/licenses/pddl/1-0/">PDDL</a>. API under <a target="_blank" class="underline" href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL</a>.
     </span>
     <ul class="space-x-4">
         <li><a href="/privacy">Privacy Policy</a></li>
