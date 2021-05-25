@@ -1,6 +1,21 @@
 defmodule Api.Custom.ItemView do
   use Api, :view
 
+  def render("show.json", %{result: item}) do
+    %{
+      status: "ok",
+      item: %{
+        type: item.__struct__.__schema__(:source),
+        attributes:
+          item
+          |> Map.from_struct()
+          |> Enum.map(fn {k, v} ->
+            %{key: k, value: v}
+          end)
+      }
+    }
+  end
+
   def render("results.json", %{result: {:ok, %{"hits" => hits}}}) do
     %{
       status: "ok",

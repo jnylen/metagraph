@@ -20,7 +20,7 @@ defmodule Frontend.MixProject do
     {:plug_cowboy, "~> 2.2"},
     {:canada, "~> 2.0"},
     {:floki, ">= 0.0.0", only: :test},
-    {:hcaptcha, "~> 0.0.1"},
+    # {:hcaptcha, "~> 0.0.1"},
 
     # Database
     {:database, in_umbrella: true},

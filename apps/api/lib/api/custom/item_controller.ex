@@ -5,6 +5,11 @@ defmodule Api.Custom.ItemController do
 
   use Api, :controller
 
+  def show(conn, %{"id" => id}) do
+    conn
+    |> render("show.json", result: Graph.Repo.get!(id))
+  end
+
   def search(conn, %{"query" => query}) do
     conn
     |> render("results.json", result: Meilisearch.Search.search("items", query))

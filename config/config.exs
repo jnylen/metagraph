@@ -29,7 +29,12 @@ config :logger, :console,
 
 config :frontend, FrontendWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: FrontendWeb.ErrorView, accepts: ~w(html json), root_layout: {FrontendWeb.LayoutView, "root.html"}, layout: {FrontendWeb.LayoutView, "app.html"}],
+  render_errors: [
+    view: FrontendWeb.ErrorView,
+    accepts: ~w(html json),
+    root_layout: {FrontendWeb.LayoutView, "root.html"},
+    layout: {FrontendWeb.LayoutView, "app.html"}
+  ],
   pubsub_server: Frontend.PubSub,
   debug_errors: false
 
@@ -47,9 +52,9 @@ config :ueberauth, Ueberauth,
        ]}
   ]
 
-config :hcaptcha,
-  public_key: {:system, "HCAPTCHA_PUBLIC_KEY"},
-  secret: {:system, "HCAPTCHA_PRIVATE_KEY"}
+# config :hcaptcha,
+#   public_key: {:system, "HCAPTCHA_PUBLIC_KEY"},
+#   secret: {:system, "HCAPTCHA_PRIVATE_KEY"}
 
 # config :scrivener_html,
 #   routes_helper: FrontendWeb.Router.Helpers,
