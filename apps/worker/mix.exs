@@ -26,7 +26,8 @@ defmodule Worker.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:que, "~> 0.10.1"}
+      {:que, "~> 0.10.1"},
+      {:database, in_umbrella: true}
     ]
   end
 end
