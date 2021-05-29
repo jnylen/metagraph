@@ -6,24 +6,37 @@
         <img class="h-full w-full object-cover" src="<%= Routes.static_path(@conn, "/images/doctors.jpg") %>" alt="Doctors">
         <div class="absolute inset-0 bg-indigo-800 mix-blend-multiply"></div>
       </div>
-      <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+      <div class="relative px-4 pb-16 sm:pb-16 lg:pb-24 pt-16 sm:px-6 sm:pt-24 lg:pt-32 lg:px-8">
+        <div class="flex justify-center pb-6">
+          <span class="rounded bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600 tracking-wide uppercase">
+            Now in pre-alpha
+          </span>
+        </div>
         <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-          <span class="block text-white">Help eachother</span>
-          <span class="block text-indigo-200">with public data</span>
+          <span class="block text-white">Welcome to metagraph</span>
+          <span class="block text-4xl text-indigo-300">a community curated public database</span>
         </h1>
         <p class="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
           Metagraph was built to help developers and other users to get free and public data that is licensed under open licenses.
         </p>
         <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
           <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-            <a href="/auth/signup" class="rounded-md flex items-center justify-center px-4 py-3 border border-transparent text-base font-mediumrounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8">
+            <a href="/auth/signup" class="rounded-md flex items-center justify-center px-4 py-3 border border-transparent text-base font-mediumrounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-4">
               Join us
             </a>
-            <a href="#" class="rounded-md flex items-center justify-center px-4 py-3 border border-transparent text-base font-mediumrounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8">
+            <a href="#" class="rounded-md flex items-center justify-center px-4 py-3 border border-transparent text-base font-mediumrounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-4">
               Random Item
             </a>
           </div>
         </div>
+
+        <a target="_blank" href="https://github.com/pixelmonster-ou/metagraph/discussions" class="mt-10 space-x-2 rounded-md flex items-center justify-center px-4 py-3 border border-transparent text-base font-mediumrounded-md shadow-sm text-white hover:text-opacity-70 sm:px-4">
+          <span>Github Discussions</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
