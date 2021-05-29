@@ -16,6 +16,7 @@
     <div class="flex h-screen">
       <%= render FrontendWeb.SharedView, "_sidebar.html", assigns %>
       <main role="main" class="flex-1 flex flex-col h-full relative z-0 overflow-y-auto focus:outline-none">
+        <%= render FrontendWeb.SharedView, "_notice.html", assigns %>
         <div class="flex-1">
           <%= @inner_content %>
         </div>
