@@ -1,4 +1,4 @@
 https://github.com/elixir-buildpack/heroku-buildpack
 https://github.com/gjaldon/heroku-buildpack-phoenix-static
 https://github.com/jnylen/heroku-buildpack-elixir-mix-release
-https://github.com/heroku/heroku-buildpack-nodejs
+https://github.com/heroku/heroku-buildpack-multi-procfile
