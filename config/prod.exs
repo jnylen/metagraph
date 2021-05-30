@@ -22,7 +22,7 @@ config :database, Database.Repo,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE", "100"))
 
-config :frontend, Frontend.Endpoint,
+config :frontend, FrontendWeb.Endpoint,
   live_view: [signing_salt: System.get_env("LIVE_VIEW_SALT")],
   url: [host: System.get_env("APP_HOST", "localhost")],
   http: [
