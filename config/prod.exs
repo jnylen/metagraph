@@ -27,7 +27,7 @@ config :frontend, Frontend.Endpoint,
   url: [host: System.get_env("APP_HOST", "localhost")],
   http: [
     ip: {0, 0, 0, 0},
-    port: {:system, "DOKKU_PROXY_PORT"},
+    port: System.get_env("WEB_PORT",
     compress: true
   ],
   server: true,
