@@ -3,7 +3,7 @@
 import Config
 
 config :api,
-  ecto_repos: [Api.Repo],
+  ecto_repos: [Database.Repo],
   generators: [context_app: false]
 
 # Configures the endpoint
