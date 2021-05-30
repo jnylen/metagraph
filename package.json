@@ -1,0 +1,16 @@
+{
+  "name": "metagraph",
+  "version": "1.0.0",
+  "description": "Metagraph is a community-curated metadata database that is born for providing users with a public domain database rather than being locked down behind a non-public license.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelmonster-ou/metagraph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixelmonster-ou/metagraph/issues"
+  },
+  "homepage": "https://github.com/pixelmonster-ou/metagraph#readme"
+}
