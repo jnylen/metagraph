@@ -10,11 +10,19 @@ import scss from "../css/app.scss";
 // Import dependencies
 //
 import "phoenix_html";
-
 import "alpinejs";
+import topbar from "topbar";
 import "@kollegorna/cocoon-vanilla-js";
 
 require("./liveview.js").default;
+
+// Show progress bar on live navigation and form submits
+topbar.config({
+  barColors: { 0: "#4f46e5" },
+  shadowColor: "rgba(0, 0, 0, .3)",
+});
+window.addEventListener("phx:page-loading-start", (info) => topbar.show());
+window.addEventListener("phx:page-loading-stop", (info) => topbar.hide());
 
 import { relationsSelect, relationSelect } from "./components/add-relation";
 window.relationSelect = relationSelect;

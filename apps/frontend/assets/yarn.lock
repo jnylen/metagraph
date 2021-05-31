@@ -3319,13 +3319,13 @@ performance-now@^2.1.0:
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
 "phoenix@file:../../../deps/phoenix":
-  version "1.5.7"
+  version "1.5.9"
 
 "phoenix_html@file:../../../deps/phoenix_html":
-  version "2.14.2"
+  version "2.14.3"
 
 "phoenix_live_view@file:../../../deps/phoenix_live_view":
-  version "0.14.8"
+  version "0.15.5"
 
 picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.2"
@@ -4379,6 +4379,11 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+topbar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/topbar/-/topbar-1.0.1.tgz#7987fb9ea40ce702ed2d9fcded3407a8ae5a33a9"
+  integrity sha512-HZqQSMBiG29vcjOrqKCM9iGY/h69G5gQH7ae83ZCPz5uPmbQKwK0sMEqzVDBiu64tWHJ+kk9NApECrF+FAAvRA==
 
 tough-cookie@~2.5.0:
   version "2.5.0"
