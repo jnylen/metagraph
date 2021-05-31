@@ -1,19 +1,23 @@
 <%= for domain <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>
-    <div class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] %>">
-      <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
-        <div class="flex">
-          <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
-          <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
-        </div>
-      </div>
-      <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
-        <%= if Map.get(@item, domain["name"], []) != [] do %>
-          <%= for value <- Map.get(@item, domain["name"], []) do %>
-            <%= live_component(@socket, FrontendWeb.ItemLive.MediatorItem, value: value) %>
-          <% end %>
-        <% else %>
-          No items found.
-        <% end  %>
-      </div>
-    </div>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg my-8" id="<%= @domain["id"] |> prettify_predicate() %>">
+  <div class="px-4 py-5 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      <%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %>
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+      <%= @domain["id"] %>
+    </p>
+  </div>
+  <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <%= if Map.get(@item, domain["name"], []) != [] do %>
+        <%= for value <- Map.get(@item, domain["name"], []) do %>
+          <%= live_component(@socket, FrontendWeb.ItemLive.MediatorItem, value: value) %>
+        <% end %>
+      <% else %>
+        <div class="py-4 text-center">No items found.</div>
+      <% end  %>
+    </dl>
+  </div>
+</div>
 <% end %>

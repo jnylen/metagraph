@@ -1,13 +1,17 @@
-<div class="mt-12 bg-white rounded-lg shadow domain" id="<%= @domain["id"] %>">
-  <div class="flex items-center justify-between px-8 py-4 bg-white border-b rounded-t-lg header font-oxygen">
-    <div class="flex">
-      <h1 class="font-bold text-brand-ind"><%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %></h1>
-      <span class="ml-4 text-gray-500">(<%= @domain["id"] %>)</span>
-    </div>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg" id="<%= @domain["id"] %>">
+  <div class="px-4 py-5 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      <%= Gettext.dgettext(FrontendWeb.Gettext, "domain", @domain["name"]) %>
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+      <%= @domain["id"] %>
+    </p>
   </div>
-  <div class="px-8 pt-4 pb-8 font-sourcesans text-brand-ind">
-    <%= for predicate <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>
-      <%= live_component(@socket, FrontendWeb.ItemLive.Predicate, folder: "show", predicate: predicate, value: Map.get(@item, predicate["name"], []), template: predicate["config"][:template], type: predicate["type"]) %>
-    <% end %>
+  <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <%= for predicate <- @types |> Enum.filter(& &1["section"] == @domain["id"]) do %>
+        <%= live_component(@socket, FrontendWeb.ItemLive.Predicate, folder: "show", predicate: predicate, value: Map.get(@item, predicate["name"], []), template: predicate["config"][:template], type: predicate["type"]) %>
+      <% end %>
+    </dl>
   </div>
 </div>
