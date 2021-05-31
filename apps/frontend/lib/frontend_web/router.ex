@@ -70,10 +70,12 @@ defmodule FrontendWeb.Router do
     post("/identity/callback", AuthController, :callback)
   end
 
-  # Other scopes may use custom stacks.
-  scope "/", FrontendWeb do
+  scope "/api", FrontendWeb do
     pipe_through(:api)
 
-    post("/query", QueryController, :query)
+    post("/create", ApiController, :create)
+    post("/update", ApiController, :update)
+    get("/search", ApiController, :search)
+    get("/item/:id", ApiController, :show)
   end
 end

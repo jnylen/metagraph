@@ -1,9 +1,9 @@
-defmodule Api.Custom.ItemController do
+defmodule FrontendWeb.ApiController do
   @moduledoc """
   An endpoint for the bots to update data
   """
 
-  use Api, :controller
+  use FrontendWeb, :controller
 
   def show(conn, %{"id" => id}) do
     conn

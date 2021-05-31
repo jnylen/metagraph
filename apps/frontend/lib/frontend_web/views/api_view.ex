@@ -1,5 +1,5 @@
-defmodule Api.Custom.ItemView do
-  use Api, :view
+defmodule FrontendWeb.ApiView do
+  use FrontendWeb, :view
 
   def render("show.json", %{result: item}) do
     %{

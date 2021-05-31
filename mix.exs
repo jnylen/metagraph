@@ -17,7 +17,6 @@ defmodule Umbrella.MixProject do
           include_executables_for: [:unix],
           applications: [
             runtime_tools: :permanent,
-            api: :permanent,
             frontend: :permanent,
             database: :permanent,
             graph: :permanent,
