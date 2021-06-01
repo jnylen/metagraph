@@ -15,6 +15,28 @@ defmodule FrontendWeb.ApiController do
     |> render("results.json", result: Meilisearch.Search.search("items", query))
   end
 
+  def query(conn, %{"field" => field, "value" => value}) do
+    statement = [
+      "{uid_get(func: eq(#{field}, #{value})) { uid }}"
+    ]
+
+    Dlex.query(Graph.Repo, statement)
+    |> case do
+      {:ok, %{"uid_get" => values}} ->
+        conn
+        |> render(
+          "query.json",
+          %{
+            values: Enum.map(values, fn x -> Map.get(x, "uid") end)
+          }
+        )
+
+      _ ->
+        conn
+        |> render("query.json", %{})
+    end
+  end
+
   def update(conn, %{"uid" => uid, "values" => values}) do
     {:ok, item} = Graph.Repo.get_new(uid)
     changeset = item.__struct__.changeset(item, values)

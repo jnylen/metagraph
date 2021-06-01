@@ -11,11 +11,16 @@ defmodule FrontendWeb.Router do
     plug(FrontendWeb.Plugs.SetCurrentUser)
   end
 
-  pipeline :api do
+  pipeline :ajax do
     plug(:accepts, ["json"])
     plug(:fetch_session)
     plug(:protect_from_forgery)
     plug(FrontendWeb.Plugs.SetCurrentUser)
+  end
+
+  pipeline :api do
+    plug(:accepts, ["json"])
+    plug(FrontendWeb.Plugs.BearerAuth)
   end
 
   scope "/", FrontendWeb do
@@ -54,7 +59,7 @@ defmodule FrontendWeb.Router do
 
   # Ajax
   scope "/ajax", FrontendWeb do
-    pipe_through([:api])
+    pipe_through([:ajax])
 
     get("/relations", AjaxController, :relations)
     post("/relations", AjaxController, :relations)
@@ -76,6 +81,7 @@ defmodule FrontendWeb.Router do
     post("/create", ApiController, :create)
     post("/update", ApiController, :update)
     get("/search", ApiController, :search)
+    get("/query", ApiController, :query)
     get("/item/:id", ApiController, :show)
   end
 end

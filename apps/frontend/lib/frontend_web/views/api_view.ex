@@ -25,6 +25,14 @@ defmodule FrontendWeb.ApiView do
     }
   end
 
+  def render("query.json", %{values: values}) do
+    %{status: "ok", uids: values}
+  end
+
+  def render("query.json", _) do
+    %{status: "error", uids: []}
+  end
+
   def render("result.json", %{result: {:ok, item}}) do
     {:ok, item} = Graph.Repo.get_new(item.uid)
 
