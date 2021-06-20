@@ -10,9 +10,14 @@ defmodule FrontendWeb.ApiController do
     |> render("show.json", result: Graph.Repo.get!(id))
   end
 
-  def search(conn, %{"query" => query}) do
+  def search(conn, %{"query" => query} = params) do
+    opts =
+      %{"filters" => Map.get(params, "filters")}
+      |> Enum.filter(fn {_, v} -> v end)
+      |> Enum.into([])
+
     conn
-    |> render("results.json", result: Meilisearch.Search.search("items", query))
+    |> render("results.json", result: Meilisearch.Search.search("items", query, opts))
   end
 
   def query(conn, %{"field" => field, "value" => value}) do
