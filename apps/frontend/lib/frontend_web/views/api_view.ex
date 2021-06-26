@@ -1,6 +1,13 @@
 defmodule FrontendWeb.ApiView do
   use FrontendWeb, :view
 
+  def render("show.json", %{result: {:error, _}}) do
+    %{
+      status: "error",
+      message: "error occured"
+    }
+  end
+
   def render("show.json", %{result: item}) do
     %{
       status: "ok",
