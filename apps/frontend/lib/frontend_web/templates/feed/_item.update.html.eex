@@ -1,5 +1,5 @@
 <div class="mt-2 mb-4 bg-white rounded-lg shadow-md border-2 border-transparent transition-border hover:border-indigo-500 hover:cursor-pointer overflow-hidden" x-data="{ show: false }" :class="{ 'border-indigo-500': show }">
-  <div class="flex items-center px-4 py-5" @click="show = !show" >
+  <div class="flex items-center px-4 py-5" x-cloak x-on:click="show = !show" >
     <div class="relative pl-2">
       <div class="px-5 py-4 font-bold leading-none tracking-tighter text-green-900 bg-blue-200 rounded-full font-sourcesans">E</div>
       <div class="absolute bottom-0 right-0 w-4 h-4 leading-none text-white bg-red-600 border-2 border-white rounded-full"></div>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-gray-600 w-full py-4 px-6 shadow-inner" :aria-expanded="show ? 'true' : 'false'" :class="{ 'hidden': !show }">
+  <div class="bg-gray-600 w-full py-4 px-6 shadow-inner hidden" :aria-expanded="show ? 'true' : 'false'" :class="{ 'hidden': !show }">
     <div class="flex flex-wrap">
       <%= for %{"action" => action, "key" => change_key, "value" => change_val} <- @item.changes |> remove_blanks!(@graph) do %>
         <div class="flex items-center w-full py-2 font-sourcesans">

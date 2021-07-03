@@ -12,7 +12,12 @@
     <dl class="sm:divide-y sm:divide-gray-200">
       <%= if Map.get(@item, domain["name"], []) != [] do %>
         <%= for value <- Map.get(@item, domain["name"], []) do %>
-          <%= live_component(@socket, FrontendWeb.ItemLive.MediatorItem, value: value) %>
+          <%= live_component(
+            @socket,
+            Map.get(domain, "config", %{}) |> Map.get(:component, FrontendWeb.ItemLive.MediatorItem),
+            value: value,
+            component_view: Map.get(domain, "config", %{}) |> Map.get(:component_view, "_mediator_item")
+          ) %>
         <% end %>
       <% else %>
         <div class="py-4 text-center">No items found.</div>

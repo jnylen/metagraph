@@ -1,11 +1,10 @@
-<div class="flex">
+<div class="flex-col">
 <%= for predicate <- @value.__struct__.__schema__(:field_config) do %>
-
-<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-  <%= live_component(@socket, FrontendWeb.ItemLive.Predicate, only_values: true, folder: "show", predicate: predicate, value: Map.get(@value, predicate.name, []), template: predicate.template, type: :relation) %>
-  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+<div class="flex">
+  <span class="text-sm text-gray-900 w-1/2">
     <%= predicate.label %>
-  </dd>
+  </span>
+  <%= live_component(@socket, FrontendWeb.ItemLive.Predicate, only_values: true, folder: "show", predicate: predicate, value: Map.get(@value, predicate.name, []), template: predicate.template, type: :relation) %>
 </div>
 <% end %>
 </div>

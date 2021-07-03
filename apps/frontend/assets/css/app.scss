@@ -120,4 +120,8 @@ iframe {
   display: none;
 }
 
+[x-cloak] {
+  display: none;
+}
+
 @tailwind utilities;

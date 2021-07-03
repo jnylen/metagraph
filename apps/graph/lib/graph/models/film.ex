@@ -44,7 +44,9 @@ defmodule Graph.Film do
       mediator: true,
       depends_on: Graph.Mediator.Crew,
       field_name: :film,
-      template: "mediator/list"
+      template: "mediator/list",
+      component: FrontendWeb.ItemLive.MediatorItem,
+      component_view: "special/crew_film"
     )
 
     field_config(:performances,
@@ -54,7 +56,9 @@ defmodule Graph.Film do
       mediator: true,
       depends_on: Graph.Mediator.Performance,
       field_name: :film,
-      template: "mediator/list"
+      template: "mediator/list",
+      component: FrontendWeb.ItemLive.MediatorItem,
+      component_view: "special/performance_film"
     )
 
     field_config(:imdb_id,

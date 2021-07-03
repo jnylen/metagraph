@@ -50,7 +50,9 @@ defmodule Graph.Person do
       mediator: true,
       depends_on: Graph.Mediator.Crew,
       field_name: :person,
-      template: "mediator/list"
+      template: "mediator/list",
+      component: FrontendWeb.ItemLive.MediatorItem,
+      component_view: "special/crew_person"
     )
 
     field_config(:performances,
@@ -60,7 +62,9 @@ defmodule Graph.Person do
       mediator: true,
       depends_on: Graph.Mediator.Performance,
       field_name: :person,
-      template: "mediator/list"
+      template: "mediator/list",
+      component: FrontendWeb.ItemLive.MediatorItem,
+      component_view: "special/performance_person"
     )
 
     field_config(:themoviedb_id,

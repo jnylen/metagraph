@@ -1,0 +1,5 @@
+<div class="p-4">
+  <%= live_redirect to: Routes.item_path(@socket, :show, @value.person.uid), replace: false, class: "px-3 py-1 mr-1 text-sm text-white bg-indigo-500 rounded-lg hover:bg-indigo-600" do %>
+    <%= Map.get(get_lang(Map.get(@value.person, :label, []), "sv-SE"), :value, "Unknown") %>
+  <% end %>
+</div>

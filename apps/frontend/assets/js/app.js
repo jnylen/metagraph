@@ -10,8 +10,8 @@ import scss from "../css/app.scss";
 // Import dependencies
 //
 import "phoenix_html";
-import "alpinejs";
 import topbar from "topbar";
+import init from "./components/init.js";
 import "@kollegorna/cocoon-vanilla-js";
 
 require("./liveview.js").default;
@@ -33,3 +33,10 @@ window.queryPage = queryPage;
 
 import { Modal } from "./components/modal";
 window.Modal = Modal;
+
+import Alpine from "alpinejs";
+window.Alpine = Alpine;
+
+init(() => {
+  Alpine.start();
+});
