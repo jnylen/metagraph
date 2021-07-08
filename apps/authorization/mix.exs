@@ -7,7 +7,7 @@ defmodule Authorization.MixProject do
     {:ueberauth, "~> 0.5"},
 
     # Username/Password
-    {:ueberauth_identity, "~> 0.2"},
+    {:ueberauth_identity, "~> 0.2", github: "jnylen/ueberauth_identity"},
 
     # Hashing
     {:bcrypt_elixir, "~> 2.0"},
