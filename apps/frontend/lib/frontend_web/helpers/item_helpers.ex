@@ -91,6 +91,12 @@ defmodule FrontendWeb.ItemHelpers do
     )
   end
 
+  def get_type(%{"type" => type}) when is_list(type) do
+    type
+    |> List.first()
+    |> prettify_predicate()
+  end
+
   def get_type(_), do: "Unknown"
 
   @doc """
@@ -99,7 +105,7 @@ defmodule FrontendWeb.ItemHelpers do
   def get_lang(list, lang) when is_list(list) do
     list
     |> Enum.filter(fn item ->
-      item.language == lang
+      (Map.get(item, :language) || Map.get(item, "language")) == lang
     end)
     |> case do
       [item] -> item

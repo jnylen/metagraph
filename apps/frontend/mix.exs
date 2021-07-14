@@ -7,10 +7,10 @@ defmodule Frontend.MixProject do
   @deps [
     # , "~> 1.4"
     {:phoenix, "~> 1.5.2"},
-    # , "~> 0.10"
-    {:phoenix_live_view, "~> 0.15.0"},
+    # "~> 0.16.0",
+    {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
     # {:phoenix_pubsub, "~> 1.1"},
-    # {:phoenix_html, "~> 2.14"},
+    {:phoenix_html, github: "phoenixframework/phoenix_html", override: true},
     {:phoenix_live_reload, "~> 1.2", only: :dev},
     {:phoenix_active_link, "~> 0.3"},
     {:phoenix_html_simplified_helpers, ">= 0.0.0"},

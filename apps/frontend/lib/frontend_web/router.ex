@@ -53,6 +53,9 @@ defmodule FrontendWeb.Router do
     live("/uid/:uid/changes", ItemLive, :changes)
     live("/uid/:uid/edit", ItemLive, :edit)
 
+    # Search
+    live("/search", SearchLive, :index)
+
     # Query
     get("/query", QueryController, :index)
   end

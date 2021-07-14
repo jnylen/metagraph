@@ -1,6 +1,6 @@
 import { Socket } from "phoenix";
 
-import LiveSocket from "phoenix_live_view";
+import { LiveSocket } from "phoenix_live_view";
 
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
@@ -20,5 +20,7 @@ let liveSocket = new LiveSocket("/live", Socket, {
 liveSocket.connect();
 
 console.log("HELLO");
+
+window.liveSocket = liveSocket;
 
 export default liveSocket;
