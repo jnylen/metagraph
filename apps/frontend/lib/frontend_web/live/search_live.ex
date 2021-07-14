@@ -1,9 +1,8 @@
 defmodule FrontendWeb.SearchLive do
   use FrontendWeb, :live_view
 
-  def render(%{live_action: :index} = assigns) do
-    FrontendWeb.SearchView.render("index.html", assigns)
-  end
+  def render(%{live_action: :index} = assigns),
+    do: FrontendWeb.SearchView.render("index.html", assigns)
 
   def mount(_params, _session, socket) do
     {

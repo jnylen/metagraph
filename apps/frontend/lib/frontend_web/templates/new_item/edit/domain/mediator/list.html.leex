@@ -16,6 +16,6 @@
         Nothing found, add one please senpai.
       <% end %>
     </div>
-    <%= live_component(@socket, FrontendWeb.ModalLive, item: @item, domain: Map.get(domain, "config")) %>
+    <%= FrontendWeb.ModalLive.render(%{item: @item, domain: Map.get(domain, "config")}) %>
   </div>
 <% end %>

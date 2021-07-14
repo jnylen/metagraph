@@ -1,5 +1,14 @@
 defmodule FrontendWeb.ModalLive do
-  use FrontendWeb, :live_component
+  use Phoenix.Component
+  use Phoenix.HTML
+
+  def render(assigns) do
+    ~H"""
+    <div :class="{ 'fixed z-10 inset-0 overflow-y-auto': show_modal}" x-show="show_modal" @keydown.escape="show_modal = false" x-cloak id="modal">
+      <%#= render_block(@inner_block) %>
+    </div>
+    """
+  end
 
   def types(domain) do
     FrontendWeb.ItemHelpers.get_predicate_types(
