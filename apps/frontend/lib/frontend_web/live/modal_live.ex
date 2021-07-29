@@ -1,6 +1,5 @@
 defmodule FrontendWeb.ModalLive do
-  use Phoenix.Component
-  use Phoenix.HTML
+  use FrontendWeb, :component
 
   def render(assigns) do
     ~H"""
