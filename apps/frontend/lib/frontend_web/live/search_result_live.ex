@@ -7,7 +7,7 @@ defmodule FrontendWeb.SearchResultLive do
     <li class="bg-white w-1/2 mx-auto shadow overflow-hidden sm:rounded-md">
       <%= live_patch class: "block hover:bg-gray-50", to: Routes.item_path(Endpoint, :show, Map.get(@item, "uid")), replace: true do %>
         <div class="px-4 py-4 sm:px-6 flex items-center justify-between">
-          <div class="">
+          <div class="truncate pr-5">
               <p class="text-sm font-medium text-indigo-600 truncate">
                 <%= Map.get(get_lang(Map.get(@item, "label", []), "sv-SE"), "value", "Unknown") %>
               </p>
