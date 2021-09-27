@@ -6,7 +6,7 @@ defmodule Frontend.MixProject do
 
   @deps [
     # , "~> 1.4"
-    {:phoenix, "~> 1.5.2"},
+    {:phoenix, "~> 1.6.0"},
     # "~> 0.16.0",
     {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
     # {:phoenix_pubsub, "~> 1.1"},
