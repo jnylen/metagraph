@@ -22,7 +22,7 @@
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "autoprefixer": "^10.3.7",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.4.0",
     "css-minimizer-webpack-plugin": "^3.1.1",
