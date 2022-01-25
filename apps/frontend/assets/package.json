@@ -9,7 +9,7 @@
     "@kollegorna/cocoon-vanilla-js": "^1.0.7",
     "@kollegorna/js-utils": "^1.0.7",
     "alpinejs": "^3.5.1",
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "highlight.js": "^11.3.1",
     "phoenix": "file:../../../deps/phoenix",
     "phoenix_html": "file:../../../deps/phoenix_html",
