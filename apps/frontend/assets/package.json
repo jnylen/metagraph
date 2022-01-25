@@ -35,7 +35,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.16",
     "tailwindcss-gradients": "^3.0.0",
-    "terser-webpack-plugin": "^5.2.5",
+    "terser-webpack-plugin": "^5.3.0",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1"
   },
