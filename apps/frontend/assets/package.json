@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.16.4",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.3.4",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
