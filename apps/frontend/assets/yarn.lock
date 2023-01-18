@@ -1301,10 +1301,10 @@ alphanum-sort@^1.0.2:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-alpinejs@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.9.0.tgz#02d37e0221c2b4aa5dcada8025ed843b4749dad5"
-  integrity sha512-Dy8YOCR/BZ6WxKrfml/NCSX/JPBY8wKMqWmlyIbaneE98V9y8ZjSzv+g7VrXCkiDob1t8gf+lVNmH/tX0jfuYg==
+alpinejs@^3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.11.1.tgz#8675083411bb8a18e618a646cd64cb9bdf76a75e"
+  integrity sha512-0Y+4WKQcEZrvpfS98qeSOXCPXFPorULQ+1hc8lQrx+1HHzkUofD4HzjTfz+wimA5tSsGnpXz/SoF2P9saiXZCw==
   dependencies:
     "@vue/reactivity" "~3.1.1"
 
